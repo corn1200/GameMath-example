@@ -55,6 +55,7 @@ namespace CK
 		static const Vector2 One;
 		static const Vector2 Zero;
 		// Vector2가 가지고 있는 멤버 변수의 개수를 알 수 있도록 차원(Dimension)이라는 정적 변수를 선언하고 이 값을 2로 지정한다.
+		// test
 		static constexpr BYTE Dimension = 2;
 
 		// 멤버변수
