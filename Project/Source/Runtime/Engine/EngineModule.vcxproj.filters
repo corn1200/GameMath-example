@@ -1,185 +1,185 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="C:\GameMath\gamemath-main\Source\Runtime\Engine\Precompiled.cpp" />
-    <ClCompile Include="C:\GameMath\gamemath-main\Source\Runtime\Engine\Private\2D\CameraObject.cpp">
+    <ClCompile Include="C:\GameMath\GameMath-example\Source\Runtime\Engine\Precompiled.cpp" />
+    <ClCompile Include="C:\GameMath\GameMath-example\Source\Runtime\Engine\Private\2D\CameraObject.cpp">
       <Filter>Private\2D</Filter>
     </ClCompile>
-    <ClCompile Include="C:\GameMath\gamemath-main\Source\Runtime\Engine\Private\2D\GameEngine.cpp">
+    <ClCompile Include="C:\GameMath\GameMath-example\Source\Runtime\Engine\Private\2D\GameEngine.cpp">
       <Filter>Private\2D</Filter>
     </ClCompile>
-    <ClCompile Include="C:\GameMath\gamemath-main\Source\Runtime\Engine\Private\2D\GameObject.cpp">
+    <ClCompile Include="C:\GameMath\GameMath-example\Source\Runtime\Engine\Private\2D\GameObject.cpp">
       <Filter>Private\2D</Filter>
     </ClCompile>
-    <ClCompile Include="C:\GameMath\gamemath-main\Source\Runtime\Engine\Private\2D\Mesh.cpp">
+    <ClCompile Include="C:\GameMath\GameMath-example\Source\Runtime\Engine\Private\2D\Mesh.cpp">
       <Filter>Private\2D</Filter>
     </ClCompile>
-    <ClCompile Include="C:\GameMath\gamemath-main\Source\Runtime\Engine\Private\2D\TransformComponent.cpp">
+    <ClCompile Include="C:\GameMath\GameMath-example\Source\Runtime\Engine\Private\2D\TransformComponent.cpp">
       <Filter>Private\2D</Filter>
     </ClCompile>
-    <ClCompile Include="C:\GameMath\gamemath-main\Source\Runtime\Engine\Private\3D\Bone.cpp">
+    <ClCompile Include="C:\GameMath\GameMath-example\Source\Runtime\Engine\Private\3D\Bone.cpp">
       <Filter>Private\3D</Filter>
     </ClCompile>
-    <ClCompile Include="C:\GameMath\gamemath-main\Source\Runtime\Engine\Private\3D\CameraObject.cpp">
+    <ClCompile Include="C:\GameMath\GameMath-example\Source\Runtime\Engine\Private\3D\CameraObject.cpp">
       <Filter>Private\3D</Filter>
     </ClCompile>
-    <ClCompile Include="C:\GameMath\gamemath-main\Source\Runtime\Engine\Private\3D\GameEngine.cpp">
+    <ClCompile Include="C:\GameMath\GameMath-example\Source\Runtime\Engine\Private\3D\GameEngine.cpp">
       <Filter>Private\3D</Filter>
     </ClCompile>
-    <ClCompile Include="C:\GameMath\gamemath-main\Source\Runtime\Engine\Private\3D\GameObject.cpp">
+    <ClCompile Include="C:\GameMath\GameMath-example\Source\Runtime\Engine\Private\3D\GameObject.cpp">
       <Filter>Private\3D</Filter>
     </ClCompile>
-    <ClCompile Include="C:\GameMath\gamemath-main\Source\Runtime\Engine\Private\3D\Mesh.cpp">
+    <ClCompile Include="C:\GameMath\GameMath-example\Source\Runtime\Engine\Private\3D\Mesh.cpp">
       <Filter>Private\3D</Filter>
     </ClCompile>
-    <ClCompile Include="C:\GameMath\gamemath-main\Source\Runtime\Engine\Private\3D\TransformComponent.cpp">
+    <ClCompile Include="C:\GameMath\GameMath-example\Source\Runtime\Engine\Private\3D\TransformComponent.cpp">
       <Filter>Private\3D</Filter>
     </ClCompile>
-    <ClCompile Include="C:\GameMath\gamemath-main\Source\Runtime\Engine\Private\InputManager.cpp">
+    <ClCompile Include="C:\GameMath\GameMath-example\Source\Runtime\Engine\Private\InputManager.cpp">
       <Filter>Private</Filter>
     </ClCompile>
-    <ClCompile Include="C:\GameMath\gamemath-main\Source\Runtime\Engine\Private\Texture.cpp">
+    <ClCompile Include="C:\GameMath\GameMath-example\Source\Runtime\Engine\Private\Texture.cpp">
       <Filter>Private</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="C:\GameMath\gamemath-main\Source\Runtime\Engine\Precompiled.h" />
-    <ClInclude Include="C:\GameMath\gamemath-main\Source\Runtime\Engine\Public\2D\CameraObject.h">
+    <ClInclude Include="C:\GameMath\GameMath-example\Source\Runtime\Engine\Precompiled.h" />
+    <ClInclude Include="C:\GameMath\GameMath-example\Source\Runtime\Engine\Public\2D\CameraObject.h">
       <Filter>Public\2D</Filter>
     </ClInclude>
-    <ClInclude Include="C:\GameMath\gamemath-main\Source\Runtime\Engine\Public\2D\GameEngine.h">
+    <ClInclude Include="C:\GameMath\GameMath-example\Source\Runtime\Engine\Public\2D\GameEngine.h">
       <Filter>Public\2D</Filter>
     </ClInclude>
-    <ClInclude Include="C:\GameMath\gamemath-main\Source\Runtime\Engine\Public\2D\GameObject.h">
+    <ClInclude Include="C:\GameMath\GameMath-example\Source\Runtime\Engine\Public\2D\GameObject.h">
       <Filter>Public\2D</Filter>
     </ClInclude>
-    <ClInclude Include="C:\GameMath\gamemath-main\Source\Runtime\Engine\Public\2D\Mesh.h">
+    <ClInclude Include="C:\GameMath\GameMath-example\Source\Runtime\Engine\Public\2D\Mesh.h">
       <Filter>Public\2D</Filter>
     </ClInclude>
-    <ClInclude Include="C:\GameMath\gamemath-main\Source\Runtime\Engine\Public\2D\TransformComponent.h">
+    <ClInclude Include="C:\GameMath\GameMath-example\Source\Runtime\Engine\Public\2D\TransformComponent.h">
       <Filter>Public\2D</Filter>
     </ClInclude>
-    <ClInclude Include="C:\GameMath\gamemath-main\Source\Runtime\Engine\Public\3D\Bone.h">
+    <ClInclude Include="C:\GameMath\GameMath-example\Source\Runtime\Engine\Public\3D\Bone.h">
       <Filter>Public\3D</Filter>
     </ClInclude>
-    <ClInclude Include="C:\GameMath\gamemath-main\Source\Runtime\Engine\Public\3D\CameraObject.h">
+    <ClInclude Include="C:\GameMath\GameMath-example\Source\Runtime\Engine\Public\3D\CameraObject.h">
       <Filter>Public\3D</Filter>
     </ClInclude>
-    <ClInclude Include="C:\GameMath\gamemath-main\Source\Runtime\Engine\Public\3D\GameEngine.h">
+    <ClInclude Include="C:\GameMath\GameMath-example\Source\Runtime\Engine\Public\3D\GameEngine.h">
       <Filter>Public\3D</Filter>
     </ClInclude>
-    <ClInclude Include="C:\GameMath\gamemath-main\Source\Runtime\Engine\Public\3D\GameObject.h">
+    <ClInclude Include="C:\GameMath\GameMath-example\Source\Runtime\Engine\Public\3D\GameObject.h">
       <Filter>Public\3D</Filter>
     </ClInclude>
-    <ClInclude Include="C:\GameMath\gamemath-main\Source\Runtime\Engine\Public\3D\Mesh.h">
+    <ClInclude Include="C:\GameMath\GameMath-example\Source\Runtime\Engine\Public\3D\Mesh.h">
       <Filter>Public\3D</Filter>
     </ClInclude>
-    <ClInclude Include="C:\GameMath\gamemath-main\Source\Runtime\Engine\Public\3D\Resources.h">
+    <ClInclude Include="C:\GameMath\GameMath-example\Source\Runtime\Engine\Public\3D\Resources.h">
       <Filter>Public\3D</Filter>
     </ClInclude>
-    <ClInclude Include="C:\GameMath\gamemath-main\Source\Runtime\Engine\Public\3D\TransformComponent.h">
+    <ClInclude Include="C:\GameMath\GameMath-example\Source\Runtime\Engine\Public\3D\TransformComponent.h">
       <Filter>Public\3D</Filter>
     </ClInclude>
-    <ClInclude Include="C:\GameMath\gamemath-main\Source\Runtime\Engine\Public\EngineHeaders.h">
+    <ClInclude Include="C:\GameMath\GameMath-example\Source\Runtime\Engine\Public\EngineHeaders.h">
       <Filter>Public</Filter>
     </ClInclude>
-    <ClInclude Include="C:\GameMath\gamemath-main\Source\Runtime\Engine\Public\EngineInterface.h">
+    <ClInclude Include="C:\GameMath\GameMath-example\Source\Runtime\Engine\Public\EngineInterface.h">
       <Filter>Public</Filter>
     </ClInclude>
-    <ClInclude Include="C:\GameMath\gamemath-main\Source\Runtime\Engine\Public\InputManager.h">
+    <ClInclude Include="C:\GameMath\GameMath-example\Source\Runtime\Engine\Public\InputManager.h">
       <Filter>Public</Filter>
     </ClInclude>
-    <ClInclude Include="C:\GameMath\gamemath-main\Source\Runtime\Engine\Public\Texture.h">
+    <ClInclude Include="C:\GameMath\GameMath-example\Source\Runtime\Engine\Public\Texture.h">
       <Filter>Public</Filter>
     </ClInclude>
-    <ClInclude Include="C:\GameMath\gamemath-main\Source\Runtime\Engine\ThirdParty\Stb\stb.h">
+    <ClInclude Include="C:\GameMath\GameMath-example\Source\Runtime\Engine\ThirdParty\Stb\stb.h">
       <Filter>ThirdParty\Stb</Filter>
     </ClInclude>
-    <ClInclude Include="C:\GameMath\gamemath-main\Source\Runtime\Engine\ThirdParty\Stb\stb_c_lexer.h">
+    <ClInclude Include="C:\GameMath\GameMath-example\Source\Runtime\Engine\ThirdParty\Stb\stb_c_lexer.h">
       <Filter>ThirdParty\Stb</Filter>
     </ClInclude>
-    <ClInclude Include="C:\GameMath\gamemath-main\Source\Runtime\Engine\ThirdParty\Stb\stb_connected_components.h">
+    <ClInclude Include="C:\GameMath\GameMath-example\Source\Runtime\Engine\ThirdParty\Stb\stb_connected_components.h">
       <Filter>ThirdParty\Stb</Filter>
     </ClInclude>
-    <ClInclude Include="C:\GameMath\gamemath-main\Source\Runtime\Engine\ThirdParty\Stb\stb_divide.h">
+    <ClInclude Include="C:\GameMath\GameMath-example\Source\Runtime\Engine\ThirdParty\Stb\stb_divide.h">
       <Filter>ThirdParty\Stb</Filter>
     </ClInclude>
-    <ClInclude Include="C:\GameMath\gamemath-main\Source\Runtime\Engine\ThirdParty\Stb\stb_ds.h">
+    <ClInclude Include="C:\GameMath\GameMath-example\Source\Runtime\Engine\ThirdParty\Stb\stb_ds.h">
       <Filter>ThirdParty\Stb</Filter>
     </ClInclude>
-    <ClInclude Include="C:\GameMath\gamemath-main\Source\Runtime\Engine\ThirdParty\Stb\stb_dxt.h">
+    <ClInclude Include="C:\GameMath\GameMath-example\Source\Runtime\Engine\ThirdParty\Stb\stb_dxt.h">
       <Filter>ThirdParty\Stb</Filter>
     </ClInclude>
-    <ClInclude Include="C:\GameMath\gamemath-main\Source\Runtime\Engine\ThirdParty\Stb\stb_easy_font.h">
+    <ClInclude Include="C:\GameMath\GameMath-example\Source\Runtime\Engine\ThirdParty\Stb\stb_easy_font.h">
       <Filter>ThirdParty\Stb</Filter>
     </ClInclude>
-    <ClInclude Include="C:\GameMath\gamemath-main\Source\Runtime\Engine\ThirdParty\Stb\stb_herringbone_wang_tile.h">
+    <ClInclude Include="C:\GameMath\GameMath-example\Source\Runtime\Engine\ThirdParty\Stb\stb_herringbone_wang_tile.h">
       <Filter>ThirdParty\Stb</Filter>
     </ClInclude>
-    <ClInclude Include="C:\GameMath\gamemath-main\Source\Runtime\Engine\ThirdParty\Stb\stb_image.h">
+    <ClInclude Include="C:\GameMath\GameMath-example\Source\Runtime\Engine\ThirdParty\Stb\stb_image.h">
       <Filter>ThirdParty\Stb</Filter>
     </ClInclude>
-    <ClInclude Include="C:\GameMath\gamemath-main\Source\Runtime\Engine\ThirdParty\Stb\stb_image_resize.h">
+    <ClInclude Include="C:\GameMath\GameMath-example\Source\Runtime\Engine\ThirdParty\Stb\stb_image_resize.h">
       <Filter>ThirdParty\Stb</Filter>
     </ClInclude>
-    <ClInclude Include="C:\GameMath\gamemath-main\Source\Runtime\Engine\ThirdParty\Stb\stb_image_write.h">
+    <ClInclude Include="C:\GameMath\GameMath-example\Source\Runtime\Engine\ThirdParty\Stb\stb_image_write.h">
       <Filter>ThirdParty\Stb</Filter>
     </ClInclude>
-    <ClInclude Include="C:\GameMath\gamemath-main\Source\Runtime\Engine\ThirdParty\Stb\stb_include.h">
+    <ClInclude Include="C:\GameMath\GameMath-example\Source\Runtime\Engine\ThirdParty\Stb\stb_include.h">
       <Filter>ThirdParty\Stb</Filter>
     </ClInclude>
-    <ClInclude Include="C:\GameMath\gamemath-main\Source\Runtime\Engine\ThirdParty\Stb\stb_leakcheck.h">
+    <ClInclude Include="C:\GameMath\GameMath-example\Source\Runtime\Engine\ThirdParty\Stb\stb_leakcheck.h">
       <Filter>ThirdParty\Stb</Filter>
     </ClInclude>
-    <ClInclude Include="C:\GameMath\gamemath-main\Source\Runtime\Engine\ThirdParty\Stb\stb_perlin.h">
+    <ClInclude Include="C:\GameMath\GameMath-example\Source\Runtime\Engine\ThirdParty\Stb\stb_perlin.h">
       <Filter>ThirdParty\Stb</Filter>
     </ClInclude>
-    <ClInclude Include="C:\GameMath\gamemath-main\Source\Runtime\Engine\ThirdParty\Stb\stb_rect_pack.h">
+    <ClInclude Include="C:\GameMath\GameMath-example\Source\Runtime\Engine\ThirdParty\Stb\stb_rect_pack.h">
       <Filter>ThirdParty\Stb</Filter>
     </ClInclude>
-    <ClInclude Include="C:\GameMath\gamemath-main\Source\Runtime\Engine\ThirdParty\Stb\stb_sprintf.h">
+    <ClInclude Include="C:\GameMath\GameMath-example\Source\Runtime\Engine\ThirdParty\Stb\stb_sprintf.h">
       <Filter>ThirdParty\Stb</Filter>
     </ClInclude>
-    <ClInclude Include="C:\GameMath\gamemath-main\Source\Runtime\Engine\ThirdParty\Stb\stb_textedit.h">
+    <ClInclude Include="C:\GameMath\GameMath-example\Source\Runtime\Engine\ThirdParty\Stb\stb_textedit.h">
       <Filter>ThirdParty\Stb</Filter>
     </ClInclude>
-    <ClInclude Include="C:\GameMath\gamemath-main\Source\Runtime\Engine\ThirdParty\Stb\stb_tilemap_editor.h">
+    <ClInclude Include="C:\GameMath\GameMath-example\Source\Runtime\Engine\ThirdParty\Stb\stb_tilemap_editor.h">
       <Filter>ThirdParty\Stb</Filter>
     </ClInclude>
-    <ClInclude Include="C:\GameMath\gamemath-main\Source\Runtime\Engine\ThirdParty\Stb\stb_truetype.h">
+    <ClInclude Include="C:\GameMath\GameMath-example\Source\Runtime\Engine\ThirdParty\Stb\stb_truetype.h">
       <Filter>ThirdParty\Stb</Filter>
     </ClInclude>
-    <ClInclude Include="C:\GameMath\gamemath-main\Source\Runtime\Engine\ThirdParty\Stb\stb_voxel_render.h">
+    <ClInclude Include="C:\GameMath\GameMath-example\Source\Runtime\Engine\ThirdParty\Stb\stb_voxel_render.h">
       <Filter>ThirdParty\Stb</Filter>
     </ClInclude>
-    <ClInclude Include="C:\GameMath\gamemath-main\Source\Runtime\Engine\ThirdParty\Stb\stretchy_buffer.h">
+    <ClInclude Include="C:\GameMath\GameMath-example\Source\Runtime\Engine\ThirdParty\Stb\stretchy_buffer.h">
       <Filter>ThirdParty\Stb</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Private">
-      <UniqueIdentifier>{7229ABFD-E130-37D6-B1D4-12A0F5C84461}</UniqueIdentifier>
+      <UniqueIdentifier>{34ECA595-DD48-393B-B5C1-44CB10E31B4F}</UniqueIdentifier>
     </Filter>
     <Filter Include="Private\2D">
-      <UniqueIdentifier>{8F6FCB83-C13A-304B-AB70-10BD037D59CE}</UniqueIdentifier>
+      <UniqueIdentifier>{3D22BCF2-6DB2-331B-BFB9-24877694E24C}</UniqueIdentifier>
     </Filter>
     <Filter Include="Private\3D">
-      <UniqueIdentifier>{49C00010-8C17-3FDE-876A-661CACF61378}</UniqueIdentifier>
+      <UniqueIdentifier>{8D1CA4BD-40A2-37FB-8266-3FD5B5D8C307}</UniqueIdentifier>
     </Filter>
     <Filter Include="Public">
-      <UniqueIdentifier>{3E42827F-C0E5-3485-9BEA-9068F737C2AE}</UniqueIdentifier>
+      <UniqueIdentifier>{FCE009C0-9590-30F8-A7B2-36A5417F9ECF}</UniqueIdentifier>
     </Filter>
     <Filter Include="Public\2D">
-      <UniqueIdentifier>{37371783-6133-3543-9FCB-327C6737807A}</UniqueIdentifier>
+      <UniqueIdentifier>{E45B5014-A954-33A7-9D4F-4F160EFCC27A}</UniqueIdentifier>
     </Filter>
     <Filter Include="Public\3D">
-      <UniqueIdentifier>{2D87D1FF-EC03-3837-B552-C4272B2AC663}</UniqueIdentifier>
+      <UniqueIdentifier>{AA034AFA-149E-38CE-BF3F-BF732A60307F}</UniqueIdentifier>
     </Filter>
     <Filter Include="ThirdParty">
-      <UniqueIdentifier>{1F9FB080-F394-31B3-8DAB-C3C75C32E44A}</UniqueIdentifier>
+      <UniqueIdentifier>{86556FB0-DEF6-330A-A955-A963952A922F}</UniqueIdentifier>
     </Filter>
     <Filter Include="ThirdParty\Stb">
-      <UniqueIdentifier>{7F3B4F54-590B-3113-8585-8BD9D90E0BD5}</UniqueIdentifier>
+      <UniqueIdentifier>{4DA0B78B-CC72-3B1F-8418-97754FB68FAF}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

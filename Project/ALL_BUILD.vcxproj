@@ -25,7 +25,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{7C1B2F1E-F12C-3B17-A87C-12172A7196F7}</ProjectGuid>
+    <ProjectGuid>{7080DB3E-BF78-3646-8EE1-913EC4B683AF}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <WindowsTargetPlatformVersion>10.0.22000.0</WindowsTargetPlatformVersion>
     <Platform>x64</Platform>
@@ -110,20 +110,20 @@
   <ItemGroup>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="C:\GameMath\gamemath-main\Project\Source\Runtime\Engine\EngineModule.vcxproj">
-      <Project>{750AFD30-BFD1-32F1-8D5B-8EF67C389880}</Project>
+    <ProjectReference Include="C:\GameMath\GameMath-example\Project\Source\Runtime\Engine\EngineModule.vcxproj">
+      <Project>{EBFF4EAB-AC20-335F-8011-7924AC38A734}</Project>
       <Name>EngineModule</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\GameMath\gamemath-main\Project\Source\Runtime\Math\MathModule.vcxproj">
-      <Project>{2F93208B-FC98-30CF-ACCE-242D290E33B5}</Project>
+    <ProjectReference Include="C:\GameMath\GameMath-example\Project\Source\Runtime\Math\MathModule.vcxproj">
+      <Project>{4DFDA257-0320-363D-A115-8167CBD1E785}</Project>
       <Name>MathModule</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\GameMath\gamemath-main\Project\Source\Runtime\Renderer\RendererModule.vcxproj">
-      <Project>{42B00610-AE4C-332E-978C-71DAC2CEEA16}</Project>
+    <ProjectReference Include="C:\GameMath\GameMath-example\Project\Source\Runtime\Renderer\RendererModule.vcxproj">
+      <Project>{F27C9F4F-6870-3892-B82B-8E030CA4BF36}</Project>
       <Name>RendererModule</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\GameMath\gamemath-main\Project\Source\Player\SoftRendererPlayer.vcxproj">
-      <Project>{8685C80A-AD0C-38C5-9CDD-60C0A626097B}</Project>
+    <ProjectReference Include="C:\GameMath\GameMath-example\Project\Source\Player\SoftRendererPlayer.vcxproj">
+      <Project>{4539230A-2B1D-3193-A737-FBAB79ACD609}</Project>
       <Name>SoftRendererPlayer</Name>
     </ProjectReference>
   </ItemGroup>

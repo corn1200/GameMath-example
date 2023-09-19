@@ -1,2 +1,0 @@
-# GameMath-example
- 

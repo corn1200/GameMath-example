@@ -22,7 +22,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{8685C80A-AD0C-38C5-9CDD-60C0A626097B}</ProjectGuid>
+    <ProjectGuid>{4539230A-2B1D-3193-A737-FBAB79ACD609}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <WindowsTargetPlatformVersion>10.0.22000.0</WindowsTargetPlatformVersion>
     <Platform>x64</Platform>
@@ -59,38 +59,38 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\GameMath\gamemath-main\Output\Windows\Binary\Debug\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\GameMath\GameMath-example\Output\Windows\Binary\Debug\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">SoftRendererPlayer.dir\Debug\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">SoftRendererPlayer</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
-    <LocalDebuggerWorkingDirectory Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/GameMath/gamemath-main/Resource</LocalDebuggerWorkingDirectory>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\GameMath\gamemath-main\Output\Windows\Binary\Release\</OutDir>
+    <LocalDebuggerWorkingDirectory Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:/GameMath/GameMath-example/Resource</LocalDebuggerWorkingDirectory>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\GameMath\GameMath-example\Output\Windows\Binary\Release\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">SoftRendererPlayer.dir\Release\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">SoftRendererPlayer</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
-    <LocalDebuggerWorkingDirectory Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/GameMath/gamemath-main/Resource</LocalDebuggerWorkingDirectory>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\GameMath\gamemath-main\Output\Windows\Binary\MinSizeRel\</OutDir>
+    <LocalDebuggerWorkingDirectory Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:/GameMath/GameMath-example/Resource</LocalDebuggerWorkingDirectory>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\GameMath\GameMath-example\Output\Windows\Binary\MinSizeRel\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">SoftRendererPlayer.dir\MinSizeRel\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">SoftRendererPlayer</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
-    <LocalDebuggerWorkingDirectory Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/GameMath/gamemath-main/Resource</LocalDebuggerWorkingDirectory>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\GameMath\gamemath-main\Output\Windows\Binary\RelWithDebInfo\</OutDir>
+    <LocalDebuggerWorkingDirectory Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:/GameMath/GameMath-example/Resource</LocalDebuggerWorkingDirectory>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\GameMath\GameMath-example\Output\Windows\Binary\RelWithDebInfo\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">SoftRendererPlayer.dir\RelWithDebInfo\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">SoftRendererPlayer</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</GenerateManifest>
-    <LocalDebuggerWorkingDirectory Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/GameMath/gamemath-main/Resource</LocalDebuggerWorkingDirectory>
+    <LocalDebuggerWorkingDirectory Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:/GameMath/GameMath-example/Resource</LocalDebuggerWorkingDirectory>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\GameMath\gamemath-main\Source\Player;C:\GameMath\gamemath-main\Source\Player\Private\Windows;C:\GameMath\gamemath-main\Source\Runtime\Math\Public;C:\GameMath\gamemath-main\Source\Runtime\Engine\Public;C:\GameMath\gamemath-main\Source\Runtime\Renderer\Public;C:\GameMath\gamemath-main\Source\Runtime\Renderer\Public\Windows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\GameMath\GameMath-example\Source\Player;C:\GameMath\GameMath-example\Source\Player\Private\Windows;C:\GameMath\GameMath-example\Source\Runtime\Math\Public;C:\GameMath\GameMath-example\Source\Runtime\Engine\Public;C:\GameMath\GameMath-example\Source\Runtime\Renderer\Public;C:\GameMath\GameMath-example\Source\Runtime\Renderer\Public\Windows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -108,10 +108,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;PLATFORM_WINDOWS;Windows;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\GameMath\gamemath-main\Source\Player;C:\GameMath\gamemath-main\Source\Player\Private\Windows;C:\GameMath\gamemath-main\Source\Runtime\Math\Public;C:\GameMath\gamemath-main\Source\Runtime\Engine\Public;C:\GameMath\gamemath-main\Source\Runtime\Renderer\Public;C:\GameMath\gamemath-main\Source\Runtime\Renderer\Public\Windows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\GameMath\GameMath-example\Source\Player;C:\GameMath\GameMath-example\Source\Player\Private\Windows;C:\GameMath\GameMath-example\Source\Runtime\Math\Public;C:\GameMath\GameMath-example\Source\Runtime\Engine\Public;C:\GameMath\GameMath-example\Source\Runtime\Renderer\Public;C:\GameMath\GameMath-example\Source\Runtime\Renderer\Public\Windows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\GameMath\gamemath-main\Source\Player;C:\GameMath\gamemath-main\Source\Player\Private\Windows;C:\GameMath\gamemath-main\Source\Runtime\Math\Public;C:\GameMath\gamemath-main\Source\Runtime\Engine\Public;C:\GameMath\gamemath-main\Source\Runtime\Renderer\Public;C:\GameMath\gamemath-main\Source\Runtime\Renderer\Public\Windows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\GameMath\GameMath-example\Source\Player;C:\GameMath\GameMath-example\Source\Player\Private\Windows;C:\GameMath\GameMath-example\Source\Runtime\Math\Public;C:\GameMath\GameMath-example\Source\Runtime\Engine\Public;C:\GameMath\GameMath-example\Source\Runtime\Renderer\Public;C:\GameMath\GameMath-example\Source\Runtime\Renderer\Public\Windows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -119,13 +119,13 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>..\..\..\Output\Windows\Library\Debug\MathModule.lib;..\..\..\Output\Windows\Library\Debug\RendererModule.lib;..\..\..\Output\Windows\Library\Debug\EngineModule.lib;..\..\..\Output\Windows\Library\Debug\RendererModule.lib;..\..\..\Output\Windows\Library\Debug\MathModule.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>C:\GameMath\GameMath-example\Output\Windows\Library\Debug\MathModule.lib;C:\GameMath\GameMath-example\Output\Windows\Library\Debug\RendererModule.lib;C:\GameMath\GameMath-example\Output\Windows\Library\Debug\EngineModule.lib;C:\GameMath\GameMath-example\Output\Windows\Library\Debug\RendererModule.lib;C:\GameMath\GameMath-example\Output\Windows\Library\Debug\MathModule.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>C:/GameMath/gamemath-main/Project/Source/Player/Debug/SoftRendererPlayer.lib</ImportLibrary>
-      <ProgramDataBaseFile>C:/GameMath/gamemath-main/Output/Windows/Binary/Debug/SoftRendererPlayer.pdb</ProgramDataBaseFile>
+      <ImportLibrary>C:/GameMath/GameMath-example/Project/Source/Player/Debug/SoftRendererPlayer.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/GameMath/GameMath-example/Output/Windows/Binary/Debug/SoftRendererPlayer.pdb</ProgramDataBaseFile>
       <SubSystem>Windows</SubSystem>
     </Link>
     <ProjectReference>
@@ -134,7 +134,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\GameMath\gamemath-main\Source\Player;C:\GameMath\gamemath-main\Source\Player\Private\Windows;C:\GameMath\gamemath-main\Source\Runtime\Math\Public;C:\GameMath\gamemath-main\Source\Runtime\Engine\Public;C:\GameMath\gamemath-main\Source\Runtime\Renderer\Public;C:\GameMath\gamemath-main\Source\Runtime\Renderer\Public\Windows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\GameMath\GameMath-example\Source\Player;C:\GameMath\GameMath-example\Source\Player\Private\Windows;C:\GameMath\GameMath-example\Source\Runtime\Math\Public;C:\GameMath\GameMath-example\Source\Runtime\Engine\Public;C:\GameMath\GameMath-example\Source\Runtime\Renderer\Public;C:\GameMath\GameMath-example\Source\Runtime\Renderer\Public\Windows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>Sync</ExceptionHandling>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
@@ -152,10 +152,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;PLATFORM_WINDOWS;Windows;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\GameMath\gamemath-main\Source\Player;C:\GameMath\gamemath-main\Source\Player\Private\Windows;C:\GameMath\gamemath-main\Source\Runtime\Math\Public;C:\GameMath\gamemath-main\Source\Runtime\Engine\Public;C:\GameMath\gamemath-main\Source\Runtime\Renderer\Public;C:\GameMath\gamemath-main\Source\Runtime\Renderer\Public\Windows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\GameMath\GameMath-example\Source\Player;C:\GameMath\GameMath-example\Source\Player\Private\Windows;C:\GameMath\GameMath-example\Source\Runtime\Math\Public;C:\GameMath\GameMath-example\Source\Runtime\Engine\Public;C:\GameMath\GameMath-example\Source\Runtime\Renderer\Public;C:\GameMath\GameMath-example\Source\Runtime\Renderer\Public\Windows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\GameMath\gamemath-main\Source\Player;C:\GameMath\gamemath-main\Source\Player\Private\Windows;C:\GameMath\gamemath-main\Source\Runtime\Math\Public;C:\GameMath\gamemath-main\Source\Runtime\Engine\Public;C:\GameMath\gamemath-main\Source\Runtime\Renderer\Public;C:\GameMath\gamemath-main\Source\Runtime\Renderer\Public\Windows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\GameMath\GameMath-example\Source\Player;C:\GameMath\GameMath-example\Source\Player\Private\Windows;C:\GameMath\GameMath-example\Source\Runtime\Math\Public;C:\GameMath\GameMath-example\Source\Runtime\Engine\Public;C:\GameMath\GameMath-example\Source\Runtime\Renderer\Public;C:\GameMath\GameMath-example\Source\Runtime\Renderer\Public\Windows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -163,13 +163,13 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>..\..\..\Output\Windows\Library\Release\MathModule.lib;..\..\..\Output\Windows\Library\Release\RendererModule.lib;..\..\..\Output\Windows\Library\Release\EngineModule.lib;..\..\..\Output\Windows\Library\Release\RendererModule.lib;..\..\..\Output\Windows\Library\Release\MathModule.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>C:\GameMath\GameMath-example\Output\Windows\Library\Release\MathModule.lib;C:\GameMath\GameMath-example\Output\Windows\Library\Release\RendererModule.lib;C:\GameMath\GameMath-example\Output\Windows\Library\Release\EngineModule.lib;C:\GameMath\GameMath-example\Output\Windows\Library\Release\RendererModule.lib;C:\GameMath\GameMath-example\Output\Windows\Library\Release\MathModule.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>C:/GameMath/gamemath-main/Project/Source/Player/Release/SoftRendererPlayer.lib</ImportLibrary>
-      <ProgramDataBaseFile>C:/GameMath/gamemath-main/Output/Windows/Binary/Release/SoftRendererPlayer.pdb</ProgramDataBaseFile>
+      <ImportLibrary>C:/GameMath/GameMath-example/Project/Source/Player/Release/SoftRendererPlayer.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/GameMath/GameMath-example/Output/Windows/Binary/Release/SoftRendererPlayer.pdb</ProgramDataBaseFile>
       <SubSystem>Windows</SubSystem>
     </Link>
     <ProjectReference>
@@ -178,7 +178,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\GameMath\gamemath-main\Source\Player;C:\GameMath\gamemath-main\Source\Player\Private\Windows;C:\GameMath\gamemath-main\Source\Runtime\Math\Public;C:\GameMath\gamemath-main\Source\Runtime\Engine\Public;C:\GameMath\gamemath-main\Source\Runtime\Renderer\Public;C:\GameMath\gamemath-main\Source\Runtime\Renderer\Public\Windows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\GameMath\GameMath-example\Source\Player;C:\GameMath\GameMath-example\Source\Player\Private\Windows;C:\GameMath\GameMath-example\Source\Runtime\Math\Public;C:\GameMath\GameMath-example\Source\Runtime\Engine\Public;C:\GameMath\GameMath-example\Source\Runtime\Renderer\Public;C:\GameMath\GameMath-example\Source\Runtime\Renderer\Public\Windows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>Sync</ExceptionHandling>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
@@ -196,10 +196,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;PLATFORM_WINDOWS;Windows;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\GameMath\gamemath-main\Source\Player;C:\GameMath\gamemath-main\Source\Player\Private\Windows;C:\GameMath\gamemath-main\Source\Runtime\Math\Public;C:\GameMath\gamemath-main\Source\Runtime\Engine\Public;C:\GameMath\gamemath-main\Source\Runtime\Renderer\Public;C:\GameMath\gamemath-main\Source\Runtime\Renderer\Public\Windows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\GameMath\GameMath-example\Source\Player;C:\GameMath\GameMath-example\Source\Player\Private\Windows;C:\GameMath\GameMath-example\Source\Runtime\Math\Public;C:\GameMath\GameMath-example\Source\Runtime\Engine\Public;C:\GameMath\GameMath-example\Source\Runtime\Renderer\Public;C:\GameMath\GameMath-example\Source\Runtime\Renderer\Public\Windows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\GameMath\gamemath-main\Source\Player;C:\GameMath\gamemath-main\Source\Player\Private\Windows;C:\GameMath\gamemath-main\Source\Runtime\Math\Public;C:\GameMath\gamemath-main\Source\Runtime\Engine\Public;C:\GameMath\gamemath-main\Source\Runtime\Renderer\Public;C:\GameMath\gamemath-main\Source\Runtime\Renderer\Public\Windows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\GameMath\GameMath-example\Source\Player;C:\GameMath\GameMath-example\Source\Player\Private\Windows;C:\GameMath\GameMath-example\Source\Runtime\Math\Public;C:\GameMath\GameMath-example\Source\Runtime\Engine\Public;C:\GameMath\GameMath-example\Source\Runtime\Renderer\Public;C:\GameMath\GameMath-example\Source\Runtime\Renderer\Public\Windows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -207,13 +207,13 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>..\..\..\Output\Windows\Library\MinSizeRel\MathModule.lib;..\..\..\Output\Windows\Library\MinSizeRel\RendererModule.lib;..\..\..\Output\Windows\Library\MinSizeRel\EngineModule.lib;..\..\..\Output\Windows\Library\MinSizeRel\RendererModule.lib;..\..\..\Output\Windows\Library\MinSizeRel\MathModule.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>C:\GameMath\GameMath-example\Output\Windows\Library\MinSizeRel\MathModule.lib;C:\GameMath\GameMath-example\Output\Windows\Library\MinSizeRel\RendererModule.lib;C:\GameMath\GameMath-example\Output\Windows\Library\MinSizeRel\EngineModule.lib;C:\GameMath\GameMath-example\Output\Windows\Library\MinSizeRel\RendererModule.lib;C:\GameMath\GameMath-example\Output\Windows\Library\MinSizeRel\MathModule.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>C:/GameMath/gamemath-main/Project/Source/Player/MinSizeRel/SoftRendererPlayer.lib</ImportLibrary>
-      <ProgramDataBaseFile>C:/GameMath/gamemath-main/Output/Windows/Binary/MinSizeRel/SoftRendererPlayer.pdb</ProgramDataBaseFile>
+      <ImportLibrary>C:/GameMath/GameMath-example/Project/Source/Player/MinSizeRel/SoftRendererPlayer.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/GameMath/GameMath-example/Output/Windows/Binary/MinSizeRel/SoftRendererPlayer.pdb</ProgramDataBaseFile>
       <SubSystem>Windows</SubSystem>
     </Link>
     <ProjectReference>
@@ -222,7 +222,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\GameMath\gamemath-main\Source\Player;C:\GameMath\gamemath-main\Source\Player\Private\Windows;C:\GameMath\gamemath-main\Source\Runtime\Math\Public;C:\GameMath\gamemath-main\Source\Runtime\Engine\Public;C:\GameMath\gamemath-main\Source\Runtime\Renderer\Public;C:\GameMath\gamemath-main\Source\Runtime\Renderer\Public\Windows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\GameMath\GameMath-example\Source\Player;C:\GameMath\GameMath-example\Source\Player\Private\Windows;C:\GameMath\GameMath-example\Source\Runtime\Math\Public;C:\GameMath\GameMath-example\Source\Runtime\Engine\Public;C:\GameMath\GameMath-example\Source\Runtime\Renderer\Public;C:\GameMath\GameMath-example\Source\Runtime\Renderer\Public\Windows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -239,10 +239,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;PLATFORM_WINDOWS;Windows;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\GameMath\gamemath-main\Source\Player;C:\GameMath\gamemath-main\Source\Player\Private\Windows;C:\GameMath\gamemath-main\Source\Runtime\Math\Public;C:\GameMath\gamemath-main\Source\Runtime\Engine\Public;C:\GameMath\gamemath-main\Source\Runtime\Renderer\Public;C:\GameMath\gamemath-main\Source\Runtime\Renderer\Public\Windows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\GameMath\GameMath-example\Source\Player;C:\GameMath\GameMath-example\Source\Player\Private\Windows;C:\GameMath\GameMath-example\Source\Runtime\Math\Public;C:\GameMath\GameMath-example\Source\Runtime\Engine\Public;C:\GameMath\GameMath-example\Source\Runtime\Renderer\Public;C:\GameMath\GameMath-example\Source\Runtime\Renderer\Public\Windows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\GameMath\gamemath-main\Source\Player;C:\GameMath\gamemath-main\Source\Player\Private\Windows;C:\GameMath\gamemath-main\Source\Runtime\Math\Public;C:\GameMath\gamemath-main\Source\Runtime\Engine\Public;C:\GameMath\gamemath-main\Source\Runtime\Renderer\Public;C:\GameMath\gamemath-main\Source\Runtime\Renderer\Public\Windows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\GameMath\GameMath-example\Source\Player;C:\GameMath\GameMath-example\Source\Player\Private\Windows;C:\GameMath\GameMath-example\Source\Runtime\Math\Public;C:\GameMath\GameMath-example\Source\Runtime\Engine\Public;C:\GameMath\GameMath-example\Source\Runtime\Renderer\Public;C:\GameMath\GameMath-example\Source\Runtime\Renderer\Public\Windows;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -250,13 +250,13 @@
       <ProxyFileName>%(Filename)_p.c</ProxyFileName>
     </Midl>
     <Link>
-      <AdditionalDependencies>..\..\..\Output\Windows\Library\RelWithDebInfo\MathModule.lib;..\..\..\Output\Windows\Library\RelWithDebInfo\RendererModule.lib;..\..\..\Output\Windows\Library\RelWithDebInfo\EngineModule.lib;..\..\..\Output\Windows\Library\RelWithDebInfo\RendererModule.lib;..\..\..\Output\Windows\Library\RelWithDebInfo\MathModule.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
+      <AdditionalDependencies>C:\GameMath\GameMath-example\Output\Windows\Library\RelWithDebInfo\MathModule.lib;C:\GameMath\GameMath-example\Output\Windows\Library\RelWithDebInfo\RendererModule.lib;C:\GameMath\GameMath-example\Output\Windows\Library\RelWithDebInfo\EngineModule.lib;C:\GameMath\GameMath-example\Output\Windows\Library\RelWithDebInfo\RendererModule.lib;C:\GameMath\GameMath-example\Output\Windows\Library\RelWithDebInfo\MathModule.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib</AdditionalDependencies>
       <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>C:/GameMath/gamemath-main/Project/Source/Player/RelWithDebInfo/SoftRendererPlayer.lib</ImportLibrary>
-      <ProgramDataBaseFile>C:/GameMath/gamemath-main/Output/Windows/Binary/RelWithDebInfo/SoftRendererPlayer.pdb</ProgramDataBaseFile>
+      <ImportLibrary>C:/GameMath/GameMath-example/Project/Source/Player/RelWithDebInfo/SoftRendererPlayer.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/GameMath/GameMath-example/Output/Windows/Binary/RelWithDebInfo/SoftRendererPlayer.pdb</ProgramDataBaseFile>
       <SubSystem>Windows</SubSystem>
     </Link>
     <ProjectReference>
@@ -264,89 +264,113 @@
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="C:\GameMath\gamemath-main\Source\Player\Precompiled.cpp">
+    <ClCompile Include="C:\GameMath\GameMath-example\Source\Player\Precompiled.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Precompiled.h</PrecompiledHeaderFile>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceforModuleDependencies>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Precompiled.h</PrecompiledHeaderFile>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceforModuleDependencies>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Create</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Precompiled.h</PrecompiledHeaderFile>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceforModuleDependencies>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Create</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Precompiled.h</PrecompiledHeaderFile>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceforModuleDependencies>
     </ClCompile>
-    <ClInclude Include="C:\GameMath\gamemath-main\Source\Player\Precompiled.h" />
-    <ClCompile Include="C:\GameMath\gamemath-main\Source\Player\Private\SystemInputManager.cpp">
+    <ClInclude Include="C:\GameMath\GameMath-example\Source\Player\Precompiled.h" />
+    <ClCompile Include="C:\GameMath\GameMath-example\Source\Player\Private\SystemInputManager.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Use</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Precompiled.h</PrecompiledHeaderFile>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceforModuleDependencies>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Use</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Precompiled.h</PrecompiledHeaderFile>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceforModuleDependencies>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Use</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Precompiled.h</PrecompiledHeaderFile>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceforModuleDependencies>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Use</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Precompiled.h</PrecompiledHeaderFile>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceforModuleDependencies>
     </ClCompile>
-    <ClCompile Include="C:\GameMath\gamemath-main\Source\Player\SoftRenderer.cpp">
+    <ClCompile Include="C:\GameMath\GameMath-example\Source\Player\SoftRenderer.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Use</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Precompiled.h</PrecompiledHeaderFile>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceforModuleDependencies>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Use</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Precompiled.h</PrecompiledHeaderFile>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceforModuleDependencies>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Use</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Precompiled.h</PrecompiledHeaderFile>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceforModuleDependencies>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Use</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Precompiled.h</PrecompiledHeaderFile>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceforModuleDependencies>
     </ClCompile>
-    <ClInclude Include="C:\GameMath\gamemath-main\Source\Player\SoftRenderer.h" />
-    <ClCompile Include="C:\GameMath\gamemath-main\Source\Player\SoftRenderer2D.cpp">
+    <ClInclude Include="C:\GameMath\GameMath-example\Source\Player\SoftRenderer.h" />
+    <ClCompile Include="C:\GameMath\GameMath-example\Source\Player\SoftRenderer2D.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Use</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Precompiled.h</PrecompiledHeaderFile>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceforModuleDependencies>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Use</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Precompiled.h</PrecompiledHeaderFile>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceforModuleDependencies>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Use</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Precompiled.h</PrecompiledHeaderFile>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceforModuleDependencies>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Use</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Precompiled.h</PrecompiledHeaderFile>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceforModuleDependencies>
     </ClCompile>
-    <ClCompile Include="C:\GameMath\gamemath-main\Source\Player\SoftRenderer3D.cpp">
+    <ClCompile Include="C:\GameMath\GameMath-example\Source\Player\SoftRenderer3D.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Use</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Precompiled.h</PrecompiledHeaderFile>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceforModuleDependencies>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Use</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Precompiled.h</PrecompiledHeaderFile>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceforModuleDependencies>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Use</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Precompiled.h</PrecompiledHeaderFile>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceforModuleDependencies>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Use</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Precompiled.h</PrecompiledHeaderFile>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceforModuleDependencies>
     </ClCompile>
-    <ClInclude Include="C:\GameMath\gamemath-main\Source\Player\SystemInputManager.h" />
-    <ClInclude Include="C:\GameMath\gamemath-main\Source\Player\Private\Windows\Res\resource.h" />
-    <ClCompile Include="C:\GameMath\gamemath-main\Source\Player\Private\Windows\WindowsApp.cpp">
+    <ClInclude Include="C:\GameMath\GameMath-example\Source\Player\SystemInputManager.h" />
+    <ClInclude Include="C:\GameMath\GameMath-example\Source\Player\Private\Windows\Res\resource.h" />
+    <ClCompile Include="C:\GameMath\GameMath-example\Source\Player\Private\Windows\WindowsApp.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Use</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Precompiled.h</PrecompiledHeaderFile>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ScanSourceforModuleDependencies>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Use</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Precompiled.h</PrecompiledHeaderFile>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ScanSourceforModuleDependencies>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Use</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Precompiled.h</PrecompiledHeaderFile>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</ScanSourceforModuleDependencies>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Use</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Precompiled.h</PrecompiledHeaderFile>
+      <ScanSourceforModuleDependencies Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</ScanSourceforModuleDependencies>
     </ClCompile>
-    <ClInclude Include="C:\GameMath\gamemath-main\Source\Player\Private\Windows\WindowsPlayer.h" />
-    <ClInclude Include="C:\GameMath\gamemath-main\Source\Player\Private\Windows\WindowsUtil.h" />
-    <None Include="C:\GameMath\gamemath-main\Source\Player\Private\Windows\Res\player.ico">
+    <ClInclude Include="C:\GameMath\GameMath-example\Source\Player\Private\Windows\WindowsPlayer.h" />
+    <ClInclude Include="C:\GameMath\GameMath-example\Source\Player\Private\Windows\WindowsUtil.h" />
+    <None Include="C:\GameMath\GameMath-example\Source\Player\Private\Windows\Res\player.ico">
     </None>
-    <ResourceCompile Include="C:\GameMath\gamemath-main\Source\Player\Private\Windows\Res\player.rc" />
-    <None Include="C:\GameMath\gamemath-main\Source\Player\Private\Windows\Res\player_small.ico">
+    <ResourceCompile Include="C:\GameMath\GameMath-example\Source\Player\Private\Windows\Res\player.rc" />
+    <None Include="C:\GameMath\GameMath-example\Source\Player\Private\Windows\Res\player_small.ico">
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="C:\GameMath\gamemath-main\Project\Source\Runtime\Engine\EngineModule.vcxproj">
-      <Project>{750AFD30-BFD1-32F1-8D5B-8EF67C389880}</Project>
+    <ProjectReference Include="C:\GameMath\GameMath-example\Project\Source\Runtime\Engine\EngineModule.vcxproj">
+      <Project>{EBFF4EAB-AC20-335F-8011-7924AC38A734}</Project>
       <Name>EngineModule</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\GameMath\gamemath-main\Project\Source\Runtime\Math\MathModule.vcxproj">
-      <Project>{2F93208B-FC98-30CF-ACCE-242D290E33B5}</Project>
+    <ProjectReference Include="C:\GameMath\GameMath-example\Project\Source\Runtime\Math\MathModule.vcxproj">
+      <Project>{4DFDA257-0320-363D-A115-8167CBD1E785}</Project>
       <Name>MathModule</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\GameMath\gamemath-main\Project\Source\Runtime\Renderer\RendererModule.vcxproj">
-      <Project>{42B00610-AE4C-332E-978C-71DAC2CEEA16}</Project>
+    <ProjectReference Include="C:\GameMath\GameMath-example\Project\Source\Runtime\Renderer\RendererModule.vcxproj">
+      <Project>{F27C9F4F-6870-3892-B82B-8E030CA4BF36}</Project>
       <Name>RendererModule</Name>
     </ProjectReference>
   </ItemGroup>
