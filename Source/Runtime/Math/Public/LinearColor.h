@@ -33,6 +33,8 @@ public:
 	FORCEINLINE constexpr bool EqualsInRange(const LinearColor& InColor, float InTolerance = SMALL_NUMBER) const;
 
 	static constexpr float OneOver255 = { 1.f / 255.f };
+
+	// 코드에서 바로 사용할 수 있도록 자주 쓰는 색상을 선언한 정적 멤버 변수들
 	static const LinearColor Error;
 	static const LinearColor White;
 	static const LinearColor Black;
@@ -49,6 +51,7 @@ public:
 	static const LinearColor Magenta;
 
 public:
+	// 색상의 RGBA 값을 관리하는 멤버 변수들
 	float R = 0.f;
 	float G = 0.f;
 	float B = 0.f;
