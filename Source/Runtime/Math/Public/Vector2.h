@@ -73,11 +73,13 @@ public:
 
 FORCEINLINE float Vector2::Size() const
 {
+	// SizeSquard 함수를 호출해 얻어진 값에 제곱근을 취해 벡터의 크기를 계산해 반환한다.
 	return sqrtf(SizeSquared());
 }
 
 FORCEINLINE constexpr float Vector2::SizeSquared() const
 {
+	// x^2 + y^2의 값을 계산한 후 그 값을 반환한다.
 	return X * X + Y * Y;
 }
 

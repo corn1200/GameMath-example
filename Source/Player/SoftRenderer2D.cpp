@@ -80,7 +80,8 @@ void SoftRenderer::Update2D(float InDeltaSeconds)
 	static float moveSpeed = 100.f;
 
 	// X축과 Y축 입력을 결합해 입력 벡터를 생성한다.
-	Vector2 inputVector = Vector2(input.GetAxis(InputAxis::XAxis), input.GetAxis(InputAxis::YAxis));
+	// GetNormalize() 함수를 사용해 입력 벡터의 크기를 항상 1로 정규화한다.
+	Vector2 inputVector = Vector2(input.GetAxis(InputAxis::XAxis), input.GetAxis(InputAxis::YAxis)).GetNormalize();
 	// 이동 속도와 프레임의 경과 시간 InDeltaTime을 곱하여 해당 프레임에서 이동할 길이를 계산한 후 이를 입력 벡터에 곱하고 그 결과를 변수 deltaPosition에 저장한다.
 	Vector2 deltaPosition = inputVector * moveSpeed * InDeltaSeconds;
 
@@ -106,33 +107,66 @@ void SoftRenderer::Render2D()
 	DrawGizmo2D();
 
 	// 렌더링 로직의 로컬 변수
+	// 그릴 원의 반지름을 50으로 지정한다.
+	static float radius = 50.f;
+	// 원을 구성하는 점을 보관하기 위한 자료구조로 vector를 선택하고 이를 circles로 선언한다.
+	// 이때 한번 생성한 변수는 계속 유지될 수 있도록 변수는 static으로 선언한다.
+	static std::vector<Vector2> circles;
 
+	// 최초에 한번 반지름보다 긴 벡터를 모아 컨테이너에 담는다.
+	// circles 자료구조가 비어 있는 경우에만 원을 구성하는 점을 채워 넣도록 조건을 지정한다.
+	if (circles.empty()) {
+		// 반지름 정보를 활용해 원이 포함된 사각형 영역을 계산하고 이 안에 속한 벡터를 생성하기 위해 크기 1단위로 루프를 돈다.
+		for (float x = -radius; x <= radius; ++x) {
+			for (float y = -radius; y <= radius; ++y)
+			{
+				// x, y값을 결합해 벡터를 선언한다.
+				Vector2 pointToTest = Vector2(x, y);
+				// 벡터의 크기를 구할 때 제곱근을 씌우지 않은 값 x^2 + y^2만을 계산한다.
+				float squardLength = pointToTest.SizeSquared();
+				// squardLength 값과 크기를 비교하기 위해 반지름 값을 두 번 곱한다.
+				// 이렇게 크기의 제곱값과 반지름의 제곱값을 비교하는 방법은 제곱근을 사용하지 않기 때문에 더 빠르게 결과를 얻어낸다.
+				if (squardLength <= radius * radius)
+				{
+					// 위 조건문의 결과가 참이면 원을 구성하는 자료구조 circles에 해당 벡터를 추가한다.
+					circles.push_back(Vector2(x, y));
+				}
+			}
+		}
+	}
 
-	// 밝은 회색의 선을 사용해 평행한 벡터를 표현
-	// 벡터 currentPosition과 평행한 벡터를 표현하도록 길이를 충분히 크게 지정한다.
-	static float lineLength = 500.f;
-	// 벡터 currentPosition과 평행한 선의 시작점과 끝점을 계산한다.
-	Vector2 lineStart = currentPosition * lineLength;
-	Vector2 lineEnd = currentPosition * -lineLength;
-	// 렌더러에서 제공하는 DrawLine 함수를 사용해 밝은 회색으로 평행한 선을 표현한다.
-	r.DrawLine(lineStart, lineEnd, LinearColor::LightGray);
+	// 원을 구성하는 벡터를 모두 붉은색으로 표시한다.
+	// 원을 구성하는 자료구조 circles에 속한 모든 점을 순회한다.
+	for (auto const& v : circles) {
+		// 각 점의 위치에 현재 중점 값을 더하고 붉은색으로 찍는다.
+		r.DrawPoint(v + currentPosition, LinearColor::Red);
+	}
 
-	// 벡터를 파란색 픽셀로 표현
-	// 파란색 점으로 벡터 currentPosition을 화면에 찍는다.
-	// 점이 잘 보이도록 해당 점의 둘레 8개 픽셀도 함께 찍는다.
-	r.DrawPoint(currentPosition, LinearColor::Blue);
-	r.DrawPoint(currentPosition + Vector2::UnitX, LinearColor::Blue);
-	r.DrawPoint(currentPosition - Vector2::UnitX, LinearColor::Blue);
-	r.DrawPoint(currentPosition + Vector2::UnitY, LinearColor::Blue);
-	r.DrawPoint(currentPosition - Vector2::UnitY, LinearColor::Blue);
-	r.DrawPoint(currentPosition + Vector2::One, LinearColor::Blue);
-	r.DrawPoint(currentPosition - Vector2::One, LinearColor::Blue);
-	r.DrawPoint(currentPosition + Vector2(1.f, -1.f), LinearColor::Blue);
-	r.DrawPoint(currentPosition - Vector2(1.f, -1.f), LinearColor::Blue);
+	//// 밝은 회색의 선을 사용해 평행한 벡터를 표현
+	//// 벡터 currentPosition과 평행한 벡터를 표현하도록 길이를 충분히 크게 지정한다.
+	//static float lineLength = 500.f;
+	//// 벡터 currentPosition과 평행한 선의 시작점과 끝점을 계산한다.
+	//Vector2 lineStart = currentPosition * lineLength;
+	//Vector2 lineEnd = currentPosition * -lineLength;
+	//// 렌더러에서 제공하는 DrawLine 함수를 사용해 밝은 회색으로 평행한 선을 표현한다.
+	//r.DrawLine(lineStart, lineEnd, LinearColor::LightGray);
 
-	// 벡터의 현재 좌표를 우상단에 출력
-	// 벡터 currentPosition의 좌표를 화면 우상단에 출력한다.
-	r.PushStatisticText("Coordinate : " + currentPosition.ToString());
+	//// 벡터를 파란색 픽셀로 표현
+	//// 파란색 점으로 벡터 currentPosition을 화면에 찍는다.
+	//// 점이 잘 보이도록 해당 점의 둘레 8개 픽셀도 함께 찍는다.
+	//r.DrawPoint(currentPosition, LinearColor::Blue);
+	//r.DrawPoint(currentPosition + Vector2::UnitX, LinearColor::Blue);
+	//r.DrawPoint(currentPosition - Vector2::UnitX, LinearColor::Blue);
+	//r.DrawPoint(currentPosition + Vector2::UnitY, LinearColor::Blue);
+	//r.DrawPoint(currentPosition - Vector2::UnitY, LinearColor::Blue);
+	//r.DrawPoint(currentPosition + Vector2::One, LinearColor::Blue);
+	//r.DrawPoint(currentPosition - Vector2::One, LinearColor::Blue);
+	//r.DrawPoint(currentPosition + Vector2(1.f, -1.f), LinearColor::Blue);
+	//r.DrawPoint(currentPosition - Vector2(1.f, -1.f), LinearColor::Blue);
+
+	//// 벡터의 현재 좌표를 우상단에 출력
+	//// 벡터 currentPosition의 좌표를 화면 우상단에 출력한다.
+	//r.PushStatisticText("Coordinate : " + currentPosition.ToString());
 }
 
 // 메시를 그리는 함수
