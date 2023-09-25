@@ -77,7 +77,7 @@ CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO:STRING=/debug /INCREMENTAL
 CMAKE_FIND_PACKAGE_REDIRECTS_DIR:STATIC=C:/GameMath/GameMath-example/Project/CMakeFiles/pkgRedirects
 
 //Install path prefix, prepended onto install directories.
-CMAKE_INSTALL_PREFIX:PATH=C:/Program Files (x86)/SoftRenderer3-2
+CMAKE_INSTALL_PREFIX:PATH=C:/Program Files (x86)/SoftRenderer4-1
 
 //Path to a program.
 CMAKE_LINKER:FILEPATH=C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.35.32215/bin/Hostx64/x64/link.exe
@@ -112,7 +112,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=SoftRenderer3-2
+CMAKE_PROJECT_NAME:STATIC=SoftRenderer4-1
 
 //RC compiler
 CMAKE_RC_COMPILER:FILEPATH=rc
@@ -219,13 +219,13 @@ RendererModule_LIB_DEPENDS:STATIC=general;MathModule;
 RendererModule_SOURCE_DIR:STATIC=C:/GameMath/GameMath-example/Source/Runtime/Renderer
 
 //Value Computed by CMake
-SoftRenderer3-2_BINARY_DIR:STATIC=C:/GameMath/GameMath-example/Project
+SoftRenderer4-1_BINARY_DIR:STATIC=C:/GameMath/GameMath-example/Project
 
 //Value Computed by CMake
-SoftRenderer3-2_IS_TOP_LEVEL:STATIC=ON
+SoftRenderer4-1_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
-SoftRenderer3-2_SOURCE_DIR:STATIC=C:/GameMath/GameMath-example
+SoftRenderer4-1_SOURCE_DIR:STATIC=C:/GameMath/GameMath-example
 
 //Value Computed by CMake
 SoftRendererPlayer_BINARY_DIR:STATIC=C:/GameMath/GameMath-example/Project/Source/Player

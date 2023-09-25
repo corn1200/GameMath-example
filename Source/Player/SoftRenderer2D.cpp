@@ -107,6 +107,26 @@ void SoftRenderer::Render2D()
 	DrawGizmo2D();
 
 	// 렌더링 로직의 로컬 변수
+	float rad = 0.f;
+	static float increment = 0.001f;
+	static std::vector<Vector2> hearts;
+
+	// 하트를 구성하는 점 생성
+	if (hearts.empty())
+	{
+		for (rad = 0.f; rad < Math::TwoPI; rad += increment)
+		{
+			// 하트 방정식
+			// x와 y를 구하기.
+			// hearts.push_back(Vector2(x, y));
+		}
+	}
+
+	for (auto const& v : hearts)
+	{
+		r.DrawPoint(v * 10.f, LinearColor::Blue);
+	}
+
 	// 그릴 원의 반지름을 50으로 지정한다.
 	static float radius = 50.f;
 	// 원을 구성하는 점을 보관하기 위한 자료구조로 vector를 선택하고 이를 circles로 선언한다.
