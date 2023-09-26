@@ -58,8 +58,8 @@ namespace CK
 		static constexpr BYTE Dimension = 2;
 
 		// 멤버변수
-		// 일반적으로 Vector2를 구성하는 각 원소는 멤버 변수 X, Y를 사용해 접근하지만,
-		// 배열로도 접근할 수 있도록 union 키워드를 사용해 std::array로 선언된 2차원 배열을 추가로 선언했다.
+			// 일반적으로 Vector2를 구성하는 각 원소는 멤버 변수 X, Y를 사용해 접근하지만,
+			// 배열로도 접근할 수 있도록 union 키워드를 사용해 std::array로 선언된 2차원 배열을 추가로 선언했다.
 		union
 		{
 			struct
