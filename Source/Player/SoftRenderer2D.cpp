@@ -60,7 +60,9 @@ void SoftRenderer::LoadScene2D()
 // 변수 영역: Update2D와 Render2D 함수에서 함께 공유할 변수를 선언한다.
 // 벡터의 좌표를 관리할 변수를 currentPosition으로 선언한다.
 // 물체의 위치를 보관하는 변수 currentPosition을 선언하고 기본 값은(100, 100)으로 지정한다.
-Vector2 currentPosition(100.f, 100.f);
+Vector2 currentPosition;
+// 최종 크기 값을 보관하는 변수 currentScale을 선언하고 기본 값을 10으로 지정한다.
+float currentScale = 10.f;
 
 // 게임 로직을 담당하는 함수
 // Update2D 함수 영역: 입력에 따라 currentPosition 변수 값을 변화시킨다.
@@ -78,16 +80,26 @@ void SoftRenderer::Update2D(float InDeltaSeconds)
 	// 게임 로직의 로컬 변수
 	// 프레임당 이동 속도를 지정한다.
 	static float moveSpeed = 100.f;
+	// 최소 크기 값을 지정하는 변수 scaleMin을 선언한다.
+	static float scaleMin = 5.f;
+	// 최대 크기 값을 지정하는 변수 scaleMax를 선언한다.
+	static float scaleMax = 5.f;
+	// 입력에 따른 크기 변화 속도를 지정하는 변수 scaleSpeed를 선언한다.
+	static float scaleSpeed = 20.f;
 
 	// X축과 Y축 입력을 결합해 입력 벡터를 생성한다.
 	// GetNormalize() 함수를 사용해 입력 벡터의 크기를 항상 1로 정규화한다.
 	Vector2 inputVector = Vector2(input.GetAxis(InputAxis::XAxis), input.GetAxis(InputAxis::YAxis)).GetNormalize();
 	// 이동 속도와 프레임의 경과 시간 InDeltaTime을 곱하여 해당 프레임에서 이동할 길이를 계산한 후 이를 입력 벡터에 곱하고 그 결과를 변수 deltaPosition에 저장한다.
 	Vector2 deltaPosition = inputVector * moveSpeed * InDeltaSeconds;
+	// 현재 프레임에서 Z축 입력에 따른 크기의 변화량을 계산한다.
+	float deltaScale = input.GetAxis(InputAxis::ZAxis) * scaleSpeed * InDeltaSeconds;
 
 	// 물체의 최종 상태 설정
 	// deltaPosition 값을 반영해 현재 프레임의 currentPosition 값을 확장한다.
 	currentPosition += deltaPosition;
+	// 최종 크기 값에 변화량을 반영하되 Clamp 함수를 사용해 지정한 최댓값과 최솟값 사이를 넘지 못하도록 죈다.
+	currentScale = Math::Clamp(currentScale + deltaScale, scaleMin, scaleMax);
 }
 
 // 렌더링 로직을 담당하는 함수
@@ -107,23 +119,35 @@ void SoftRenderer::Render2D()
 	DrawGizmo2D();
 
 	// 렌더링 로직의 로컬 변수
+	// 현재 각을 지정하는 변수 rad를 선언한다.
 	float rad = 0.f;
+	// 각을 서서히 증가시키도록 증분값 increment를 선언한다.
 	static float increment = 0.001f;
+	// 하트를 구성하는 점을 모아둘 컨테이너 hearts를 선언한다.
 	static std::vector<Vector2> hearts;
 
 	// 하트를 구성하는 점 생성
 	if (hearts.empty())
 	{
+		// 각을 0에서 2pi까지 서서히 증가시키는 루프를 생성한다.
 		for (rad = 0.f; rad < Math::TwoPI; rad += increment)
 		{
-			// 하트 방정식
-			// x와 y를 구하기.
-			// hearts.push_back(Vector2(x, y));
+			// 하트 방정식을 사용해 해당 각의 x와 y값을 계산한다.
+			float sin = sinf(rad);
+			float cos = cosf(rad);
+			float cos2 = cosf(2 * rad);
+			float cos3 = cosf(3 * rad);
+			float cos4 = cosf(4 * rad);
+			float x = 16.f * sin * sin * sin;
+			float y = 13 * cos - 5 * cos2 - 2 * cos3 - cos4;
+			// x와 y값으로 벡터를 만든 후 이를 hearts에 추가한다.
+			hearts.push_back(Vector2(x, y));
 		}
 	}
 
 	for (auto const& v : hearts)
 	{
+		// hearts에 속한 모든 점에 현재 위치와 크기 값을 반영한 후 파란색으로 점을 찍는다.
 		r.DrawPoint(v * 10.f, LinearColor::Blue);
 	}
 
@@ -186,9 +210,9 @@ void SoftRenderer::Render2D()
 	//r.DrawPoint(currentPosition + Vector2(1.f, -1.f), LinearColor::Blue);
 	//r.DrawPoint(currentPosition - Vector2(1.f, -1.f), LinearColor::Blue);
 
-	//// 벡터의 현재 좌표를 우상단에 출력
-	//// 벡터 currentPosition의 좌표를 화면 우상단에 출력한다.
-	//r.PushStatisticText("Coordinate : " + currentPosition.ToString());
+	// 벡터의 현재 좌표를 우상단에 출력
+	// 벡터 currentPosition의 좌표를 화면 우상단에 출력한다.
+	r.PushStatisticText("Coordinate : " + currentPosition.ToString());
 }
 
 // 메시를 그리는 함수
