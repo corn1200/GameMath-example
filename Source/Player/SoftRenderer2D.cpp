@@ -125,6 +125,8 @@ void SoftRenderer::Render2D()
 	static float increment = 0.001f;
 	// 하트를 구성하는 점을 모아둘 컨테이너 hearts를 선언한다.
 	static std::vector<Vector2> hearts;
+	// HSV 모델을 따르는 각 0에 대응하는 최초 색상을 지정한다. 명도 값은 조금 낮춘 0.85로 설정한다.
+	HSVColor hsv(0.f, 1.f, 0.85f);
 
 	// 하트를 구성하는 점 생성
 	if (hearts.empty())
@@ -145,10 +147,18 @@ void SoftRenderer::Render2D()
 		}
 	}
 
+	// 각 값을 초기화한 후 색상을 증가시키면서 점에 대응
+	// 변수 rad 값을 다시 0으로 초기화시킨다.
+	rad = 0.f;
 	for (auto const& v : hearts)
 	{
-		// hearts에 속한 모든 점에 현재 위치와 크기 값을 반영한 후 파란색으로 점을 찍는다.
-		r.DrawPoint(v * currentScale + currentPosition, LinearColor::Blue);
+		// 소프트웨어가 제공하는 HSV 모델의 H는 라디안 값이 아닌 [0, 1] 범위 값을 사용한다.
+		// 따라서 원의 라디안 값에 해당하는 [0, 2pi] 범위를 [0, 1]의 범위로 변경한다.
+		hsv.H = rad / Math::TwoPI;
+		// HSV 색상을 RGB로 바꾼 후 점을 찍는다.
+		r.DrawPoint(v * currentScale + currentPosition, hsv.ToLinearColor());
+		// increment 변수를 사용해 각 rad 값을 증가시킨다.
+		rad += increment;
 	}
 
 	// 현재 위치와 스케일을 화면에 출력
