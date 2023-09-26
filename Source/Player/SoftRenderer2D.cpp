@@ -83,7 +83,7 @@ void SoftRenderer::Update2D(float InDeltaSeconds)
 	// 최소 크기 값을 지정하는 변수 scaleMin을 선언한다.
 	static float scaleMin = 5.f;
 	// 최대 크기 값을 지정하는 변수 scaleMax를 선언한다.
-	static float scaleMax = 5.f;
+	static float scaleMax = 20.f;
 	// 입력에 따른 크기 변화 속도를 지정하는 변수 scaleSpeed를 선언한다.
 	static float scaleSpeed = 20.f;
 
@@ -148,8 +148,12 @@ void SoftRenderer::Render2D()
 	for (auto const& v : hearts)
 	{
 		// hearts에 속한 모든 점에 현재 위치와 크기 값을 반영한 후 파란색으로 점을 찍는다.
-		r.DrawPoint(v * 10.f, LinearColor::Blue);
+		r.DrawPoint(v * currentScale + currentPosition, LinearColor::Blue);
 	}
+
+	// 현재 위치와 스케일을 화면에 출력
+	r.PushStatisticText(std::string("Position : ") + currentPosition.ToString());
+	r.PushStatisticText(std::string("Scale : ") + std::to_string(currentScale));
 
 	// 3-2
 	//// 그릴 원의 반지름을 50으로 지정한다.
@@ -210,9 +214,9 @@ void SoftRenderer::Render2D()
 	//r.DrawPoint(currentPosition + Vector2(1.f, -1.f), LinearColor::Blue);
 	//r.DrawPoint(currentPosition - Vector2(1.f, -1.f), LinearColor::Blue);
 
-	// 벡터의 현재 좌표를 우상단에 출력
-	// 벡터 currentPosition의 좌표를 화면 우상단에 출력한다.
-	r.PushStatisticText("Coordinate : " + currentPosition.ToString());
+	//// 벡터의 현재 좌표를 우상단에 출력
+	//// 벡터 currentPosition의 좌표를 화면 우상단에 출력한다.
+	//r.PushStatisticText("Coordinate : " + currentPosition.ToString());
 }
 
 // 메시를 그리는 함수
