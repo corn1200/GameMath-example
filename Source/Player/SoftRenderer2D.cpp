@@ -84,22 +84,34 @@ void SoftRenderer::Update2D(float InDeltaSeconds)
 	static float scaleMin = 5.f;
 	// 최대 크기 값을 지정하는 변수 scaleMax를 선언한다.
 	static float scaleMax = 20.f;
-	// 입력에 따른 크기 변화 속도를 지정하는 변수 scaleSpeed를 선언한다.
-	static float scaleSpeed = 20.f;
+	// 애니메이션의 왕복 시간을 duration 변수로 지정한다.
+	static float duration = 1.5f;
+	// 현재 경과 시간을 보관하는 elapsedTime 변수를 선언한다.
+	static float elapsedTime = 0.f;
 
 	// X축과 Y축 입력을 결합해 입력 벡터를 생성한다.
 	// GetNormalize() 함수를 사용해 입력 벡터의 크기를 항상 1로 정규화한다.
 	Vector2 inputVector = Vector2(input.GetAxis(InputAxis::XAxis), input.GetAxis(InputAxis::YAxis)).GetNormalize();
 	// 이동 속도와 프레임의 경과 시간 InDeltaTime을 곱하여 해당 프레임에서 이동할 길이를 계산한 후 이를 입력 벡터에 곱하고 그 결과를 변수 deltaPosition에 저장한다.
 	Vector2 deltaPosition = inputVector * moveSpeed * InDeltaSeconds;
-	// 현재 프레임에서 Z축 입력에 따른 크기의 변화량을 계산한다.
-	float deltaScale = input.GetAxis(InputAxis::ZAxis) * scaleSpeed * InDeltaSeconds;
+
+	// 경과 시간과 sin 함수를 활용한 [0, 1] 값의 생성
+	// 프레임당 경과 시간을 elapsedTime에 더해 현재 경과 시간을 갱신한다.
+	elapsedTime += InDeltaSeconds;
+	// 나머지 값을 계산하는 Mod 함수를 사용해 현재 경과 시간이 duration 값을 넘으면 0으로 초기화하고 다시 계산한다.
+	elapsedTime = Math::FMod(elapsedTime, duration);
+	// 현재 시간에 대응되는 각을 계산한다.
+	// sin 함수의 값은 [-1, 1] 범위를 가지는데, 선형 보간을 위해 [0, 1] 범위에 대응되도록 sin 함수에 1을 더하고 0.5를 곱한 후 이 값을 변수 alpha에 저장한다.
+	// 변수 alpha 값은 시간에 따라 [0, 1] 범위를 왕복하게 된다.
+	float currentRad = (elapsedTime / duration) * Math::TwoPI;
+	float alpha = (sinf(currentRad) + 1) * 0.5f;
 
 	// 물체의 최종 상태 설정
 	// deltaPosition 값을 반영해 현재 프레임의 currentPosition 값을 확장한다.
 	currentPosition += deltaPosition;
-	// 최종 크기 값에 변화량을 반영하되 Clamp 함수를 사용해 지정한 최댓값과 최솟값 사이를 넘지 못하도록 죈다.
-	currentScale = Math::Clamp(currentScale + deltaScale, scaleMin, scaleMax);
+	// 선형 보간 함수 Lerp의 세 번째 인자에 0을 대입하면 최솟값 scaleMin을 얻고 1을 대입하면 최댓값 scaleMax 값이 얻어지며 중간값 0.5를 대입하면 최솟값과 최댓값의 중간값을 얻게 된다.
+	// 변수 alpha 값은 시간에 따라 [0, 1] 범위를 왕복하므로 시간에 따라 최솟값과 최댓값 사이를 왕복하는 크기 값을 얻게 된다.
+	currentScale = Math::Lerp(scaleMin, scaleMax, alpha);
 }
 
 // 렌더링 로직을 담당하는 함수
