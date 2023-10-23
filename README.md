@@ -2,35 +2,8 @@
 
 $$
 \begin{matrix}
-A \cdot (B \cdot C) &=& 
-\begin{bmatrix}
-a & b \\
-c & d \\
-\end{bmatrix} \cdot
-(
-    \begin{bmatrix}
-    e & f \\
-    g & h \\
-    \end{bmatrix} \cdot
-    \begin{bmatrix}
-    i & j \\
-    k & l \\
-    \end{bmatrix}
-) \\
-&=&
-\begin{bmatrix}
-a & b \\
-c & d \\
-\end{bmatrix} \cdot
-\begin{bmatrix}
-ei + fk & ej + fl \\
-gi + hk & gj + hl \\
-\end{bmatrix} \\
-&=&
-\begin{bmatrix}
-aei + afk + bgi + bhk & aej + afl + bgj + bhl \\
-cei + cfk + dgi + dhk & cej + cfl + dgj + dhl \\
-\end{bmatrix}
+f(\vec{v_1} + \vec{v_2}) & = & f(x_1 + x_2, y_1 + y_2) \\
+& = & (a(x_1 + x_2) + b(y_1 + y_2), c(x_1 + x_2) + d(y_1 + y_2))
 \end{matrix}
 $$
 
@@ -1402,3 +1375,12 @@ $$
 행렬 곱의 결과는 2차원 벡터 공간의 선형 변환 $f(x, y) = (ax + by, cx + dy)$와 동일하다.     
 따라서 $2 \times 2$ ***정방행렬*** $A$는 ***2차원 공간의 선형 변환에 대응되는 함수***를 의미하고, 이 수식은 $f(x, y) = (ax + by, cx + dy)$ ***2차원 벡터에 선형 변환을 적용해 새로운 벡터를 생성하는 작업***으로 해석할 수 있다.  
 또한, ***벡터에 선형 변환을 적용하기 위한 연산 순서는 오른쪽에서 왼쪽 방향으로 이뤄짐***을 알 수 있다.
+
+
+
+$$
+\begin{matrix}
+f(\vec{v_1} + \vec{v_2}) & = & f(x_1 + x_2, y_1 + y_2) \\
+& = & (a(x_1 + x_2) + b(y_1 + y_2), c(x_1 + x_2) + d(y_1 + y_2))
+\end{matrix}
+$$
