@@ -1064,14 +1064,17 @@ $a, x_1, x_2$가 모두 ***체의 성질***을 가지는 실수라면 ***분배�
 $$f(\vec{v}) = f(x, y) = (ax + by, cx + dy)$$
 
 가법성 확인.
-- 좌변의 식: 
+- 좌변의 식:
+
 $$
 \begin{matrix}
 f(\vec{v_1} + \vec{v_2}) & = & f(x_1 + x_2, y_1 + y_2) \\
 & = & (a(x_1 + x_2) + b(y_1 + y_2), c(x_1 + x_2) + d(y_1 + y_2))
 \end{matrix}
 $$
-- 우변의 식: 
+
+- 우변의 식:
+
 $$
 \begin{matrix}
 f(\vec{v_1}) + f(\vec{v_2}) &=& (ax_1 + by_1, cx_1 + dy_1) + (ax_2 + by_2, cx_2 + dy_2) \\
@@ -1081,11 +1084,12 @@ f(\vec{v_1}) + f(\vec{v_2}) &=& (ax_1 + by_1, cx_1 + dy_1) + (ax_2 + by_2, cx_2 
 $$
 
 1차 동차성 확인.
-- 좌변의 식: 
+- 좌변의 식:
 $$
 kf(\vec{v}) = (kax + kby, kcx + kdy)
 $$
-- 우변의 식: 
+
+- 우변의 식:
 $$
 f(k\vec{v}) = (akx + bky, ckx + dky) \\
 \therefore kf(\vec{v}) = f(k\vec{v})
@@ -1114,6 +1118,7 @@ $$f(\vec{v}) = f(x, y) = (\cos \theta x - \sin \theta y, \sin \theta x + \cos \t
 ***행렬은 수를 사각형의 형태로 행과 열을 맞춰 배열한 테이블이다***.   
 따라서 $n$개의 행과 $m$개의 열로 구성된 반듯한 사각형의 형태를 띤다.    
 예를 들어 $2 \times 3$ 행렬은 다음과 같이 2행 3열의 형태를 띤다.
+
 $$
 \begin{bmatrix}
 a & b & c \\
@@ -1123,13 +1128,15 @@ $$
 
 행렬은 ***선형 변환***과 ***벡터***를 나타내는 데 사용된다.     
 ***벡터는 한 줄로 구성된 행렬로 표현***되며, 가로와 세로 두 가지 표현 방식이 존재한다.    
-$(x, y)$로 구성된 2차원의 벡터는 다음과 같은 행렬로 표기할 수 있는데, $A$는 ***열벡터***, $B$는 ***행벡터***라고 부른다.    
+$(x, y)$로 구성된 2차원의 벡터는 다음과 같은 행렬로 표기할 수 있는데, $A$는 ***열벡터***, $B$는 ***행벡터***라고 부른다.
+
 $$A = 
 \begin{bmatrix} 
 x \\
 y \\
 \end{bmatrix}
 $$
+
 $$B = 
 \begin{bmatrix}
 x & y
@@ -1138,6 +1145,7 @@ $$
 
 ***선형 변환***을 표현할 때는 행과 열이 크기가 같은 ***정방행렬(Square matrix)*** 을 사용한다.   
 2차원 벡터 공간의 선형 변환 $f(x, y) = (ax + by, cx + dy)$는 $2 \times 2$ 크기의 정방행렬로 표현하는데, 이에 대응하는 행렬 $A$는 다음과 같다.
+
 $$
 A = 
 \begin{bmatrix}
@@ -1161,6 +1169,7 @@ $$A_{col2} = (b, d)$$
 - 행렬과 행렬의 곱셈(줄여서 행렬 곱이라 부름)
 
 ***행렬과 행렬의 덧셈은 행렬의 크기가 같은 경우에만 성립***되며, 다음과 같이 ***같은 위치의 원소끼리 더한다***.
+
 $$A + B = 
 \begin{bmatrix}
 a & b \\
@@ -1177,6 +1186,7 @@ c + g & d + h \\
 $$
 
 행렬에 스칼라를 곱하는 연산은 다음과 같이 ***행렬을 구성하는 모든 원소에 스칼라를 곱한다***.
+
 $$k \cdot A = k \cdot 
 \begin{bmatrix}
 a & b \\
@@ -1190,6 +1200,7 @@ $$
 
 행렬의 전치연산은 첨자 $T$로 표시하는데 ***행과 열을 바꾸는 작업을 수행***한다.   
 예를 들어 $3 \times 2$ 행렬의 전치연산은 $2 \times 3$ 행렬이 된다.
+
 $$
 \begin{bmatrix}
 a & d \\
@@ -1204,6 +1215,7 @@ $$
 
 행과 열의 크기가 같은 정방행렬의 전치연산은 행과 열의 정보가 동일한 ***대각 성분의 원소***는 그대로 유지되고, 나머지 원소는 대각 성분을 중심으로 대칭된 행렬을 만든다.    
 아래 $2 \times 2$ 행렬의 전치연산을 살펴보면 대각 성분 $a$와 $d$는 동일하고 $b$와 $c$의 위치가 서로 바뀐 것을 볼 수 있다.
+
 $$
 \begin{bmatrix}
 a & b \\
@@ -1224,6 +1236,7 @@ $$
 
 행렬 곱셈의 중요한 성질 중 하나는 ***교환법칙이 성립하지 않는다***는 점이다.  
 실제로 두 행렬의 순서를 바꿔 곱셈을 하면 다른 결과가 나온다.
+
 $$A \cdot B = 
 \begin{bmatrix}
 a & b \\
@@ -1238,6 +1251,7 @@ ae + bg & af + bh \\
 ce + dg & cf + dh \\
 \end{bmatrix}
 $$
+
 $$B \cdot A =
 \begin{bmatrix}
 e & f \\
@@ -1252,9 +1266,11 @@ ae + cf & be + df \\
 ag + ch & bg + dh \\
 \end{bmatrix}
 $$
+
 $$\therefore A \cdot B \neq B \cdot A$$
 
 한편, 행렬은 다음과 같이 ***결합법칙을 만족***한다.
+
 $$
 \begin{matrix}
 A \cdot (B \cdot C) &=& 
@@ -1288,6 +1304,7 @@ cei + cfk + dgi + dhk & cej + cfl + dgj + dhl \\
 \end{bmatrix}
 \end{matrix}
 $$
+
 $$
 \begin{matrix}
 (A \cdot B) \cdot B &=&
@@ -1321,9 +1338,11 @@ cei + dgi + cfk + dhk & cej + dgj + cfl + dhl \\
 \end{bmatrix}
 \end{matrix}
 $$
+
 $$\therefore (A \cdot B) \cdot C = A \cdot (B \cdot C)$$
 
 행렬 곱의 특징 중 하나는, 행렬 곱을 전치한 결과는 순서를 바꾼 후 각각 전치해 곱한 결과와 동일하다는 것이다.
+
 $$(A \cdot B)^{T} = 
 \begin{bmatrix}
 ae + bg & af + bh \\
@@ -1334,6 +1353,7 @@ ae + bg & ce + dg \\
 af + bh & cf + dh \\
 \end{bmatrix}
 $$
+
 $$B^T \cdot A^T = 
 \begin{bmatrix}
 e & g \\
@@ -1348,9 +1368,11 @@ ea + gh & ec + gd \\
 fa + hb & fc + hd \\
 \end{bmatrix}
 $$
+
 $$\therefore (A \cdot B)^T = B^T \cdot A^T$$
 
 $a, b, c, d$ 네 개의 원소로 구성된 $2 \times 2$ 정방행렬과 2차원 벡터 $(x, y)$를 열벡터로 설정한 두 행렬의 곱은 다음과 같이 전개된다.
+
 $$
 \begin{bmatrix}
 a & b \\
