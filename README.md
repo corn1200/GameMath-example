@@ -1,5 +1,38 @@
 # 게임 수학 정리 문서
-게임 개발에 필요한 수학 개념에 대해 정리한 문서입니다.
+
+$$
+\begin{matrix}
+A \cdot (B \cdot C) &=& 
+\begin{bmatrix}
+a & b \\
+c & d \\
+\end{bmatrix} \cdot
+(
+    \begin{bmatrix}
+    e & f \\
+    g & h \\
+    \end{bmatrix} \cdot
+    \begin{bmatrix}
+    i & j \\
+    k & l \\
+    \end{bmatrix}
+) \\
+&=&
+\begin{bmatrix}
+a & b \\
+c & d \\
+\end{bmatrix} \cdot
+\begin{bmatrix}
+ei + fk & ej + fl \\
+gi + hk & gj + hl \\
+\end{bmatrix} \\
+&=&
+\begin{bmatrix}
+aei + afk + bgi + bhk & aej + afl + bgj + bhl \\
+cei + cfk + dgi + dhk & cej + cfl + dgj + dhl \\
+\end{bmatrix}
+\end{matrix}
+$$
 
 # 목차
 * [1. 수와 집합](#1-수와-집합)
