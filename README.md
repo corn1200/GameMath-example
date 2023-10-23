@@ -1135,3 +1135,65 @@ $$A_{row1} = (a, b)$$
 $$A_{row2} = (C, D)$$
 $$A_{col1} = (a, c)$$
 $$A_{col2} = (b, d)$$
+
+# 11.1. 행렬의 기본 연산
+행렬은 사각형의 형태로 수를 배열한 것에 불과하지만 지정된 계산 방법을 통해 많은 문제를 해결할 수 있다.  
+- 행렬과 행렬의 덧셈
+- 행렬과 스칼라의 곱셈
+- 행렬의 전치(Transpose of a matrix)
+- 행렬과 행렬의 곱셈(줄여서 행렬 곱이라 부름)
+
+***행렬과 행렬의 덧셈은 행렬의 크기가 같은 경우에만 성립***되며, 다음과 같이 ***같은 위치의 원소끼리 더한다***.
+$$A + B = 
+\begin{bmatrix}
+a & b \\
+c & d \\
+\end{bmatrix} +
+\begin{bmatrix}
+e & f \\
+g & h \\
+\end{bmatrix} =
+\begin{bmatrix}
+a + e & b + f \\
+c + g & d + h \\
+\end{bmatrix}
+$$
+
+행렬에 스칼라를 곱하는 연산은 다음과 같이 ***행렬을 구성하는 모든 원소에 스칼라를 곱한다***.
+$$k \cdot A = k \cdot 
+\begin{bmatrix}
+a & b \\
+c & d \\
+\end{bmatrix} =
+\begin{bmatrix}
+k \cdot a & k \cdot b \\
+k \cdot c & k \cdot d \\
+\end{bmatrix}
+$$
+
+행렬의 전치연산은 첨자 $T$로 표시하는데 ***행과 열을 바꾸는 작업을 수행***한다.   
+예를 들어 $3 \times 2$ 행렬의 전치연산은 $2 \times 3$ 행렬이 된다.
+$$
+\begin{bmatrix}
+a & d \\
+b & e \\
+c & f \\
+\end{bmatrix}^{T} = 
+\begin{bmatrix}
+a & b & c \\
+d & e & f \\
+\end{bmatrix}
+$$
+
+행과 열의 크기가 같은 정방행렬의 전치연산은 행과 열의 정보가 동일한 ***대각 성분의 원소***는 그대로 유지되고, 나머지 원소는 대각 성분을 중심으로 대칭된 행렬을 만든다.    
+아래 $2 \times 2$ 행렬의 전치연산을 살펴보면 대각 성분 $a$와 $d$는 동일하고 $b$와 $c$의 위치가 서로 바뀐 것을 볼 수 있다.
+$$
+\begin{bmatrix}
+a & b \\
+c & d \\
+\end{bmatrix}^{T} = 
+\begin{bmatrix}
+a & c \\
+b & d \\
+\end{bmatrix}
+$$
