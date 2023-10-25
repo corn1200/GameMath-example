@@ -12,7 +12,7 @@ y \\
 ax + by \\
 cx + dy \\
 \end{bmatrix}
-\\
+\\\\
 B \cdot (A \cdot \vec{v}) = 
 \begin{bmatrix}
 e & f \\
