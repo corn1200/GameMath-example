@@ -1448,7 +1448,9 @@ $$
 따라서 행렬의 연산 순서를 바꿔도 최종 계산된 벡터 $\vec{w}$ 값은 동일하다.  
 미지수로 구성된 정방행렬과 벡터를 사용해 이를 확인할 수 있다.
 
-$$A \cdot \vec{v} = 
+$$
+\begin{matrix}
+A \cdot \vec{v} = 
 \begin{bmatrix}
 a & b \\
 c & d \\
@@ -1474,9 +1476,12 @@ cx + by \\
 e(ax + by) + f(cx + dy) \\
 g(ax + by) + h(cx + dy) \\
 \end{bmatrix}
+\end{matrix}
 $$
 
-$$B \cdot A =
+$$
+\begin{matrix}
+B \cdot A =
 \begin{bmatrix}
 e & f \\
 g & h \\
@@ -1494,6 +1499,7 @@ ag + ch & bg + dh \\
 x(ae + cf) + y(be + df) \\
 x(ag + ch) + y(bg + dh) \\
 \end{bmatrix}
+\end{matrix}
 $$
 
 1번 식과 2번 식은 동일한 값이므로 다음 식이 성립한다.
@@ -1504,9 +1510,12 @@ $$\vec{W} = B \cdot (A \cdot \vec{v}) = (B \cdot A) \cdot \vec{v}$$
 예를 들어 100개의 점으로 구성된 물체가 모니터에 표현되기까지 5번의 선형 변환이 발생한다고 가정해보자.   
 물체의 점을 각각 $\vec{v_1}...\vec{v_{100}}$으로 표기하고 선형 변환을 수행하는 행렬을 각각 $A, B, C, D, E$라고 하면 컴퓨터가 수행해야 할 계산은 다음과 같다.
 
-$$E \cdot D \cdot C \cdot B \cdot A \cdot \vec{v_1} \\
+$$
+\begin{matrix}
+E \cdot D \cdot C \cdot B \cdot A \cdot \vec{v_1} \\
 ... \\
-E \cdot D \cdot C \cdot B \cdot A \cdot \vec{v_{100}}
+E \cdot D \cdot C \cdot B \cdot A \cdot \vec{v_{100}} \\
+\end{matrix}
 $$
 
 각 점마다 5번의 행렬 곱이 수행되므로 100개 점에 대한 행렬 곱의 총 횟수는 500이 될 것이다.
@@ -1520,9 +1529,12 @@ $$F = E \cdot D \cdot C \cdot B \cdot A$$
 
 이제 각 점에 대해 미리 계산된 행렬 $F$만 곱하면 동일한 결과가 나온다.
 
-$$F \cdot \vec{v_1} \\
+$$
+\begin{matrix}
+F \cdot \vec{v_1} \\
 ... \\
-F \cdot \vec{v_{100}}
+F \cdot \vec{v_{100}} \\
+\end{matrix}
 $$
 
 이 경우 100개 점에 대한 행렬 곱의 총 횟수는 최초 합성 변환을 만들기 위한 4번의 행렬 곱과 벡터마다 1번의 행렬 곱이 수행되므로 104가 된다.
@@ -1548,7 +1560,7 @@ y \\
 \begin{bmatrix}
 ax + by \\
 cx + dy \\
-> \end{bmatrix}$$
+\end{bmatrix}$$
 >
 > 컴퓨터에서 실제로 행렬을 응용할 때는, 행 기준 행렬을 사용하는 경우도 있다.    
 행 기준으로 선형 변환을 수행할 때는 열 기준과 다르게 행렬과 벡터의 위치를 거꾸로 뒤집어서, 다음과 같이 벡터를 앞쪽에 두어야 행렬의 곱셈이 성립된다.
@@ -1563,7 +1575,7 @@ c & d \\
 \end{bmatrix} =
 \begin{bmatrix}
 ax + cy & bx + dy
-> \end{bmatrix}$$
+\end{bmatrix}$$
 >
 > 이와 같이 정방행렬 $A$의 요소를 열 기준 방식과 동일하게 배치한다면 행렬 곱셈의 결과는 다른 값이 나온다.   
 >
@@ -1581,7 +1593,7 @@ b & d \\
 \end{bmatrix} =
 \begin{bmatrix}
 ax + by & cx + dy
-> \end{bmatrix}$$
+\end{bmatrix}$$
 >
 > 이는 행 기준 방식의 정방행렬 $A$를 전치시킨 결과와 동일하다.
 >
@@ -1593,7 +1605,7 @@ b & d \\
 \begin{bmatrix}
 a & b \\
 c & d \\
-> \end{bmatrix}^T$$
+\end{bmatrix}^T$$
 >
 > 행 기준 방식을 사용하는 대표적인 사례로는 게임 그래픽스 라이브러리인 다이렉트X(DirectX)가 있으며, 열 기준 방식을 사용하는 게임 그래픽스 라이브러리로는 오픈GL(OpenGL)이 있다.     
 유니티(Unity) 엔진은 C# 스크립트에서 열 기준 방식을 사용하고, 언리얼(Unreal) 엔진의 C++ 코드는 행 기준 방식을 사용한다.     
@@ -1630,7 +1642,7 @@ x & y
 \begin{bmatrix}
 a & c \\
 b & d \\
-> \end{bmatrix}$$
+\end{bmatrix}$$
 >
 > 열 기준 행렬은 행렬의 적용 순서가 오른쪽에서 왼쪽 방향으로 흐르는 역방향으로 진행된다.    
 다음 행렬의 곱셈이 열 기준 방식으로 이뤄진다면, 벡터 $v$에 대해 행렬 $A$의 선형 변환이 적용된 후 행렬 $B$의 선형 변환이 적용된다.
