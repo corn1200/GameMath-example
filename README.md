@@ -11,7 +11,8 @@ y \\
 \begin{bmatrix}
 ax + by \\
 cx + dy \\
-\end{bmatrix} \\
+\end{bmatrix}
+\\
 B \cdot (A \cdot \vec{v}) = 
 \begin{bmatrix}
 e & f \\
@@ -39,7 +40,8 @@ c & d \\
 \begin{bmatrix}
 ae + cf & be + df \\
 ag + ch & bg + dh \\
-\end{bmatrix} \\
+\end{bmatrix}
+\\
 (B \cdot A) \cdot \vec{v} = 
 \begin{bmatrix}
 x(ae + cf) + y(be + df) \\
