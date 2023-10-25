@@ -1391,3 +1391,261 @@ $$
 행렬 곱의 결과는 2차원 벡터 공간의 선형 변환 $f(x, y) = (ax + by, cx + dy)$와 동일하다.     
 따라서 $2 \times 2$ ***정방행렬*** $A$는 ***2차원 공간의 선형 변환에 대응되는 함수***를 의미하고, 이 수식은 $f(x, y) = (ax + by, cx + dy)$ ***2차원 벡터에 선형 변환을 적용해 새로운 벡터를 생성하는 작업***으로 해석할 수 있다.  
 또한, ***벡터에 선형 변환을 적용하기 위한 연산 순서는 오른쪽에서 왼쪽 방향으로 이뤄짐***을 알 수 있다.
+
+# 11.3. 정방행렬의 곱셈
+$2 \times 2$ 정방행렬이 2차원 벡터 공간의 선형 변환에 대응된다면, $2 \times 2$ ***정방행렬 간의 곱은 합성함수에 대응되는 연산이다***.
+
+벡터 $\vec{v}$에 선형 변환을 나타내는 $2 \times 2$ 정방행렬 $A, B$를 순서대로 연산한다고 가정하면, ***연산 순서는 오른쪽에서 왼쪽으로 진행***되므로 이의 수식은 다음과 같다.
+
+$$B \cdot A \cdot \vec{v}$$
+
+이는 다음 [그림 4-9](#그림-4-9-두-번의-선형-변환을-순서대로-적용한-예시)와 같이 세 개의 2차원 벡터 공간 $V, U, W$에 대해 두 번의 선형 변환을 거쳐 벡터 공간 $V$에 속한 벡터 $\vec{v}$가 벡터 공간 $W$의 벡터 $\vec{w}$에 대응되는 관계로 해석할 수 있다.
+
+###### 그림 4-9 두 번의 선형 변환을 순서대로 적용한 예시
+![두 번의 선형 변환을 순서대로 적용한 예시](/img/)
+
+선형 변환을 담당하는 정방행렬 $A, B$와 벡터 $\vec{v}$의 각 요소를 다음과 같이 행렬로 나타낸다.
+
+$$B = 
+\begin{bmatrix}
+e & f \\
+g & h \\
+\end{bmatrix}
+$$
+
+$$A = 
+\begin{bmatrix}
+a & b \\
+c & d \\
+\end{bmatrix}
+$$
+
+$$\vec{v} = 
+\begin{bmatrix}
+x \\
+y \\
+\end{bmatrix}
+$$
+
+벡터 $\vec{v}$가 벡터 $\vec{w}$로 변환되는 과정은 다음과 같은 행렬 곱으로 표현할 수 있다.
+
+$$\vec{w} = 
+\begin{bmatrix}
+e & f \\
+g & h \\
+\end{bmatrix} \cdot
+\begin{bmatrix}
+a & b \\
+c & d \\
+\end{bmatrix} \cdot
+\begin{bmatrix}
+x \\
+y \\
+\end{bmatrix}
+$$
+
+***합성함수에 대응하는 행렬의 곱셈 역시 결합법칙을 만족한다***.   
+따라서 행렬의 연산 순서를 바꿔도 최종 계산된 벡터 $\vec{w}$ 값은 동일하다.  
+미지수로 구성된 정방행렬과 벡터를 사용해 이를 확인할 수 있다.
+
+$$A \cdot \vec{v} = 
+\begin{bmatrix}
+a & b \\
+c & d \\
+\end{bmatrix} \cdot
+\begin{bmatrix}
+x \\
+y \\
+\end{bmatrix} =
+\begin{bmatrix}
+ax + by \\
+cx + dy \\
+\end{bmatrix} \\
+B \cdot (A \cdot \vec{v}) = 
+\begin{bmatrix}
+e & f \\
+g & h \\
+\end{bmatrix} \cdot
+\begin{bmatrix}
+ax + by \\
+cx + by \\
+\end{bmatrix} =
+\begin{bmatrix}
+e(ax + by) + f(cx + dy) \\
+g(ax + by) + h(cx + dy) \\
+\end{bmatrix}
+$$
+
+$$B \cdot A =
+\begin{bmatrix}
+e & f \\
+g & h \\
+\end{bmatrix} \cdot
+\begin{bmatrix}
+a & b \\
+c & d \\
+\end{bmatrix} =
+\begin{bmatrix}
+ae + cf & be + df \\
+ag + ch & bg + dh \\
+\end{bmatrix} \\
+(B \cdot A) \cdot \vec{v} = 
+\begin{bmatrix}
+x(ae + cf) + y(be + df) \\
+x(ag + ch) + y(bg + dh) \\
+\end{bmatrix}
+$$
+
+1번 식과 2번 식은 동일한 값이므로 다음 식이 성립한다.
+
+$$\vec{W} = B \cdot (A \cdot \vec{v}) = (B \cdot A) \cdot \vec{v}$$
+
+이처럼 ***결합법칙이 성립하는 행렬 곱의 성질***은 ***컴퓨터 그래픽 연산***에서 아주 유용하게 활용된다.  
+예를 들어 100개의 점으로 구성된 물체가 모니터에 표현되기까지 5번의 선형 변환이 발생한다고 가정해보자.   
+물체의 점을 각각 $\vec{v_1}...\vec{v_{100}}$으로 표기하고 선형 변환을 수행하는 행렬을 각각 $A, B, C, D, E$라고 하면 컴퓨터가 수행해야 할 계산은 다음과 같다.
+
+$$E \cdot D \cdot C \cdot B \cdot A \cdot \vec{v_1} \\
+... \\
+E \cdot D \cdot C \cdot B \cdot A \cdot \vec{v_{100}}
+$$
+
+각 점마다 5번의 행렬 곱이 수행되므로 100개 점에 대한 행렬 곱의 총 횟수는 500이 될 것이다.
+
+$$5 \cdot 100 = 500$$
+
+이때 결합법칙이 성립하는 행렬 연산의 특징을 사용하면 계산량을 줄이되 동일한 결과를 얻을 수 있다.    
+다음과 같이 행렬 곱을 4번 수행해서 합성함수에 해당하는 행렬 $F$를 미리 만들어둘 수 있다.
+
+$$F = E \cdot D \cdot C \cdot B \cdot A$$
+
+이제 각 점에 대해 미리 계산된 행렬 $F$만 곱하면 동일한 결과가 나온다.
+
+$$F \cdot \vec{v_1} \\
+... \\
+F \cdot \vec{v_{100}}
+$$
+
+이 경우 100개 점에 대한 행렬 곱의 총 횟수는 최초 합성 변환을 만들기 위한 4번의 행렬 곱과 벡터마다 1번의 행렬 곱이 수행되므로 104가 된다.
+
+$$4 + 1 \cdot 100 = 104$$
+
+이의 결과는 앞서 구한 500번의 행렬 곱 연산과 동일하다.  
+가상 공간의 한 캐릭터를 표현하는 데 보통 10만 개의 점이 사용되므로, 컴퓨터 그래픽에서 행렬은 가상 세계를 구축하는 데 필요한 계산량을 크게 줄여주는 중요한 역할을 수행한다는 사실을 알 수 있다.
+
+> 참고: ***열 기준 행렬과 행 기준 행렬***     
+행렬과 벡터의 곱셈을 수행하는 방식으로, 열 기준 행렬(Column major matrix)과 행 기준 행렬(Row major matrix) 두 가지가 있다.  
+수학에서 행렬을 다룰 때는, 벡터를 열벡터로 나타내는 열 기준 행렬 방식을 주로 사용한다.
+>
+> $$
+\begin{bmatrix}
+a & b \\
+c & d \\
+\end{bmatrix} \cdot
+\begin{bmatrix}
+x \\
+y \\
+\end{bmatrix} =
+\begin{bmatrix}
+ax + by \\
+cx + dy \\
+\end{bmatrix}
+\> $$
+>
+> 컴퓨터에서 실제로 행렬을 응용할 때는, 행 기준 행렬을 사용하는 경우도 있다.    
+행 기준으로 선형 변환을 수행할 때는 열 기준과 다르게 행렬과 벡터의 위치를 거꾸로 뒤집어서, 다음과 같이 벡터를 앞쪽에 두어야 행렬의 곱셈이 성립된다.
+>
+> $$
+\begin{bmatrix}
+x & y
+\end{bmatrix} \cdot
+\begin{bmatrix}
+a & b \\
+c & d \\
+\end{bmatrix} =
+\begin{bmatrix}
+ax + cy & bx + dy
+\end{bmatrix}
+\> $$
+>
+> 이와 같이 정방행렬 $A$의 요소를 열 기준 방식과 동일하게 배치한다면 행렬 곱셈의 결과는 다른 값이 나온다.   
+>
+> $$(ax + by, cx + dy) \neq (ax + cy, bx + dy)$$
+>
+> 원하는 결과는 $(ax + by, cx + dy)$이므로 열 기준 행렬 방식을 사용한다면 정방행렬 $A$의 요소는 다음과 같이 배치해야 할 것이다.
+>
+> $$
+\begin{bmatrix}
+x & y
+\end{bmatrix} \cdot
+\begin{bmatrix}
+a & c \\
+b & d \\
+\end{bmatrix} =
+\begin{bmatrix}
+ax + by & cx + dy
+\end{bmatrix}
+\> $$
+>
+> 이는 행 기준 방식의 정방행렬 $A$를 전치시킨 결과와 동일하다.
+>
+> $$
+\begin{bmatrix}
+a & c \\
+b & d \\
+\end{bmatrix} = 
+\begin{bmatrix}
+a & b \\
+c & d \\
+\end{bmatrix}^T
+\> $$
+>
+> 행 기준 방식을 사용하는 대표적인 사례로는 게임 그래픽스 라이브러리인 다이렉트X(DirectX)가 있으며, 열 기준 방식을 사용하는 게임 그래픽스 라이브러리로는 오픈GL(OpenGL)이 있다.     
+유니티(Unity) 엔진은 C# 스크립트에서 열 기준 방식을 사용하고, 언리얼(Unreal) 엔진의 C++ 코드는 행 기준 방식을 사용한다.     
+이렇게 그래픽 라이브러리와 애플리케이션마다 행렬을 사용하는 방법은 다르다.      
+두 방식 모두 전치연산을 통해 서로 변환할 수 있으므로 방식만 명확하게 이해하고 있다면 응용하는 데 큰 문제는 없다.    
+열벡터와 행벡터는 서로 전치 관계에 있기 때문에, 선형 변환 역시 전치 관계의 차이가 있을 뿐이다.
+>
+> 열 기준 체계에서 설계된 수식을 행 기준에서 가져다 쓰고 싶다면 다음과 같이 전치연산을 적용해 변환하면 된다.
+>
+> $$(A \cdot \vec{v})^T = \vec{v}^T \cdot A^T$$
+>
+> $$
+(
+    \begin{bmatrix}
+    a & b \\
+    c & d \\
+    \end{bmatrix} \cdot
+    \begin{bmatrix}
+    x \\
+    y \\
+    \end{bmatrix}
+)^T =
+\begin{bmatrix}
+x \\
+y \\
+\end{bmatrix}^T \cdot
+\begin{bmatrix}
+a & b \\
+c & d \\
+\end{bmatrix}^T =
+\begin{bmatrix}
+x & y
+\end{bmatrix} \cdot
+\begin{bmatrix}
+a & c \\
+b & d \\
+\end{bmatrix}
+\> $$
+>
+> 열 기준 행렬은 행렬의 적용 순서가 오른쪽에서 왼쪽 방향으로 흐르는 역방향으로 진행된다.    
+다음 행렬의 곱셈이 열 기준 방식으로 이뤄진다면, 벡터 $v$에 대해 행렬 $A$의 선형 변환이 적용된 후 행렬 $B$의 선형 변환이 적용된다.
+>
+> $$B \cdot A \cdot \vec{v} = \vec{W}$$
+>
+> 이와 같은 열 기준 방식의 변환을 행 기준 방식으로 변환하기 위해 위 식을 전치해보면, 계산은 다음과 같이 왼쪽에서 오른쪽의 순방향으로 진행된다.
+>
+> $$(B \cdot A \cdot \vec{v})^T = (\vec{W})^T$$
+> $$\vec{v}^T \cdot A^T \cdot B^T = (\vec{W})^T$$
+>
+> 이와 같이 열벡터 행렬을 전치한 결과는 행벡터가 된다.  
+따라서 행벡터 변환 방식을 사용한다면 행렬의 적용 순서는 왼쪽에서 오른쪽의 순방향으로 진행되므로 이 점을 주의해야 한다.
