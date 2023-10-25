@@ -21,8 +21,7 @@ c & d \\
 \end{bmatrix} =
 \begin{bmatrix}
 ax + cy & bx + dy
-\end{bmatrix}
-\> $$
+> \end{bmatrix} $$
 >
 > 이와 같이 정방행렬 $A$의 요소를 열 기준 방식과 동일하게 배치한다면 행렬 곱셈의 결과는 다른 값이 나온다.   
 >
