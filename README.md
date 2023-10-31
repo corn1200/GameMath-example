@@ -1834,3 +1834,79 @@ $$S =
 1 & a \\
 0 & 1 \\
 \end{bmatrix}$$
+
+# 12.4. 삼각함수의 덧셈 정리
+삼각함수를 응용할 때 유용하게 사용되는 공식에는 삼각함수의 덧셈 정리가 있다.    
+$\cos$ 함수와 $\sin$ 함수의 덧셈 정리는 다음과 같다.
+
+$$\cos(\alpha + \beta) = \cos \alpha \cos \beta - \sin \alpha \sin \beta$$
+$$\sin(\alpha + \beta) = \sin \alpha \cos \beta + \cos \alpha \sin \beta$$
+
+회전행렬의 원리를 파악하면 행렬 곱을 사용해 덧셈 정리를 유도할 수 있다.     
+[그림 4-19](#4-19-두-회전을-합성한-변환과-각각-회전한-변환의-비교)와 같이 회전 변환에 사용하는 두 각 $\alpha$와 $\beta$가 있을 때, 이 둘을 합한 $\alpha + \beta$ 만큼 회전한 변환은 두 각에 대한 회전 변환을 순서대로 적용한 결과와 동일하다.
+
+###### 4-19 두 회전을 합성한 변환과 각각 회전한 변환의 비교
+![두 회전을 합성한 변환과 각각 회전한 변환의 비교](/img/)
+
+각 $\alpha$에 대한 회전 변환행렬을 $R_\alpha$로, 각 $\beta$에 대한 회전 변환행렬을 $R_\beta$로 표기한다면 각 회전 변환과 이 둘을 합한 각 $\alpha + \beta$의 회전 변환도 다음과 같은 행렬로 나타낼 수 있다.
+
+$$R_\alpha = 
+\begin{bmatrix}
+\cos \alpha & -\sin \alpha \\
+\sin \alpha & \cos \alpha \\
+\end{bmatrix}$$
+
+$$R_\beta = 
+\begin{bmatrix}
+\cos \beta & -\sin \beta \\
+\sin \beta & \cos \beta \\
+\end{bmatrix}$$
+
+$$R_{(\alpha + \beta)} = 
+\begin{bmatrix}
+\cos(\alpha + \beta) & -\sin(\alpha + \beta) \\
+\sin(\alpha + \beta) & \cos(\alpha + \beta) \\
+\end{bmatrix}$$
+
+각 $\alpha + \beta$의 회전 변환은 각 $\alpha$에 대한 회전 변환을 수행한 후에 각 $\beta$에 대한 회전 변환을 이어서 변환한 결과와 동일하다.   
+이를 행렬 곱으로 나타내면 다음과 같다.
+
+$$
+\begin{matrix}
+R_\beta \cdot R_\alpha &=& 
+\begin{bmatrix}
+\cos \beta & -\sin \beta \\
+\sin \beta & \cos \beta \\
+\end{bmatrix}
+\begin{bmatrix}
+\cos \alpha & -\sin \alpha \\
+\sin \alpha & \cos \alpha \\
+\end{bmatrix} \\
+&=&
+\begin{bmatrix}
+\cos \alpha \cos \beta - \sin \alpha \sin \beta & -(\cos \alpha \sin \beta + \sin \alpha \cos \beta) \\
+\cos \alpha \sin \beta + \sin \alpha \cos \beta & \cos \alpha \cos \beta - \sin \alpha \sin \beta \\
+\end{bmatrix} \\
+&=&
+\begin{bmatrix}
+\cos(\alpha + \beta) & -\sin(\alpha + \beta) \\
+\sin(\alpha + \beta) & \cos(\alpha + \beta) \\
+\end{bmatrix}
+\end{matrix}
+$$
+
+> 참고: ***삼각함수의 배각 공식***  
+삼각함수의 덧셈 정리를 응용한 삼각함수의 배각 공식은 각 $\beta$ 대신 $\alpha$를 대입해 얻을 수 있다.    
+>
+> - $$
+\begin{matrix}
+\cos 2 \alpha &=& \cos(\alpha + \alpha) \\
+&=& \cos^2 \alpha - \sin^2 \alpha \\
+&=& 1 - 2 \sin^2 \alpha \\
+\end{matrix}$$
+>
+> - $$
+\begin{matrix}
+\sin 2 \alpha &=& \sin(\alpha + \alpha) \\
+&=& 2 \sin \alpha \cos \alpha
+\end{matrix}$$
