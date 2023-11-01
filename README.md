@@ -1,11 +1,9 @@
 $$
-\begin{matrix}
-  -1 & 3 \\
-  2 & -4
+\[
+ \begin{matrix}
+  a & b & c \\
+  d & e & f \\
+  g & h & i
  \end{matrix}
- =
- \begin{matrix}[r]
-  -1 & 3 \\
-  2 & -4
- \end{matrix}
+\]
 $$
