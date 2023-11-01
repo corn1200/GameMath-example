@@ -1,4 +1,4 @@
-$$
+$
 \[
  \begin{matrix}
   a & b & c \\
@@ -6,4 +6,4 @@ $$
   g & h & i
  \end{matrix}
 \]
-$$
+$
