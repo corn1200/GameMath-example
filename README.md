@@ -4,8 +4,8 @@ $$
   2 & -4
  \end{matrix}
  =
- \begin{matrix*}[r]
+ \begin{matrix}[r]
   -1 & 3 \\
   2 & -4
- \end{matrix*}
+ \end{matrix}
 $$
