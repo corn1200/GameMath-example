@@ -2059,3 +2059,50 @@ $$S^{-1} =
 1 & -a \\
 0 & 1 \\
 \end{bmatrix}$$
+
+# 13.4. 회전 변환행렬의 역행렬
+회전 변환행렬 $R$은 다음과 같다.
+
+$$R = 
+\begin{bmatrix}
+\cos \theta & -\sin \theta \\
+\sin \theta & \cos \theta \\
+\end{bmatrix}$$
+
+회전각 $\theta$에 대한 회전 변환행렬의 역행렬은 [그림 4-27](#그림-4-27-회전-변환의-역변환)과 같이 반대방향의 회전각 $-\theta$에 대한 회전 변환을 의미한다.
+
+$$R^{-1}_\theta = R_{(-\theta)}$$
+
+###### 그림 4-27 회전 변환의 역변환
+![회전 변환의 역변환](/img/)
+
+$\sin$ 함수와 $\cos$ 함수는 다음과 같은 성질이 있다.
+
+$$\cos(-\theta) = \cos(\theta)$$
+$$\sin(-\theta) = -\sin(\theta)$$
+
+이를 활용하면 회전행렬의 역행렬은 다음과 같이 정리할 수 있다.
+
+$$R^{-1}_\theta = R_{(-\theta)} = 
+\begin{bmatrix}
+\cos \theta & \sin \theta \\
+-\sin \theta & \cos \theta \\
+\end{bmatrix}$$
+
+역행렬에서 부호가 변하지 않는 $\cos$ 함수는 ***대각선 영역에만 위치***하므로 회전행렬과 이것의 역행렬은 서로 ***전치 관계***에 있다.
+
+$$R_\theta = 
+\begin{bmatrix}
+\cos \theta & -\sin \theta \\
+\sin \theta & \cos \theta \\
+\end{bmatrix}$$
+
+$$R^{-1}_\theta = 
+\begin{bmatrix}
+\cos \theta & \sin \theta \\
+-\sin \theta & \cos \theta \\
+\end{bmatrix}$$
+
+따라서 ***회전행렬의 역행렬은 별도로 삼각함수를 사용하지 않아도 기존 행렬에 전치연산을 적용하는 방법으로 쉽게 구할 수 있다***.
+
+$$R^{-1}_\theta = R^T_\theta$$
