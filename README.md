@@ -2554,3 +2554,41 @@ $$L(a) = a \cdot P_1 + (1 - a) \cdot P_2$$
 $$\vec{u} = (a, b)$$
 $$\vec{v} = (c, d)$$
 $$\vec{u} \cdot \vec{v} = a \cdot c + b \cdot d$$
+
+# 17.1. 내적의 성질
+***내적은 스칼라의 곱셈과 덧셈으로 구성되어 있으므로 교환법칙이 성립한다***.
+
+$$\vec{u} \cdot \vec{v} = a \cdot c + b \cdot d$$
+$$\vec{v} \cdot \vec{u} = c \cdot a + d \cdot b$$
+$$\therefore \vec{u} \cdot \vec{v} = \vec{v} \cdot \vec{u}$$
+
+하지만 ***결과가 벡터가 아닌 스칼라로 나오는 성질***로 인해 ***결합법칙은 성립하지 않는다***.
+
+$$\vec{u} \cdot (\vec{v} \cdot \vec{w}) \neq (\vec{u} \cdot \vec{v}) \cdot \vec{w}$$
+
+***내적은 덧셈에 대한 분배법칙이 성립된다***.
+
+$$\vec{w} \cdot (\vec{u} + \vec{v}) = (e, f) \cdot (a + c, b + d) = ae + ce + bf + df$$
+$$\vec{u} \cdot \vec{w} + \vec{v} \cdot \vec{w} = (a, b) \cdot (e, f) + (c, d) \cdot (e, f) = ae + bf + ce + df$$
+$$\therefore \vec{w} \cdot (\vec{u} + \vec{v}) = \vec{u} \cdot \vec{w} + \vec{v} \cdot \vec{w}$$
+
+같은 벡터를 내적하면 ***벡터의 크기를 제곱한 결과***가 나온다.    
+이와 같은 내적의 성질은 모든 차원의 벡터에 동일하게 적용된다.
+
+$$(x, y) \cdot (x, y) = x^2 + y^2$$
+$$\therefore \vec{v} \cdot \vec{v} = |\vec{v}|^2$$
+
+> 참고: ***벡터 크기의 정의***      
+벡터의 크기를 정의할 때 피타고라스 정리를 활용한 최단 거리의 개념으로 설명했는데, 직각삼각형과 같은 기하학적인 요소를 완전히 배제한다면 벡터의 크기는 자신을 내적한 결과의 제곱근으로 정의할 수 있다.
+
+내적은 교환법칙과 분배법칙이 성립하기 때문에, 두 벡터 합의 내적 $(\vec{u} + \vec{v}) \cdot (\vec{u} + \vec{v})$은 두 벡터의 크기로 표현할 수 있다.
+
+$$
+\begin{matrix}
+(\vec{u} + \vec{v}) \cdot (\vec{u} + \vec{v}) &=& \vec{u} \cdot \vec{u} + \vec{v} \cdot \vec{v} + 2(\vec{u} \cdot \vec{v}) \\
+&=& |\vec{u}|^2 + |\vec{v}|^2 + 2(\vec{u} \cdot \vec{v}) \\
+\end{matrix}
+$$
+
+벡터의 내적은 벡터를 응용하는 데 있어 빈번히 사용되는 중요한 공식이다.      
+특히 ***곱셈과 덧셈으로만 구성된 내적은 컴퓨터에서 빠르게 처리***되기 때문에, 컴퓨터 그래픽에서 실시간으로 변화하는 효과를 구현하는 데 유용하게 사용된다.     
