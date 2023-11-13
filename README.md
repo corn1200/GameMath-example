@@ -2644,7 +2644,7 @@ $$
 ###### 그림 6-1 두 벡터의 사잇각 세타
 ![두 벡터의 사잇각 세타](/img/)
 
-두 벡터 $\vec{u}, \vec{v}$의 사잇각을 $\theta$라고 할 떄 내적과 $\cos$ 함수의 관계는 다음과 같다.
+두 벡터 $\vec{u}, \vec{v}$의 사잇각을 $\theta$라고 할 때 내적과 $\cos$ 함수의 관계는 다음과 같다.
 
 ###### 식 6-1
 
@@ -2715,3 +2715,141 @@ $$\vec{u} \cdot \vec{v} = \cos \theta$$
 
 ###### 그림 6-5 회전행렬을 구성하는 항상 직교하는 두 기저벡터
 ![회전행렬을 구성하는 항상 직교하는 두 기저벡터](/img/)
+
+# 17.3. 행렬의 곱셈을 내적으로 표현하기
+***행렬의 곱셈 연산은 내적으로 표현이 가능하다***.    
+
+$$
+\begin{bmatrix}
+a & b \\
+c & d \\
+\end{bmatrix}
+\begin{bmatrix}
+x \\
+y \\
+\end{bmatrix} = 
+\begin{bmatrix}
+ax + by \\
+cx + dy \\
+\end{bmatrix}
+$$
+
+행렬과 벡터의 곱셈은 행렬을 구성하는 두 개의 행벡터 $(a, b), (c, d)$와 벡터를 구성하는 열벡터 $(x, y)$의 내적으로 표현할 수 있다.
+
+$$
+\begin{bmatrix}
+ax + by \\
+cx + dy \\
+\end{bmatrix} =
+\begin{bmatrix}
+(a, b) \cdot (x, y) \\
+(c, d) \cdot (x, y) \\
+\end{bmatrix}
+$$
+
+행렬의 곱셈 또한 벡터의 내적으로 바꿔 표현할 수 있다.   
+행렬의 곱을 내적으로 표현하면 다음과 같다.
+
+$$
+\begin{bmatrix}
+a & b \\
+c & d \\
+\end{bmatrix}
+\begin{bmatrix}
+e & f \\
+g & h \\
+\end{bmatrix} =
+\begin{bmatrix}
+ae + bg & af + bh \\
+ce + dg & cf + dh \\
+\end{bmatrix} =
+\begin{bmatrix}
+(a, b) \cdot (e, g) & (a, b) \cdot (f, h) \\
+(c, d) \cdot (e, g) & (c, d) \cdot (f, h) \\
+\end{bmatrix}
+$$
+
+***직교 행렬(Orthogonal matrix)*** 은 ***정방행렬을 구성하는 모든 행벡터와 열벡터의 크기가 1이고 벡터들이 서로 직교하는 행렬***이다.     
+$a, b, c, d$로 구성된 직교행렬을 $Q$로 지정하면 열벡터와 행벡터를 구성하는 $(a, b), (b, d), (a, c), (c, d)$의 크기는 1이고 $(a, b)$와 $(c, d)$는 서로 직교한다.
+
+$$Q = 
+\begin{bmatrix}
+a & c \\
+b & d \\
+\end{bmatrix}$$
+
+직교행렬이 지니는 특징은 ***직교행렬의 전치행렬은 역행렬이 된다***는 점이다.  
+그렇다면 직교행렬 $Q$와 이의 전치행렬 $Q^T$의 곱은 항등행렬이 된다.
+
+$$Q \cdot Q^T = I$$
+
+이는 내적을 사용해 증명할 수 있다.  
+임의의 직교행렬과 이의 전치행렬의 곱을 내적을 사용해 표현해보자.
+
+$$
+\begin{bmatrix}
+a & c \\
+b & d \\
+\end{bmatrix}^T
+\begin{bmatrix}
+a & c \\
+b & d \\
+\end{bmatrix} =
+\begin{bmatrix}
+(a, b) \cdot (a, b) & (a, b) \cdot (c, d) \\
+(c, d) \cdot (a, b) & (c, d) \cdot (c, d) \\
+\end{bmatrix}
+$$
+
+직교행렬의 정의에 의해 벡터 $(a, b)$와 $(c, d)$는 서로 직교하므로 두 벡터의 내적은 0이 나온다.  
+직교행렬의 정의에 의해 행벡터와 열벡터의 크기는 각각 1이므로, 자신을 내적한 결과는 1이 된다.    
+따라서 직교행렬과 그 전치행렬의 곱은 언제나 항등행렬을 보장한다.
+
+$$
+\begin{bmatrix}
+(a, b) \cdot (a, b) & (a, b) \cdot (c, d) \\
+(c, d) \cdot (a, b) & (c, d) \cdot (c, d) \\
+\end{bmatrix} = 
+\begin{bmatrix}
+1 & 0 \\
+0 & 1 \\
+\end{bmatrix} = 
+I
+$$
+
+***회전 변환행렬은 각 행벡터와 열벡터의 크기가 1이고 서로 직교하므로 직교행렬이다***.     
+회전행렬의 역행렬은 전치연산으로 쉽게 구할 수 있다.
+
+$$
+\begin{matrix}
+R_\theta &=& 
+\begin{bmatrix}
+\cos \theta & -\sin \theta \\
+\sin \theta & \cos \theta \\
+\end{bmatrix} \\
+R^T_\theta \cdot R_\theta &=&
+\begin{bmatrix}
+\cos^2 \theta + \sin^2 \theta & 0 \\
+0 & \cos^2 \theta + \sin^2 \theta \\
+\end{bmatrix} = 
+\begin{bmatrix}
+1 & 0 \\
+0 & 1 \\
+\end{bmatrix} =
+1
+\end{matrix}
+$$
+
+여러 종류의 선형 변환 중 물체의 형태가 그대로 유지되는 선형 변환을 ***강체 변환(Rigid Transformation)*** 이라고 하는데, 선형 변환이 강체 변환이 되기 위한 조건은 다음과 같다.
+
+1. 변화된 기저벡터의 크기는 모두 1이어야한다.
+2. 모든 기저벡터는 서로 직교해야 한다.
+3. 행렬식의 값이 1이어야 한다.
+
+회전 변환은 강체 변환의 성질을 가지고 있음을 수식으로 확인해보자.   
+앞에서 회전행렬은 직교행렬의 성질을 가지고 있음을 확인했으므로 1번과 2번은 만족한다.    
+3번을 확인하기 위해 회전 행렬의 행렬식 값을 확인해보자.     
+회전행렬의 행렬식 $ad - bc$의 값은 언제나 1이 됨을 알 수 있다.  
+따라서 ***회전 변환은 물체의 형태를 그대로 유지시켜주는 강체 변환***이다.
+
+$$\det(R) = \cos^2 \theta + \sin^2 \theta = 1$$
