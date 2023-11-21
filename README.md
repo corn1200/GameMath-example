@@ -3237,10 +3237,10 @@ UV 좌표계는 2차원 벡터로 구성되며 가로 정보는 U, 세로 정보
 
 $$S = 
 \begin{bmatrix}
-S_x && 0 && 0 && 0 \\
-0 && S_y && 0 && 0 \\
-0 && 0 && S_z && 0 \\
-0 && 0 && 0 && 1 \\
+S_x & 0 & 0 & 0 \\
+0 & S_y & 0 & 0 \\
+0 & 0 & S_z & 0 \\
+0 & 0 & 0 & 1 \\
 \end{bmatrix}
 $$
 
@@ -3249,10 +3249,10 @@ $$
 
 $$T = 
 \begin{bmatrix}
-1 && 0 && 0 && t_x \\
-0 && 1 && 0 && t_y \\
-0 && 0 && 1 && t_z \\
-0 && 0 && 0 && 1 \\
+1 & 0 & 0 & t_x \\
+0 & 1 & 0 & t_y \\
+0 & 0 & 1 & t_z \\
+0 & 0 & 0 & 1 \\
 \end{bmatrix}
 $$
 
@@ -3308,9 +3308,9 @@ $$(\theta_x, \theta_y, \theta_z)$$
 
 $$R_x = 
 \begin{bmatrix}
-1 && 0 && 0 \\
-0 && \cos \theta && -\sin \theta \\
-0 && \sin \theta && \cos \theta \\
+1 & 0 & 0 \\
+0 & \cos \theta & -\sin \theta \\
+0 & \sin \theta & \cos \theta \\
 \end{bmatrix}
 $$
 
@@ -3318,20 +3318,92 @@ $$
 
 $$R_y = 
 \begin{bmatrix}
-\cos \theta && 0 && \sin \theta \\
-0 && 1 && 0 \\
--\sin \theta && 0 && \cos \theta \\
+\cos \theta & 0 & \sin \theta \\
+0 & 1 & 0 \\
+-\sin \theta & 0 & \cos \theta \\
 \end{bmatrix}
 $$
 
 $$R_z = 
 \begin{bmatrix}
-\cos \theta && -\sin \theta && 0 \\
-\sin \theta && \cos \theta && 0 \\
-0 && 0 && 1 \\
+\cos \theta & -\sin \theta & 0 \\
+\sin \theta & \cos \theta & 0 \\
+0 & 0 & 1 \\
 \end{bmatrix}
 $$
 
 주의 깊게 살펴볼 부분은 $y$축의 회전행렬 $R_y$다.   
 다른 행렬은 모두 우측 상단의 $\sin$ 함수가 음의 부호인 반면 회전행렬 $R_y$는 좌측 하단의 $\sin$ 함수가 음의 부호를 가진다.  
 3차원 공간에서는 $x \rightarrow y \rightarrow z \rightarrow x \rightarrow y$의 순서로 세 축이 순환되기 때문에 $y$축에 직교하는 평면은 $xz$ 평면이 아니라 $zx$ 평면이다.
+
+# 26.2. 회전행렬의 유도
+각 기저 축의 회전행렬을 구했다면, 이를 순서대로 적용해 최종 회전행렬을 만들어야 한다.   
+세 번의 연속적인 회전으로 구성된 오일러 각 회전 방법은 [표 8-1](#표-8-1-오일러-각-조합에-대한-경우의-수)과 같이 총 6가지의 경우가 발생한다.
+
+###### 표 8-1 오일러 각 조합에 대한 경우의 수
+|경우|회전축의 순서|회전 동작의 순서|
+|---|---|---|
+|1|$x \rightarrow y \rightarrow z$|피치 $\rightarrow$ 요 $\rightarrow$ 롤|
+|2|$x \rightarrow z \rightarrow y$|피치 $\rightarrow$ 롤 $\rightarrow$ 요|
+|3|$y \rightarrow x \rightarrow z$|요 $\rightarrow$ 피치 $\rightarrow$ 롤|
+|4|$y \rightarrow z \rightarrow x$|요 $\rightarrow$ 롤 $\rightarrow$ 피치|
+|5|$z \rightarrow x \rightarrow y$|롤 $\rightarrow$ 피치 $\rightarrow$ 요|
+|6|$z \rightarrow y \rightarrow x$|롤 $\rightarrow$ 요 $\rightarrow$ 피치|
+
+언리얼 엔진과 유니티 엔진은 5번의 $z \rightarrow x \rightarrow y$의 순서를 사용한다.
+
+***각 회전행렬을 순서대로 곱해 오일러 각에 대응되는 회전행렬*** $R$ ***을 생성할 수 있다***.
+
+###### 식 8-1
+
+$$R = R_{yaw} \cdot R_{pitch} \cdot R_{roll}$$
+
+요, 피치, 롤 각의 값을 각 $\alpha, \beta, \gamma$라고 한다면 행렬 곱은 다음과 같이 계산된다.
+
+$$
+\begin{matrix}
+R_\alpha \cdot R_\beta \cdot R_\gamma &=& 
+\begin{bmatrix}
+\cos \alpha & 0 & \sin \alpha \\
+0 & 1 & 0 \\
+-\sin \alpha & 0 & \cos \alpha \\
+\end{bmatrix}
+\begin{bmatrix}
+1 & 0 & 0 \\
+0 & \cos \beta & -\sin \beta \\
+0 & \sin \beta & \cos \beta \\
+\end{bmatrix}
+\begin{bmatrix}
+\cos \gamma & -\sin \gamma & 0 \\
+\sin \gamma & \cos \gamma & 0 \\
+0 & 0 & 1 \\
+\end{bmatrix} \\
+&=& 
+\begin{bmatrix}
+\cos \alpha \cos \gamma + \sin \alpha \sin \beta \sin \gamma & -\cos \alpha \sin \gamma + \sin \alpha \sin \beta \cos \gamma & \sin \alpha \cos \beta \\
+\cos \beta \sin \gamma & \cos \beta \cos \gamma & -\sin \beta \\
+-\sin \alpha \cos \gamma + \cos \alpha \sin \beta \sin \gamma & \sin \alpha \sin \gamma + \cos \alpha \sin \beta \cos \gamma & \cos \alpha \cos \beta \\
+\end{bmatrix}
+\end{matrix}
+$$
+
+***계산된 회전행렬의 열벡터는 표준기저벡터가 회전 변환된 로컬 축을 의미한다***.   
+따라서 오일러 각으로 변환된 각 로컬 축의 값은 다음과 같이 계산해 얻을 수 있다.
+
+$$x_{local} = (\cos \alpha \cos \gamma + \sin \alpha \sin \beta \sin \gamma, \cos \beta \sin \gamma, -\sin \alpha \cos \gamma + \cos \alpha \sin \beta \sin \gamma)$$
+
+$$y_{local} = (-\cos \alpha \sin \gamma + \sin \alpha \sin \beta \cos \gamma, \cos \beta \cos \gamma, \sin \alpha \sin \gamma + \cos \alpha \sin \beta \cos \gamma)$$
+
+$$z_{local} = (\sin \alpha \cos \beta, -\sin \beta, \cos \alpha \cos \beta)$$
+
+3차원 공간의 트랜스폼도 회전 변환이 발생할 때마다 로컬 축 데이터를 갱신하면 게임 로직에서 유용하게 사용할 수 있을 뿐만 아니라, 렌더링 로직에 필요한 회전행렬도 바로 만들어 낼 수 있다.  
+이 계산식으로 얻어낸 로컬 축 벡터를 각각 $\vec{x} = (x_x, x_y, x_z)$, $\vec{y} = (y_x, y_y, y_z)$, $\vec{z} = (z_x, z_y, z_z)$로 지정하고, 이들을 열벡터로 꽂아넣어 얻어지는 3차원 공간의 회전행렬 $R$은 다음과 같다.
+
+$$R = 
+\begin{bmatrix}
+x_x & y_x & z_x & 0 \\
+x_y & y_y & z_y & 0 \\
+x_z & y_z & z_z & 0 \\
+0 & 0 & 0 & 1 \\
+\end{bmatrix}
+$$
