@@ -3410,3 +3410,44 @@ x_z & y_z & z_z & 0 \\
 0 & 0 & 0 & 1 \\
 \end{bmatrix}
 $$
+
+# 26.3. 3차원 모델링 행렬
+***3차원 공간의 트랜스폼***을 구성하는 ***크기(S)***, ***회전(R)***, ***이동(T)*** 변환행렬은 다음과 같다.  
+
+$$S = 
+\begin{bmatrix}
+S_x & 0 & 0 & 0 \\
+0 & S_y & 0 & 0 \\
+0 & 0 & S_z & 0 \\
+0 & 0 & 0 & 1 \\
+\end{bmatrix}
+$$
+
+$$R = 
+\begin{bmatrix}
+X_x & Y_x & Z_x & 0 \\
+X_y & Y_y & Z_y & 0 \\
+X_z & Y_z & Z_z & 0 \\
+0 & 0 & 0 & 1 \\
+\end{bmatrix}
+$$
+
+$$T = 
+\begin{bmatrix}
+1 & 0 & 0 & t_x \\
+0 & 1 & 0 & t_y \\
+0 & 0 & 1 & t_z \\
+0 & 0 & 0 & 1 \\
+\end{bmatrix}
+$$
+
+이 세 행렬을 $TRS$ 연산 순서에 따라 곱해 만든 ***모델링 행렬*** $M$은 다음과 같이 계산된다.
+
+$$M = T \cdot R \cdot S = 
+\begin{bmatrix}
+X_xS_x & Y_xS_y & Z_xS_z & t_x \\
+X_yS_x & Y_yS_y & Z_yS_z & t_y \\
+X_zS_x & Y_zS_y & Z_zS_z & t_z \\
+0 & 0 & 0 & 1 \\
+\end{bmatrix}
+$$
