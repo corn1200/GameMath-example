@@ -4115,4 +4115,17 @@ $$\vec{OP'} = \vec{v} + \cos \theta \cdot (\vec{u} - \vec{v}) + \sin \theta \cdo
 
 $$\vec{u'} = \cos \theta \cdot \vec{u} + (1 - \cos \theta)(\vec{u} \cdot \hat{n}) \cdot \hat{n} + \sin \theta \cdot (\hat{n} \times \vec{u})$$
 
-위 공식은 1840년에 프랑스 수학자 로드리게스(Olinde Rodrigues)가 발표했으며, 그의 이름을 인용해 로드리게스 회전 공식(Rodrigues' rotation formula)이라고 한다.
+위 공식은 1840년에 프랑스 수학자 로드리게스(Olinde Rodrigues)가 발표했으며, 그의 이름을 인용해 ***로드리게스 회전 공식(Rodrigues' rotation formula)*** 이라고 한다.
+
+# 33. 삼중곱
+벡터의 외적과 내적을 두 번 연속 사용하는 연산을 ***삼중곱(Triple product)*** 이라고 한다.  
+두 연산이 연속으로 사용되는 삼중곱의 식을 세우려면 세 개의 벡터 $\vec{u}$, $\vec{v}$, $\vec{w}$가 필요하며, 내적과 외적의 순서에 따라 다음과 같은 경우의 수가 발생한다.
+
+1. $\vec{u} \cdot (\vec{v} \cdot \vec{w})$
+2. $\vec{u} \cdot (\vec{v} \times \vec{w})$
+3. $\vec{u} \times (\vec{v} \cdot \vec{w})$
+4. $\vec{u} \times (\vec{v} \times \vec{w})$
+
+1번 연산에서 괄호 안의 벡터 내적의 결괏값은 스칼라가 되므로 해당 삼중곱은 벡터를 세 번 곱했다고 보기 어렵다.    
+3번 연산의 경우 벡터와 스칼라는 외적할 수 없으므로 연산이 불가능하다.   
+이 두 경우는 제외되므로 2번과 4번만이 유효한 삼중곱 연산이 된다.
