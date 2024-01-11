@@ -6130,3 +6130,116 @@ $$Area(T) = \frac{\sin\theta}{2}$$
 
 ###### 그림 13-8 부채꼴에 포함된 삼각형 OAB의 넓이
 ![부채꼴에 포함된 삼각형 OAB의 넓이](/img/)
+
+[그림 13-9](#그림-13-9-삼각형에-포함된-부채꼴의-넓이)와 같이 선분 $\overline{OB}$를 반지름으로 하는 작은 부채꼴 $CS_2$을 만든다.     
+작은 부채꼴 $CS_2$의 영역은 언제나 삼각형 내부에 속하게 된다.   
+선분 $\overline{OB}$의 길이는 $\cos\theta$이므로 이를 반지름으로 하는 부채꼴 $CS_2$의 넓이는 [식 13-10](#식-13-10)에 의해 다음과 같이 계산된다.
+
+$$Area(CS_2) = \frac{\theta}{2} \cdot \cos^2 \theta$$
+
+###### 그림 13-9 삼각형에 포함된 부채꼴의 넓이
+![삼각형에 포함된 부채꼴의 넓이](/img/)
+
+부채꼴에 관련된 세 영역의 넓이 $Area(CS_1)$, $Area(T)$, $Area(CS_2)$를 구하는 공식은 다음과 같은 대소 관계가 성립된다.
+
+$$\frac{\theta}{2} \cdot \cos^2 \theta \leq \frac{\sin \theta}{2} \leq \frac{\theta}{2}$$
+
+여기서 넓이 $Area(CS_1)$의 역수 $\frac{2}{\theta}$를 곱해 부등식을 정리하면 다음과 같다.
+
+$$\cos^2\theta \leq \frac{\sin\theta}{\theta} \leq 1$$
+
+$\theta$를 $h$로 변경한 후 우변의 극한값 $\lim_{h \rightarrow 0}1$과 좌변의 극한값 $\lim_{h \rightarrow 0}\cos^2 h$를 구한다.
+
+$$\lim_{h \rightarrow 0}\cos^2 h \leq \lim_{h \rightarrow 0}\frac{\sin h}{h} \leq \lim_{h \rightarrow 0}1$$
+
+우변의 극한값 $\lim_{h \rightarrow 0}1$은 상수이므로 바로 1임을 확인할 수 있다.
+
+좌변 $\lim_{h \rightarrow 0}\cos^2h$의 $\cos$ 함수는 각이 0도 수렴할 수록 그 값은 1에 수렴한다.     
+따라서 이를 제곱한 극한값 역시 1에 수렴한다.        
+극한의 성질 6으로 정리한 극한의 조임 정리에 의해 좌우의 극한값이 동일한 경우 가운데에 위치한 $\frac{\sin h}{h}$의 극한값 또한 1이 되어 [식 13-9](#식-13-9)가 성립함을 확인할 수 있다.       
+여기에 추가로 알아두면 좋은 함수의 극한값은 다음과 같다.
+
+###### 식 13-11
+
+$$\lim_{h \rightarrow 0}\frac{\cos h - 1}{h} = 0$$
+
+[식 13-11](#식-13-11)은 다음 과정을 거쳐서 유도된다.
+
+$$
+\begin{matrix}
+\lim_{h \rightarrow 0}\frac{\cos h - 1}{h} &=& \lim_{h \rightarrow 0}\frac{(\cos h -1) \cdot (\cos h + 1)}{h \cdot (\cos h + 1)} \\
+&=& \lim_{h \rightarrow 0}\frac{\cos^2 h - 1}{h \cdot (\cos h + 1)} \\
+&=& \lim_{h \rightarrow 0}\frac{-\sin^2 h}{h \cdot (\cos h + 1)} \\
+&=& \lim_{h \rightarrow 0}\sin h \cdot \lim_{h \rightarrow 0}\frac{-\sin h}{h} \cdot \lim_{h \rightarrow 0}\frac{1}{(\cos h + 1)} \\
+&=& 0 \\
+\end{matrix}
+$$
+
+1. 함수의 분자와 분모에 각각 $(\cos h + 1)$을 곱한다.
+2. 분자에 삼각함수 공식 $\cos^2 \theta + \sin^2 \theta = 1$을 적용해 $-\sin^2 h$로 단순하게 만든다.
+3. 극한의 성질 3을 사용해 각 극한을 곱으로 분리한다.
+4. 각 극한값을 순서대로 구하면 0, 1, $\frac{1}{2}$이 되는데 이들을 곱하면 0이 된다.
+
+[식 13-9](#식-13-9)와 [식 13-11](#식-13-11)을 사용해 삼각함수의 도함수를 하나씩 구한다.     
+먼저 $f(x) = \sin x$라 할 때 이의 도함수를 확인한다.    
+
+$$
+\begin{matrix}
+f'(x) &=& \lim_{h \rightarrow 0}\frac{\sin(x + h) - \sin x}{h} \\
+&=& \lim_{h \rightarrow 0}\frac{\cos h \cdot \sin x + \cos x \cdot \sin h - \sin x}{h} \\
+&=& \sin x \cdot \lim_{h \rightarrow 0}\frac{\cos h - 1}{h} + \cos x \cdot \lim_{h \rightarrow 0}\frac{\sin h}{h} \\
+&=& \cos x \\
+\end{matrix}
+$$
+
+1. 삼각함수의 덧셈 정리를 사용해 분리한다.
+2. 극한식을 분리하고 $h$와 관련없는 $\sin x$와 $\cos x$는 극한식 밖으로 빼낸다.
+3. 우변의 좌향 극한식에 [식 13-11](#식-13-11)을 적용하고 우향 극한식에는 [식 13-9](#식-13-9)를 적용하면 $\cos x$만 남는다.
+
+따라서 $\sin$ 함수의 도함수는 $\cos$ 함수가 됨을 알 수 있다.    
+함수 $f(x)$를 $\cos x$라 할 때 도함수를 구한다.
+
+$$
+\begin{matrix}
+f'(x) &=& \lim_{h \rightarrow 0}\frac{\cos(x + h) - \cos(x)}{h} \\
+&=& \lim_{h \rightarrow 0}\frac{\cos x \cdot \cos h - \sin x \cdot \sin h - \cos x}{h} \\
+&=& \cos x \cdot \lim_{h \rightarrow 0}\frac{\cos h - 1}{h} - \sin x \cdot \lim_{h \rightarrow 0}\frac{\sin h}{h} \\
+&=& -\sin x \\
+\end{matrix}
+$$
+
+1. 삼각함수의 덧셈 정리를 사용해 분리한다.
+2. 극한식을 분리하고 $h$와 관련없는 $\sin x$와 $\cos x$는 극한식 밖으로 빼낸다.
+3. 우변의 좌항 극한식에 [식 13-11](#식-13-11)을 적용하면 $\cos x$만 남는다.
+
+이는 앞서 구한 $\sin$ 함수의 도함수 전개와 유사하며 $\cos$ 함수의 도함수는 $-\sin x$가 됨을 알 수 있다.
+
+$\sin$ 함수의 도함수는 $\cos$ 함수고 $\cos$ 함수의 도함수는 $-\sin$ 함수다.     
+따라서 다음과 같은 식이 성립할 것이다.
+
+$$f(x) = \sin x$$
+
+$$f'(x) = \cos x$$
+
+$$f''(x) = -\sin x$$
+
+여기서 두 번 더 미분하면 원함수인 $\sin$ 함수로 돌아오게 된다.
+
+$$f'''(x) = -\cos x$$
+
+$$f^{(4)}(x) = \sin x$$
+
+이렇게 네 번 미분했을 때 원함수로 돌아오는 성질은 $\cos$ 함수도 동일하다.
+
+$$f(x) = \cos x$$
+
+$$f'(x) = -\sin x$$
+
+$$f''(x) = -\cos x$$
+
+$$f'''(x) = \sin x$$
+
+$$f^{(4)}(x) = \cos x$$
+
+따라서 $\sin$ ***함수와*** $\cos$ ***함수는 네 번 미분하면 원함수로 돌아오기 때문에 자연지수함수와 동일한 성질을 가진 무한번 미분 가능한 함수다***.     
+이들의 연관성은 급수를 통해 확인할 수 있다.
