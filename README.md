@@ -6953,3 +6953,150 @@ $$e^{\vec{n}\theta} \cdot q^* = e^0$$
 이를 만족하는 $q^*$의 값은 $e^{-\vec{n}\theta}$이며 이는 같은 축 $\vec{n}$을 중심으로 반대 방향으로 $\theta$ 돌리는 회전을 의미한다.
 
 $$\therefore q^* = e^{-\vec{n}\theta} = e^{\vec{n}(-\theta)}$$
+
+# 50.2. 회전 사원수를 이용한 3차원 공간에서의 회전
+회전 사원수 $q$를 사용해 임의의 회전축 $\vec{n}$에 대해 3차원 공간의 벡터 $\vec{v}$를 각 $\theta$만큼 회전시키는 방법을 확인해보자.
+
+일반적으로 사용하는 3차원 공간의 벡터 $\vec{v}$는 순허수 사원수에 대응되는 개념이다.    
+벡터 $\vec{v}$의 값을 $(x, y, z)$로 표시하고, 회전축 $\vec{n}$의 값을 $(a, b, c)$로 지정한다.       
+회전축은 단위 벡터이기 때문에 $a^2 + b^2 + c^2 = 1$의 조건을 가진다.        
+그리고 회전축 $\vec{n}$으로 각 $\theta$만큼 회전시키는 회전 사원수 $q$는 $(\cos \theta, \sin \theta \cdot \vec{n})$의 값을 가진다.
+
+회전 사원수 $q$를 사용해 벡터를 회전시키는 방법은 회전 사원수를 벡터의 왼쪽에 배치하고 둘을 곱하는 것이다.          
+이때 사원수의 곱셈은 교환법칙이 성립하지 않기 떄문에 곱하는 순서에 항상 신경 써야 한다.
+
+회전 사원수와 순허수 사원수 벡터 $\vec{v}$의 곱셈은 다음과 같이 전개된다.
+
+$$
+\begin{matrix}
+\vec{v^{'}} &=& q \cdot \vec{v} \\
+&=& (\cos \theta, \sin \theta \cdot \vec{n}) \cdot (0, \vec{v}) \\
+&=& (-\sin \theta (\vec{n} \cdot \vec{v}), \cos \theta \vec{v} + \sin \theta (\vec{n} \times \vec{v})) \\
+\end{matrix}
+$$
+
+계산 결과를 살펴보면 회전 사원수와 벡터를 곱한 결과는 순허수 사원수가 아닌 네 요소를 모두 사용하는 일반 사원수가 나온다.        
+따라서 이 곱의 결과는 순허수 사원수와 1:1로 대응했던 3차원 공간의 규격에서 벗어나게 되므로 3차원 공간의 요소로 사용할 수 없게 된다.     
+[그림 14-2](#그림-14-2-회전-사원수를-사용해-벡터를-회전시킨-결과)에 지금까지의 상황을 정리한다.
+
+###### 그림 14-2 회전 사원수를 사용해 벡터를 회전시킨 결과
+![회전 사원수를 사용해 벡터를 회전시킨 결과](/img/)
+
+3차원 공간에서 벡터를 회전시키는 용도로 사원수를 사용하기 위해서는 사원수 곱의 결과가 항상 순허수 사원수가 되는 특별한 수식을 발견해야 한다.        
+
+회전 사원수의 벡터 $\vec{n}$은 회전축의 역할을 수행한다.        
+이는 로드리게스 회전 공식에서 언급되는 축-각 회전에 대응하는 벡터다.     
+3차원 공간에서 임의의 축 $\vec{n}$에 대한 회전을 표현하면 [그림 14-3](#그림-14-3-임의의-회전축-n에-대한-회전의-표현)과 같다.
+
+###### 그림 14-3 임의의 회전축 n에 대한 회전의 표현
+![임의의 회전축 n에 대한 회전의 표현](/img/)
+
+회전시킬 벡터를 $\vec{v}$로 정하고 이를 회전축 $\vec{n}$에 평행한 성분과 수직인 성분으로 나눈다.            
+회전축에 수평인 성분을 $\vec{v_\parallel}$, 수직인 성분을 $\vec{v_\perp}$으로 표시하면 다음 식이 성립된다.
+
+$$\vec{v} = \vec{v_\parallel} + \vec{v_\perp}$$
+
+[그림 14-4](#그림-14-4-회전시킬-벡터-v를-평행-성분과-수직-성분으로-분리한-결과)는 벡터 $\vec{v}$를 수직 성분과 수평 성분으로 분리해 나타낸 그림이다.        
+이를 각 $\theta$만큼 회전 시킨 벡터를 $\vec{v^{'}}$로 가정한다.
+
+###### 그림 14-4 회전시킬 벡터 v를 평행 성분과 수직 성분으로 분리한 결과
+![회전시킬 벡터 v를 평행 성분과 수직 성분으로 분리한 결과](/img/)
+
+이때 원하는 최종 회전의 벡터 $\vec{v^{'}}$는 [그림 14-5](#그림-14-5-3차원-공간에서의-회전의-구현)와 같이 회전축에 수직인 성분만 회전시킨 후, 수평 성분은 그대로 더하면 구할 수 있다.
+
+###### 그림 14-5 3차원 공간에서의 회전의 구현
+![3차원 공간에서의 회전의 구현](/img/)
+
+따라서 3차원 공간에서의 회전은 다음과 같은 식이 될 것이다.
+
+$$\vec{v^{'}} = \vec{v_\parallel} + q \cdot \vec{v_\perp}$$
+
+오일러 공식을 활용해 위 수식을 간단하게 정리한다.       
+이 식에서 회전 사원수 $q$를 자연지수함수로 바꿔 표현하면 다음과 같다.
+
+$$\vec{v^{'}} = \vec{v_\parallel} + e^{\vec{n}\theta} \cdot \vec{v_\perp}$$
+
+우변의 두 번째 항인 회전 사원수와 벡터와의 곱셈은 다음과 같이 간략하게 전개된다.
+
+$$
+\begin{matrix}
+e^{\vec{n}\theta} \cdot \vec{v_\perp} &=& (-\sin \theta (\vec{n} \cdot \vec{v_\perp}), \cos \theta \vec{v_\perp} + \sin \theta (\vec{n} \times \vec{v_\perp})) \\
+&=& (0, \cos \theta \vec{v_\perp} + \sin \theta (\vec{n} \times \vec{v_\perp})) \\
+\end{matrix}
+$$
+
+회전축 $\vec{n}$와 이에 직교하는 벡터 $\vec{v_\perp}$의 내적은 항상 0이다.
+
+이로써 회전축에 수직인 벡터와 회전 사원수의 곱으로 얻어지는 사원수는 항상 실수부 값이 0인 순허수 사원수가 되므로, 이의 결과는 언제나 3차원 공간의 벡터에 대응됨을 확인할 수 있다.
+
+3차원 공간의 회전식을 간략하게 정리하도록 연산 순서를 바꾼다.       
+연산 순서를 변경하면 외적의 성질에 의해 $\sin$ 함수의 부호가 반대로 바뀐다.
+
+$$\vec{v_\perp} \cdot e^{\vec{n} \theta} = (0, \cos \theta \vec{v_\perp} - \sin \theta (\vec{n} \times \vec{v_\perp}))$$
+
+그러고 나서 회전 각에 $-\theta$를 대입하면, 이는 $\sin$ 함수에만 영향을 미치므로 다음과 같이 바뀐다.
+
+$$
+\begin{matrix}
+\vec{v_\perp} \cdot e^{\vec{n}(-\theta)} &=& (0, \cos(-\theta) \vec{v_\perp} - \sin(-\theta)(\vec{n} \times \vec{v_\perp})) \\
+&=& (0, \cos \theta \vec{v_\perp} + \sin \theta (\vec{n} \times \vec{v_\perp})) \\
+\end{matrix}
+$$
+
+두 항의 순서를 바꿔 연산한 결과는 처음 식과 동일하므로 회전축과 직교하는 벡터에 대해서는 다음과 같은 식이 성립한다.
+
+$$e^{\vec{n}\theta} \cdot \vec{v_\perp} = \vec{v_\perp} \cdot e^{\vec{n}(-\theta)}$$
+
+수식에 등장하지 않지만 회전축에 평행한 벡터 $\vec{v_\parallel}$의 회전 사원수 곱이 가지는 성질을 살펴보자.      
+평행인 두 벡터의 외적은 영벡터가 되므로 실수부가 남고 허수부가 단순화된다.
+
+$$e^{\vec{n}\theta} \cdot \vec{v_\parallel} = (-\sin \theta (\vec{n} \cdot \vec{v_\parallel}), \cos \theta \vec{v_\parallel})$$
+
+이때 사원수 곱에서 교환법칙의 성립을 방해하던 외적 부분이 사라졌기 때문에, 평행인 벡터와의 곱은 다음과 같이 항상 교환법칙이 성립한다.
+
+$$e^{\vec{n}\theta} \cdot \vec{v_\parallel} = \vec{v_\parallel} \cdot e^{\vec{n}\theta}$$
+
+식을 좀 더 단순화하기 위해, 회전 사원수를 둘로 쪼개서 나타낸다.     
+각 $\theta$의 회전을 수행하는 회전 사원수는 이를 절반으로 나눈 각 $\frac{\theta}{2}$의 회전 사원수를 두 번 곱한 결과와 동일하다.
+
+$$e^{\vec{n}\theta} = e^{\vec{n}(\frac{\theta}{2})} \cdot e^{\vec{n}(\frac{\theta}{2})}$$
+
+회전 사원수와 그 켤레 사원수와의 곱은 아무런 변화 없는 $0^\circ$ 회전을 만들어내므로, 이들의 곱은 곱셈의 항등원 1에 대응된다.
+
+$$1 = e^{0} = e^{\vec{n}(\frac{\theta}{2})} \cdot e^{\vec{n}(-\frac{\theta}{2})}$$
+
+직교하는 벡터와 평행하는 벡터의 성질을 파악했다면, 이를 활용해 3차원 공간에서의 회전을 전개하면 다음과 같이 정리된다.
+
+$$
+\begin{matrix}
+v' &=& \vec{v_\parallel} + e^{\vec{n}\theta} \cdot \vec{v_\perp} \\
+&=& e^0 \cdot \vec{v_\parallel} + e^{\vec{n}\theta} \cdot \vec{v_\perp} \\
+&=& e^{\vec{n}(\frac{\theta}{2})} \cdot e^{\vec{n}(-\frac{\theta}{2})} \cdot \vec{v_\parallel} + e^{\vec{n}(\frac{\theta}{2})} \cdot e^{\vec{n}(\frac{\theta}{2})} \cdot \vec{v_\perp} \\
+&=& e^{\vec{n}(\frac{\theta}{2})} \cdot \vec{v_\parallel} \cdot e^{\vec{n}(-\frac{\theta}{2})} + e^{\vec{n}(\frac{\theta}{2})} \cdot \vec{v_\perp} \cdot e^{\vec{n}(-\frac{\theta}{2})} \\
+&=& e^{\vec{n}(\frac{\theta}{2})} \cdot (\vec{v_\parallel} + \vec{v_\perp}) \cdot e^{\vec{n}(-\frac{\theta}{2})} \\
+&=& e^{\vec{n}(\frac{\theta}{2})} \cdot \vec{v} \cdot e^{\vec{n}(-\frac{\theta}{2})} \\
+\end{matrix}
+$$
+
+1. 평행한 벡터 $\vec{v_\parallel}$의 계수 1을 지수함수로 바꿔 표현한다.
+2. 평행한 벡터의 계수는 두 개의 상반되는 회전의 곱으로 표현하고, 직교하는 벡터의 계수에 적용하는 회전은 절반 회전의 곱으로 표현한다.
+3. 평행한 벡터와의 곱은 교환법칙이 성립하고, 직교하는 벡터와의 곱은 연산 순서를 바꿨을 때 각의 부호가 반대로 바뀐다.
+4. 사원수는 덧셈의 분배법칙이 성립하므로 묶을 수 있다.
+5. 평행한 벡터와 직교하는 벡터의 합은 원 벡터 $\vec{v}$가 된다.
+
+간략해진 최종 식에서 자연지수함수를 다시 사원수의 형태로 바꾼다.        
+각 $\theta$가 아닌 이의 절반값 $\frac{\theta}{2}$만큼 돌리는 회전 사원수를 $q$로 표현한다.      
+반대 방향으로 돌리는 사원수는 켤레 사원수 $q^*$가 된다.
+
+$$e^{\vec{n}(\frac{\theta}{2})} = q$$
+
+3차원 공간의 회전을 보장하는 사원수의 회전식은 [식 14-1](#식-14-1)과 같이 최종 정리된다.
+
+###### 식 14-1
+
+$$
+\begin{matrix}
+v' &=& e^{\vec{n}(\frac{\theta}{2})} \cdot \vec{v} \cdot e^{\vec{n}(-\frac{\theta}{2})} \\
+&=& q \cdot v \cdot q^* \\
+\end{matrix}
+$$
