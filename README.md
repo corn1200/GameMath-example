@@ -6957,13 +6957,13 @@ $$\therefore q^* = e^{-\vec{n}\theta} = e^{\vec{n}(-\theta)}$$
 # 50.2. 회전 사원수를 이용한 3차원 공간에서의 회전
 회전 사원수 $q$를 사용해 임의의 회전축 $\vec{n}$에 대해 3차원 공간의 벡터 $\vec{v}$를 각 $\theta$만큼 회전시키는 방법을 확인해보자.
 
-일반적으로 사용하는 3차원 공간의 벡터 $\vec{v}$는 순허수 사원수에 대응되는 개념이다.    
+일반적으로 사용하는 ***3차원 공간의 벡터*** $\vec{v}$는 ***순허수 사원수에 대응되는 개념***이다.    
 벡터 $\vec{v}$의 값을 $(x, y, z)$로 표시하고, 회전축 $\vec{n}$의 값을 $(a, b, c)$로 지정한다.       
 회전축은 단위 벡터이기 때문에 $a^2 + b^2 + c^2 = 1$의 조건을 가진다.        
 그리고 회전축 $\vec{n}$으로 각 $\theta$만큼 회전시키는 회전 사원수 $q$는 $(\cos \theta, \sin \theta \cdot \vec{n})$의 값을 가진다.
 
 회전 사원수 $q$를 사용해 벡터를 회전시키는 방법은 회전 사원수를 벡터의 왼쪽에 배치하고 둘을 곱하는 것이다.          
-이때 사원수의 곱셈은 교환법칙이 성립하지 않기 떄문에 곱하는 순서에 항상 신경 써야 한다.
+이때 ***사원수의 곱셈은 교환법칙이 성립하지 않기 떄문에 곱하는 순서에 항상 신경 써야 한다***.
 
 회전 사원수와 순허수 사원수 벡터 $\vec{v}$의 곱셈은 다음과 같이 전개된다.
 
@@ -6975,14 +6975,14 @@ $$
 \end{matrix}
 $$
 
-계산 결과를 살펴보면 회전 사원수와 벡터를 곱한 결과는 순허수 사원수가 아닌 네 요소를 모두 사용하는 일반 사원수가 나온다.        
+계산 결과를 살펴보면 ***회전 사원수와 벡터를 곱한 결과는 순허수 사원수가 아닌 네 요소를 모두 사용하는 일반 사원수가 나온다***.        
 따라서 이 곱의 결과는 순허수 사원수와 1:1로 대응했던 3차원 공간의 규격에서 벗어나게 되므로 3차원 공간의 요소로 사용할 수 없게 된다.     
 [그림 14-2](#그림-14-2-회전-사원수를-사용해-벡터를-회전시킨-결과)에 지금까지의 상황을 정리한다.
 
 ###### 그림 14-2 회전 사원수를 사용해 벡터를 회전시킨 결과
 ![회전 사원수를 사용해 벡터를 회전시킨 결과](/img/)
 
-3차원 공간에서 벡터를 회전시키는 용도로 사원수를 사용하기 위해서는 사원수 곱의 결과가 항상 순허수 사원수가 되는 특별한 수식을 발견해야 한다.        
+3차원 공간에서 벡터를 회전시키는 용도로 사원수를 사용하기 위해서는 ***사원수 곱의 결과가 항상 순허수 사원수가 되는 특별한 수식***을 발견해야 한다.        
 
 회전 사원수의 벡터 $\vec{n}$은 회전축의 역할을 수행한다.        
 이는 로드리게스 회전 공식에서 언급되는 축-각 회전에 대응하는 벡터다.     
@@ -7011,7 +7011,7 @@ $$\vec{v} = \vec{v_\parallel} + \vec{v_\perp}$$
 
 $$\vec{v^{'}} = \vec{v_\parallel} + q \cdot \vec{v_\perp}$$
 
-오일러 공식을 활용해 위 수식을 간단하게 정리한다.       
+***오일러 공식***을 활용해 위 수식을 간단하게 정리한다.       
 이 식에서 회전 사원수 $q$를 자연지수함수로 바꿔 표현하면 다음과 같다.
 
 $$\vec{v^{'}} = \vec{v_\parallel} + e^{\vec{n}\theta} \cdot \vec{v_\perp}$$
@@ -7030,7 +7030,7 @@ $$
 이로써 회전축에 수직인 벡터와 회전 사원수의 곱으로 얻어지는 사원수는 항상 실수부 값이 0인 순허수 사원수가 되므로, 이의 결과는 언제나 3차원 공간의 벡터에 대응됨을 확인할 수 있다.
 
 3차원 공간의 회전식을 간략하게 정리하도록 연산 순서를 바꾼다.       
-연산 순서를 변경하면 외적의 성질에 의해 $\sin$ 함수의 부호가 반대로 바뀐다.
+연산 순서를 변경하면 ***외적의 성질***에 의해 $\sin$ ***함수의 부호가 반대로 바뀐다***.
 
 $$\vec{v_\perp} \cdot e^{\vec{n} \theta} = (0, \cos \theta \vec{v_\perp} - \sin \theta (\vec{n} \times \vec{v_\perp}))$$
 
@@ -7052,7 +7052,7 @@ $$e^{\vec{n}\theta} \cdot \vec{v_\perp} = \vec{v_\perp} \cdot e^{\vec{n}(-\theta
 
 $$e^{\vec{n}\theta} \cdot \vec{v_\parallel} = (-\sin \theta (\vec{n} \cdot \vec{v_\parallel}), \cos \theta \vec{v_\parallel})$$
 
-이때 사원수 곱에서 교환법칙의 성립을 방해하던 외적 부분이 사라졌기 때문에, 평행인 벡터와의 곱은 다음과 같이 항상 교환법칙이 성립한다.
+이때 사원수 곱에서 ***교환법칙의 성립을 방해하던 외적 부분***이 사라졌기 때문에, 평행인 벡터와의 곱은 다음과 같이 ***항상 교환법칙이 성립***한다.
 
 $$e^{\vec{n}\theta} \cdot \vec{v_\parallel} = \vec{v_\parallel} \cdot e^{\vec{n}\theta}$$
 
@@ -7100,3 +7100,120 @@ v' &=& e^{\vec{n}(\frac{\theta}{2})} \cdot \vec{v} \cdot e^{\vec{n}(-\frac{\thet
 &=& q \cdot v \cdot q^* \\
 \end{matrix}
 $$
+
+회전 사원수에 사용한 각은 $\frac{\theta}{2}$이므로 여기에 사용한 사원수 $q$의 값은 다음과 같다.
+
+$$q = (\cos \frac{\theta}{2}, \sin \frac{\theta}{2}\vec{n})$$
+
+3차원 공간의 회전을 보장하는 사원수의 회전식이 [식 14-1](#식-14-1)로 깔끔하게 정리된다.     
+절반의 각만 회전시키는 단위 사원수를 임의의 벡터와 곱했을 때 그 결과는 항상 실수부가 0인 순허수 사원수가 나오는지 확인해보자.       
+회전 사원수 $q$의 실수부와 허수부를 각각 $w$와 $\vec{r}$로 표시해 식을 간단하게 전개한다.
+
+$$q = (\cos \frac{\theta}{2}, \sin \frac{\theta}{2}\vec{n}) = (w, \vec{r})$$
+
+[식 14-1](#식-14-1)을 내적과 외적의 형태로 바꾸면 다음과 같이 전개된다.
+
+$$
+\begin{matrix}
+v' &=& q \cdot v \cdot q* \\
+&=& (w, \vec{r}) \cdot (0, \vec{v}) \cdot (w, -\vec{r}) \\
+&=& (-(\vec{r} \cdot \vec{v}), w\vec{v} + \vec{r} \times \vec{v}) \cdot (w, -\vec{r}) \\
+&=& (-(\vec{r} \cdot \vec{v})w - (w\vec{v} + \vec{r} \times \vec{v}) \cdot (-\vec{r}), -(\vec{r} \cdot \vec{v}) \cdot -\vec{r} + w(w\vec{v} + \vec{r} \times \vec{v}) + (w\vec{v} + \vec{r} \times \vec{v}) \times -\vec{r}) \\
+\end{matrix}
+$$
+
+이 결과 중에서 실수부와 허수부를 다음과 같이 각각 따로 전개한다.        
+우선 첫 항인 실수부를 전개하면 다음과 같다.
+
+$$
+\begin{matrix}
+-(\vec{r} \cdot \vec{v})w - (w\vec{v} + \vec{r} \times \vec{v}) \cdot (-\vec{r}) &=& -(\vec{r} \cdot \vec{v})w + w(\vec{v} \cdot \vec{r}) + (\vec{r} \times \vec{v}) \cdot \vec{r} \\
+&=& -(\vec{r} \cdot \vec{v})w + w(\vec{v} \cdot \vec{r}) \\
+&=& -(\vec{r} \cdot \vec{v})w + (\vec{r} \cdot \vec{v})w \\
+&=& 0
+\end{matrix}
+$$
+
+1. $(\vec{r} \times \vec{v}) \cdot \vec{r}$ 항의 결과는 외적으로 직교하는 벡터를 생성한 후에 이를 내적하므로 언제나 0이 나온다.
+2. 내적은 교환법칙이 성립하므로 스칼라와 벡터의 순서를 동일하게 맞춰준다.
+
+[식 14-1](#식-14-1)을 내적과 외적으로 전개했을 때 실수부 값은 언제나 0이 나온다.        
+이는 [그림 14-6](#14-6-실수부가-0인-3차원-공간에서의-회전을-보장하는-사원수의-곱셈-공식)과 같이 절반의 각과 그 켤레를 사용해 회전시킨 결과는 항상 3차원 공간의 벡터에 대응된다고 할 수 있다.
+
+###### 14-6 실수부가 0인 3차원 공간에서의 회전을 보장하는 사원수의 곱셈 공식
+![실수부가 0인 3차원 공간에서의 회전을 보장하는 사원수의 곱셈 공식](/img/)
+
+허수부의 결과는 어떻게 정리되는지 확인해보자.       
+허수부는 사원수를 사용해 회전된 벡터 $\vec{v'}$가 나온다.       
+허수부의 수식을 전개하면 다음과 같다.
+
+$$
+\begin{matrix}
+\vec{v'} &=& -(\vec{r} \cdot \vec{v}) \cdot -\vec{r} + w(w\vec{v} + \vec{r} \times \vec{v}) + (w\vec{v} + \vec{r} \times \vec{v}) \times -\vec{r} \\
+&=& (\vec{r} \cdot \vec{v}) \cdot \vec{r} + w^2\vec{v} + w(\vec{r} \times \vec{v}) - w(\vec{v} \times \vec{r}) - (\vec{r} \times \vec{v}) \times \vec{r} \\
+&=& (\vec{r} \cdot \vec{v}) \cdot \vec{r} + w^2\vec{v} + 2w(\vec{r} \times \vec{v}) - (\vec{r} \times \vec{v}) \times \vec{r} \\
+&=& (\vec{r} \cdot \vec{v}) \cdot \vec{r} + (1 - \vec{r} \cdot \vec{r}) \cdot \vec{v} + 2w(\vec{r} \times \vec{v}) - (\vec{r} \times \vec{v}) - (\vec{r} \times \vec{v}) \times \vec{r} \\
+&=& \vec{v} + (\vec{r} \cdot \vec{v}) \cdot \vec{r} - (\vec{r} \cdot \vec{r}) \cdot \vec{v} + 2w(\vec{r} \times \vec{v}) - (\vec{r} \times \vec{v}) \times \vec{r} \\
+&=& \vec{v} + \vec{r} \times (\vec{r} \times \vec{v}) + 2w(\vec{r} \times \vec{v}) - (\vec{r} \times \vec{v}) \times \vec{r} \\
+&=& \vec{v} + 2w(\vec{r} \times \vec{v}) + 2(\vec{r} \times (\vec{r} \times \vec{v})) \\
+\end{matrix}
+$$
+
+1. 외적은 순서를 바꾸면 반대 부호가 나오므로 $w(\vec{r} \times \vec{v}) - w(\vec{v} \times \vec{r})$는 $2w(\vec{r} \times \vec{v})$가 된다.
+2. 회전 사원수는 단위 사원수이므로 $w^2 + |\vec{r}|^2 = 1$이 성립하는데, 이를 내적으로 바꾸면 $w^2 = 1 - \vec{r} \cdot \vec{r}$이 성립한다.
+3. 벡터 삼중곱 공식을 사용해 $(\vec{r} \cdot \vec{v}) \cdot \vec{r} - (\vec{r} \cdot \vec{r}) \cdot \vec{v}$를 벡터 삼중곱 $\vec{r} \times (\vec{r} \times \vec{v})$로 치환한다.
+4. 마지막 항에 위치한 외적식의 순서를 뒤집어 벡터 삼중곱으로 변환한 외적식과 함께 묶는다.
+
+최종 값 $\vec{v} + 2w(\vec{r} \times \vec{v}) + 2(\vec{r} \times (\vec{r} \times \vec{v}))$에서 $2(\vec{r} \times \vec{v})$를 벡터 $\vec{t}$로 치환하면 위 식은 [식 14-2](#식-14-2)와 같이 단순하게 정리된다.
+
+###### 식 14-2
+
+$$\vec{v'} = \vec{v} + w\vec{t} + \vec{r} \times \vec{t}$$
+
+이로써 사원수를 사용해 3차원 공간의 벡터 $\vec{v}$를 임의의 회전축 $\vec{n}$을 중심으로 각 $\theta$만큼 회전시키는 최종 수식이 완성된다.
+
+[식 14-2](#식-14-2)를 $\frac{\theta}{2}$가 아닌 각 $\theta$를 중심으로 전개하면 [식 9-2](#식-9-2)의 로드리게스 회전 공식이 유도된다.
+
+$$
+\begin{matrix}
+\vec{v'} &=& \vec{v} + 2w(\vec{r} \times \vec{v}) + 2(\vec{r} \times (\vec{r} \times \vec{v})) \\
+&=& \vec{v} + 2 \cos \frac{\theta}{2}(\sin\frac{\theta}{2}\vec{n}\times \vec{v}) + 2(\sin\frac{\theta}{2}\vec{n} \times (\sin \frac{\theta}{2} \vec{n} \times \vec{v})) \\
+&=& \vec{v} + 2 \cos \frac{\theta}{2}\sin\frac{\theta}{2}(\vec{n} \times \vec{v}) + 2\sin^2 \frac{\theta}{2}(\vec{n} \times (\vec{n} \times \vec{v})) \\
+&=& \vec{v} + \sin(\frac{\theta}{2} + \frac{\theta}{2})(\vec{n} \times \vec{v}) + (1 - \cos(\frac{\theta}{2} + \frac{\theta}{2})) (\vec{n} \times (\vec{n} \times \vec{v})) \\
+&=& \vec{v} + \sin \theta(\vec{n} \times \vec{v}) + (1 - \cos \theta)((\vec{n} \cdot \vec{v})\vec{n} - (\vec{n} \cdot \vec{n})\vec{v}) \\
+&=& \vec{v} - (1 - \cos \theta)(\vec{n} \cdot \vec{n})\vec{v} + \sin \theta(\vec{n} \times \vec{v}) + (1 - \cos \theta)(\vec{n} \cdot \vec{v})\vec{n} \\
+&=& \cos \theta \vec{v} + (1 - \cos \theta)(\vec{n} \cdot \vec{v})\vec{n} + \sin \theta(\vec{n} \times \vec{v}) \\
+\end{matrix}
+$$
+
+1. [식 14-2](#식-14-2)를 삼각함수와 회전축으로 바꿔 표현한다.
+2. 각 요소에 사용한 모든 삼각함수 값을 계수로 빼서 정리한다.
+3. 삼각함수의 배각 공식 $\sin 2\theta = 2\sin\theta \cos \theta$와 $\cos 2 \theta = 1- 2\sin^2\theta$를 사용해 $\frac{\theta}{2}$의 삼각함수를 $\theta$의 삼각함수로 변경한다.
+4. 벡터 삼중곱을 내적으로 구성된 수식으로 변경한다.
+
+이로써 회전 사원수의 벡터부에서 설정한 벡터 $\vec{n}$은 축-각 회전에서 회전축의 기능을 수행한다는 사실을 확인할 수 있다.        
+그리고 각 $\theta$를 기준으로 전개했을 떄보다 각 $\frac{\theta}{2}$를 기준으로 전개했을 때 식이 더 간편해진다는 것을 알 수 있다.
+
+같은 회전축에 두 개의 다른 각을 연속해서 회전시키는 경우를 알아보자.        
+첫 번째 각의 크기를 $2\alpha$, 두 번째 각의 크기를 $2\beta$로 지정하고 회전할 벡터를 $\vec{v}$, 첫 번째 회전을 적용한 벡터를 $\vec{v'}$, 두 번째 회전을 적용한 벡터를 $\vec{v''}$로 표기하면 두 회전 변환을 적용한 식은 다음과 같다.
+
+$$\vec{v'} = q_\alpha \cdot \vec{v} \cdot q^*_\alpha$$
+
+$$\vec{v''} = q_\beta \cdot \vec{v'} \cdot q^*_\beta$$
+
+벡터 $\vec{v'}$를 $q_\alpha \cdot \vec{v} \cdot q^*_\alpha$로 치환하면 $\vec{v''}$를 계산하는 식은 다음과 같이 전개된다.
+
+$$
+\begin{matrix}
+\vec{v''} &=& q_\beta \cdot (q_\alpha \cdot \vec{v} \cdot q_\alpha^*) \cdot q_\beta^* \\
+&=& (q_\beta \cdot q_\alpha) \cdot \vec{v} \cdot (q_\alpha^* \cdot q_\beta^*) \\
+&=& (q_\beta \cdot q_\alpha) \cdot \vec{v} \cdot (q_\beta \cdot q_\alpha)^* \\
+&=& q_{(\alpha + \beta)} \cdot \vec{v} \cdot q^*_{(\alpha + \beta)} \\
+\end{matrix}
+$$
+
+1. 사원수의 곱셈은 결합법칙을 만족하므로 벡터를 가운데 두고 양 옆으로 묶을 수 있다.
+2. 켤레 사원수로 묶으면 두 사원수의 순서는 뒤집힌다.
+3. 두 회전 사원수의 곱은 두 각을 더한 회전 사원수와 동일하다.
+
+이로써 ***3차원 공간의 회전을 위해 절반의 각과 켤레 사원수를 사용하더라도 서로 다른 두 회전 사원수의 곱은 두 각을 합한 회전 사원수와 형태가 동일하다***는 점을 확인할 수 있다.        
