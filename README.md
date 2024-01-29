@@ -7248,3 +7248,63 @@ $$q_{yaw} \cdot q_{pitch} \cdot q_{roll} = \cos \frac{\theta_{roll}}{2} \cos \fr
 (\cos \frac{\theta_{roll}}{2} \sin \frac{\theta_{pitch}}{2} \cos \frac{\theta_{yaw}}{2} + \sin \frac{\theta_{roll}}{2} \cos \frac{\theta_{pitch}}{2} \sin \frac{\theta_{yaw}}{2})i + \\
 (\cos \frac{\theta_{roll}}{2} \cos \frac{\theta_{pitch}}{2} \sin \frac{\theta_{yaw}}{2} - \sin \frac{\theta_{roll}}{2} \sin \frac{\theta_{pitch}}{2} \cos \frac{\theta_{yaw}}{2})j + \\
 (\sin \frac{\theta_{roll}}{2} \cos \frac{\theta_{pitch}}{2} \cos \frac{\theta_{yaw}}{2} - \cos \frac{\theta_{roll}}{2} \sin \frac{\theta_{pitch}}{2} \sin \frac{\theta_{yaw}}{2})k$$
+
+# 51.2. 사원수에서 오일러 각으로의 변환
+거꾸로 사원수로부터 오일러 각의 값을 변환하는 방법에 대해 알아보자.     
+[식 14-3](#식-14-3)에서 실수부를 $w$, 각 허수부 값을 $x, y, z$로 치환한 후 $2(wz + xy)$를 계산한 결과를 살펴본다.       
+요, 롤 피치의 절반각을 $y, r, p$로 표기하고, 이들의 $\sin$ 값을 $sy, sr, sp$로 지정하고 $\cos$ 값을 $cr, cp, cy$로 지정해 식을 전개하면 다음과 같다.
+
+$$
+\begin{matrix}
+w &=& cr \cdot cp \cdot cy + sr \cdot sp \cdot sy \\
+z &=& sr \cdot cp \cdot cy - cr \cdot sp \cdot sy \\
+wz &=& cy^2 \cdot cr \cdot cp^2 \cdot sr - cy \cdot ct^2 \cdot cp \cdot sy \cdot sp + cy \cdot cp \cdot sy \cdot sr^2 \cdot sp - cr \cdot sy^2 \cdot sr \cdot sp^2 \\
+x &=& sy \cdot sr \cdot cp + sp \cdot cy \cdot cr \\
+y &=& sy \cdot cp \cdot cr - sp \cdot sr \cdot cy \\
+xy &=& cr \cdot cp^2 \cdot sy^2 \cdot sr - cy \cdot cp \cdot sy \cdot sr^2 \cdot sp + cy \cdot cr^2 \cdot cp \cdot sy \cdot sp - cy^2 \cdot cr \cdot sr \cdot sp^2 \\
+\end{matrix}
+$$
+
+사원수로부터 오일러 각을 구하려면 사원수를 잘 조합해 단일 각에 대한 삼각함수가 나오도록 식을 설정해야 한다.     
+롤 회전에 대한 삼각함수를 만들어주는 $wz + xy$의 값을 계산한다.
+
+$$
+\begin{matrix}
+wz + xy &=& cr \cdot cp^2 \cdot sr - (cy \cdot cp \cdot sy \cdot sp) + cy \cdot cp \cdot sy \cdot sp - (cr \cdot sr \cdot sp^2) \\
+&=& cr \cdot sr(cp^2 - sp^2) \\
+&=& \frac{\sin(2r)}{2} \cdot \cos (2p) \\
+\end{matrix}
+$$
+
+삼각함수의 배각 공식을 사용해 두 배의 각으로 변환한다.
+
+$2(wz + xy)$의 값은 $\sin\theta_{roll} \cdot \cos \theta_{pitch}$가 된다.       
+같은 방식으로 $1 - 2(z^2 + x^2)$를 계산하면 $\cos \theta_{roll} \cdot \cos \theta_{pitch}$가 된다.      
+그렇다면 $\sin\theta_{roll} \cdot \cos\theta_{pitch}$ 값을 $\cos\theta_{roll} \cdot \cos \theta_{pitch}$로 나누면 다음과 같이 롤 회전의 $\tan$ 값이 나온다.
+
+$$\frac{\sin\theta_{roll} \cdot \cos\theta_{pitch}}{\cos\theta_{roll} \cdot \cos\theta_{pitch}} = \tan\theta_{roll} = \frac{2(wz + xy)}{(1 - 2(z^2 + x^2))}$$
+
+이제 롤 회전의 값은 $\arctan$ 함수를 사용해 구할 수 있다.
+
+$$\theta_{roll} = atan2(2(wz + xy), 1 - 2(z^2 + x^2))$$
+
+피치 회전에 대한 삼각함수를 만들어주는 $wx - yz$ 값은 다음과 같이 전개된다.
+
+$$
+\begin{matrix}
+wx - yz &=& \sin\frac{\theta_{pitch}}{2} \cdot \cos\frac{\theta_{pitch}}{2} \\
+&=& \frac{1}{2}\sin\theta_{pitch} \\
+\end{matrix}
+$$
+
+$\sin$ 함수의 배각 공식을 사용해 간략화 한다.
+
+따라서 피치 회전각은 $\arcsin$ 함수를 사용해 구할 수 있다.
+
+$$\theta_{pitch} = asin(2(wx - yz))$$
+
+이때 주의할 점은 $\arcsin$ 함수의 정의역은 $|-1, 1|$ 범위로 제한되어 있으므로 $wx - yz$ 값이 $|-0.5, 0.5|$ 범위를 벗어나지 않는지 확인하고 벗어나는 경우에는 범위 내 가장 가까운 값으로 설정해야 한다.
+
+요 회전은 롤 회전과 유사한 방식으로 요 회전의 $\tan$ 함수 값을 구한 후 $\arctan$ 함수를 사용한다.
+
+$$\theta_{yaw} = atan2(2(wy + xz), 1 - 2(x^2 + y^2))$$
