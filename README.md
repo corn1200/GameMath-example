@@ -1961,6 +1961,81 @@ b & d \\
 $$
 
 # 11.2. 행렬의 곱셈
+### 선요약
+
+> 행렬의 곱셈: 앞에 위치한 행렬의 행벡터와 뒤에 위치한 행렬의 열벡터를 각각 곱하는 방식으로 진행      
+> 
+> $$
+\begin{bmatrix}
+a & b \\
+c & d \\
+\end{bmatrix} \cdot
+\begin{bmatrix}
+e & f \\
+g & h \\
+\end{bmatrix} =
+\begin{bmatrix}
+ae + bg & af + bh \\
+ce + dg & cf + dh \\
+\end{bmatrix}$$
+> 
+> 행렬 곱셈의 연산 법칙 성립 여부:
+> 
+> |법칙|성립|
+> |---|---|
+> |교환법칙|X|
+> |결합법칙|O|
+> 
+> 행렬 곱을 전치한 결과는 순서를 바꾼 후 각각 전치해 곱한 결과와 동일하다
+> 
+> $$(A \cdot B)^T = 
+\begin{bmatrix}
+ae + bg & af + bh \\
+ce + dg & cf + dh \\
+\end{bmatrix}^T = 
+\begin{bmatrix}
+ae + bg & ce + dg \\
+af + bh & cf + dh \\
+\end{bmatrix}$$
+> 
+> $$B^T \cdot A^T = 
+\begin{bmatrix}
+e & g \\
+f & h \\
+\end{bmatrix} \cdot
+\begin{bmatrix}
+a & c \\
+b & d \\
+\end{bmatrix} =
+\begin{bmatrix}
+ea + gb & ec + gd \\
+fa + hb & fc + hd \\
+\end{bmatrix}$$
+> 
+> $$\therefore (A \cdot B)^T = B^T \cdot A^T$$
+> 
+> $a, b, c, d$ 네 개의 원소로 구성된 $2 \times 2$ 정방행렬과 2차원 벡터 $(x, y)$를 열벡터로 설정한 두 행렬의 곱은 다음과 같이 전개된다        
+> 행렬 곱의 결과는 2차원 벡터 공간의 선형 변환 $f(x, y) = (ax + by, cx + dy)$와 동일하다      
+> 따라서 $2 \times 2$ 정방행렬 $A$는 2차원 공간의 선형 변환에 대응되는 함수를 의미하고, 이 수식은 $f(x, y) = (ax + by, cx + dy)$ 2차원 벡터에 선형 변환을 적용해 새로운 벡터를 생성하는 작업으로 해석할 수 있다       
+> 벡터에 선형 변환을 적용하기 위한 연산 순서는 오른쪽에서 왼쪽 방향으로 이뤄진다
+> 
+> $$
+\begin{bmatrix}
+a & b \\
+c & d \\
+\end{bmatrix} \cdot 
+\begin{bmatrix}
+x \\
+y \\
+\end{bmatrix} = 
+\begin{bmatrix}
+ax + by \\
+cx + dy \\
+\end{bmatrix}$$
+> 
+
+* * *
+
 ***행렬의 곱셈은 앞에 위치한 행렬의 행벡터와 뒤에 위치한 행렬의 열벡터를 각각 곱하는 방식으로 진행된다***.    
 예를 들어 $2 \times 2$ 행렬의 곱셈은 [그림 4-8](#그림-4-8-행렬의-곱셈)에서의 화살표 방향으로 전개된다.
 
