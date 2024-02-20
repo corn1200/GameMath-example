@@ -2605,6 +2605,45 @@ a & 0 \\
 $$
 
 # 12.2. 회전 변환행렬
+### 선요약
+
+> - 회전 변환행렬(Rotation transformation matrix): 주어진 각 $\theta$로 벡터 공간을 회전시키는 행렬
+> - 표준기저벡터 $e_1$을 $90^\circ$ 회전한 벡터: $(0, 1)$
+> - 표준기저벡터 $e_2$를 $90^\circ$ 회전한 벡터: $(-1, 0)$
+> 
+> $90^\circ$ 회전 변환을 수행하는 행렬:
+> 
+> $$R_{90^\circ} = R_\frac{\pi}{2} = 
+\begin{bmatrix}
+0 & -1 \\
+1 & 0 \\
+\end{bmatrix}$$
+> 
+> - 표준기저벡터 $e_1$을 $-90^\circ$ 회전한 벡터: $(0, -1)$
+> - 표준기저벡터 $e_2$을 $-90^\circ$ 회전한 벡터: $(1, 0)$
+> 
+> $-90^\circ$ 회전 변환을 수행하는 행렬:
+> 
+> $$R_{90^\circ} = R_{-\frac{\pi}{2}} = 
+\begin{bmatrix}
+0 & 1 \\
+-1 & 0 \\
+\end{bmatrix}$$
+> 
+> - 표준기저벡터 $e_1$을 $\theta$만큼 회전한 벡터: $(\cos \theta, \sin \theta)$
+> - 표준기저벡터 $e_2$를 $\theta$만큼 회전한 벡터: $(-\sin \theta, \cos \theta)$
+> 
+> 각 $\theta$에 대한 회전 변환행렬:
+> 
+> $$R_\theta =
+\begin{bmatrix}
+\cos \theta & -\sin \theta \\
+\sin \theta & \cos \theta \\
+\end{bmatrix}$$
+>
+
+* * *
+
 ***회전 변환행렬(Rotation transformation matrix)*** 은 주어진 각 $\theta$로 벡터 공간을 회전시킨다.    
 $90^\circ$ 회전은 양의 방향(+)에 해당하는 회전과 음의 방향(-) 두 가지가 있는데, 반시계 방향으로 회전하는 양의 방향 $90^\circ$ 회전은 [그림 4-14](#그림-4-14-반시계-방향으로-90도-회전-변환한-결과)와 같이 두 표준기저벡터가 서로 바뀐 형태를 가진다.
 
