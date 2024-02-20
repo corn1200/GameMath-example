@@ -2774,6 +2774,25 @@ $$S =
 \end{bmatrix}$$
 
 # 12.4. 삼각함수의 덧셈 정리
+### 선요약
+
+> 삼각함수를 응용할 때 유용하게 사용되는 삼각함수의 덧셈:
+> - $\cos(\alpha + \beta) = \cos \alpha \cos \beta - \sin \alpha \sin \beta$
+> - $\sin(\alpha + \beta) = \sin \alpha \cos \beta + \cos \alpha \sin \beta$
+> 
+> 회전행렬의 원리를 사용해 덧셈 정리를 유도할 수 있다     
+> 회전 변환에 사용하는 두 각 $\alpha$와 $\beta$가 있을 때, 이 둘을 합한 $\alpha + \beta$ 만큼 회전한 변환은 두 각에 대한 회전 변환을 순서대로 적용한 결과와 동일하다      
+> 각 $\alpha$에 대한 회전 변환행렬과 각 $\beta$에 대한 회전 변환행렬을 행렬 곱하면 삼각함수의 덧셈 정리를 얻을 수 있다
+> 
+> 삼각함수의 배각 공식: 삼각함수의 덧셈 정리를 응용한 삼각함수의 배각 공식은 각 $\beta$ 대신 $\alpha$를 대입해 얻을 수 있다
+> - $\cos 2 \alpha = \cos(\alpha + \alpha)$       
+> $\qquad = \cos^2\alpha - \sin^2\alpha$      
+> $\qquad = 1 - 2\sin^2\alpha$
+> - $\sin 2 \alpha = \sin(\alpha + \alpha)$     
+> $\qquad = 2 \sin \alpha \cos \alpha$
+
+* * *
+
 삼각함수를 응용할 때 유용하게 사용되는 공식에는 삼각함수의 덧셈 정리가 있다.    
 $\cos$ 함수와 $\sin$ 함수의 덧셈 정리는 다음과 같다.
 
