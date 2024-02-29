@@ -1517,6 +1517,71 @@ $$\vec{u} \cdot \vec{v} = \cos \theta$$
 ![회전행렬을 구성하는 항상 직교하는 두 기저벡터](/img/)
 
 # 17.3. 행렬의 곱셈을 내적으로 표현하기
+### 선요약
+
+> 행렬과 벡터의 곱셈은 행렬을 구성하는 두 개의 행벡터 $(a, b), (c, d)$와 벡터를 구성하는 열벡터 $(x, y)$의 내적으로 표현할 수 있다
+> 
+> $$
+\begin{bmatrix}
+a & b \\
+c & d \\
+\end{bmatrix}
+\begin{bmatrix}
+x \\
+y \\
+\end{bmatrix} =
+\begin{bmatrix}
+ax + by \\
+cx + dy \\
+\end{bmatrix} =
+\begin{bmatrix}
+(a, b) \cdot (x, y) \\
+(c, d) \cdot (x, y) \\
+\end{bmatrix}$$
+> 
+> 행렬의 곱셈 또한 벡터의 내적으로 바꿔 표현할 수 있다
+> 
+> $$
+\begin{bmatrix}
+a & b \\
+c & d \\
+\end{bmatrix}
+\begin{bmatrix}
+e & f \\
+g & h \\
+\end{bmatrix} =
+\begin{bmatrix}
+ae + bg & af + bh \\
+ce + dg & cf + dh \\
+\end{bmatrix} =
+\begin{bmatrix}
+(a, b) \cdot (e, g) & (a, b) \cdot (f, h) \\
+(c, d) \cdot (e, g) & (c, d) \cdot (f, h) \\
+\end{bmatrix}$$
+> 
+> - 직교행렬(Orthogonal matrix): 정방행렬을 구성하는 모든 행벡터와 열벡터의 크기가 1이고 벡터들이 서로 직교하는 행렬      
+> $a, b, c, d$로 구성된 직교행렬을 $Q$로 지정하면 열벡터와 행벡터를 구성하는 $(a, b), (b, d), (a, c), (c, d)$의 크기는 1이고 $(a, b)$와 $(c, d)$는 서로 직교한다      
+> 
+> $$Q = 
+\begin{bmatrix}
+a & c \\
+b & d \\
+\end{bmatrix}$$
+> 
+> 직교행렬의 전치행렬은 역행렬이 된다     
+> 때문에 직교행렬 $Q$와 이의 전치행렬 $Q^T$의 곱은 항등행렬이 된다
+> 
+> $$Q \cdot Q^T = I$$
+> 
+> - 강체 변환(Rigid Transformation): 물체의 형태가 그대로 유지되는 선형 변환
+> 
+> 강체 변환 조건:
+> 1. 변환된 기저벡터의 크기는 모두 1이어야 한다
+> 2. 모든 기저벡터는 서로 직교해야 한다
+> 3. 행렬식 값이 1이어야 한다
+
+* * *
+
 ***행렬의 곱셈 연산은 내적으로 표현이 가능하다***.    
 
 $$
