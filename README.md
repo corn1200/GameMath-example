@@ -1674,63 +1674,18 @@ b & d \\
 [본문](/README-ORIGIN.md/#23-무게중심좌표)
 
 # 23.1. 무게중심좌표의 계산
-[식 7-4](#식-7-4)에서 세 점의 아핀 결합이 삼각형이 되려면 모든 스칼라의 값이 $|0, 1|$ 범위 내에 있어야 했다.    
-무게중심좌표를 구성하는 스칼라 값이 하나라도 $|0, 1|$ 범위를 벗어난다면 아핀 결합으로 생성된 점은 삼각형 외부에 있다고 할 수 있다.      
-이러한 성질을 활용하면 주어진 점이 삼각형 영역의 내부에 있는지 외부에 있는지 판단할 수 있다.    
-세 점의 아핀 결합 수식을 벡터로 변경한 [식 7-3](#식-7-3)을 도식화하면 [그림 7-9](#그림-7-9-삼각형을-구성하는-세-벡터)와 같다.
+### 선요약
 
-###### 그림 7-9 삼각형을 구성하는 세 벡터
-![삼각형을 구성하는 세 벡터](/img/)
+> 세 점의 아핀 결합이 삼각형이 되려면 모든 스칼라의 값이 $|0, 1|$ 범위 내에 있어야 한다       
+> 무게중심좌표를 구성하는 스칼라 값이 하나라도 $|0, 1|$ 범위를 벗어난다면 아핀 결합으로 생성된 점은 삼각형 외부에 있다고 할 수 있다       
+> 이러한 성질을 활용하면 주어진 점이 삼각형 영역의 내부에 있는지 외부에 있는 판단할 수 있다
+> 
+> - 퇴화삼각형(Degenerate triangle): 선형 종속의 관계를 이루는 세 점의 결합으로 만들어진 선분     
+> 퇴화삼각형이 검출되면 그리기에서 제외한다
 
-여기서 아핀 결합으로 생성되는 점 $P'$가 삼각형 내부에 있는지 판별하기 위해 ***내적***을 활용한다.     
-[식 7-3](#식-7-3)의 벡터 $\vec{w}$에 $\vec{u}$와 $\vec{v}$를 각각 내적하면 다음 수식이 나온다.
+* * *
 
-$$\vec{w} \cdot \vec{u} = (s \cdot \vec{u} + t \cdot \vec{v}) \cdot \vec{u}$$
-
-$$\vec{w} \cdot \vec{v} = (s \cdot \vec{u} + t \cdot \vec{v}) \cdot \vec{v}$$
-
-내적 연산한 수식을 분배법칙에 따라 풀어주면 다음과 같이 전개된다.
-
-$$\vec{w} \cdot \vec{u} = s(\vec{u} \cdot \vec{u}) + t(\vec{u} \cdot \vec{v})$$
-
-$$\vec{w} \cdot \vec{v} = s(\vec{u} \cdot \vec{v}) + t(\vec{v} \cdot \vec{v})$$
-
-여기서 $s$를 소거하기 위해, 1번 식에는 $(\vec{u} \cdot \vec{v})$를, 2번 식에는 $(\vec{u} \cdot \vec{u})$를 곱해 각각 전개한다.  
-
-$$(\vec{w} \cdot \vec{u})(\vec{u} \cdot \vec{v}) = s(\vec{u} \cdot \vec{u})(\vec{u} \cdot \vec{v}) + t(\vec{u} \cdot \vec{v})(\vec{u} \cdot \vec{v})$$
-
-$$(\vec{w} \cdot \vec{v})(\vec{u} \cdot \vec{u}) = s(\vec{u} \cdot \vec{v})(\vec{u} \cdot \vec{u}) + t(\vec{v} \cdot \vec{v})(\vec{u} \cdot \vec{u})$$
-
-1번 식에서 2번 식을 빼 $s$를 소거하고 $t$만 남긴다.     
-식을 풀어 $t$에 대해 정리하면 다음과 같은 식이 만들어진다.
-
-$$t = \frac{(\vec{w} \cdot \vec{u})(\vec{u} \cdot \vec{v}) - (\vec{w} \cdot \vec{v})(\vec{u} \cdot \vec{u})}{(\vec{u} \cdot \vec{v})^2 - (\vec{u} \cdot \vec{u})(\vec{v} \cdot \vec{v})}$$
-
-다시 예전 식으로 돌아가서, $s$에 대해 정리하기 위해 1번 식과 2번 식의 양변에 $(\vec{v} \cdot \vec{v})$와 $(\vec{u} \cdot \vec{v})$를 각각 곱한다.
-
-$$(\vec{w} \cdot \vec{u})(\vec{v} \cdot \vec{v}) = s(\vec{u} \cdot \vec{u})(\vec{v} \cdot \vec{v}) + t(\vec{u} \cdot \vec{v})(\vec{v} \cdot \vec{v})$$
-
-$$(\vec{w} \cdot \vec{v})(\vec{u} \cdot \vec{v}) = s(\vec{u} \cdot \vec{v})(\vec{u} \cdot \vec{v}) + t(\vec{v} \cdot \vec{v})(\vec{u} \cdot \vec{v})$$
-
-1번 식에서 2번 식을 빼 $t$를 소거하고 $s$에 대해 정리한 식은 다음과 같다.
-
-$$s = \frac{(\vec{w} \cdot \vec{v})(\vec{u} \cdot \vec{v}) - (\vec{w} \cdot \vec{u})(\vec{v} \cdot \vec{v})}{(\vec{u} \cdot \vec{v})^2 - (\vec{u} \cdot \vec{u})(\vec{v} \cdot \vec{v})}$$
-
-이렇게 얻어진 무게중심좌표 $(s, t, 1 - s - t)$의 세 값 모두 $|0, 1|$ 범위 안에 있다면 점 $P_4$는 삼각형 안에 있고, 세 값 중 하나라도 $|0, 1|$ 범위를 벗어나면 점 $P_4$는 삼각형 밖에 있다고 판단할 수 있다.
-
-이 식을 사용할 때 주의할 점은 공통분모 $(\vec{u} \cdot \vec{v})^2 - (\vec{u} \cdot \vec{u})(\vec{v} \cdot \vec{v})$의 결과가 0이 나올 수도 있다는 것이다.    
-이처럼 분모 값이 0이라면 무게중심좌표를 구할 수 없다.   
-어떤 경우에 분모 값이 0이 되는지 살펴보자.  
-분모 $(\vec{u} \cdot \vec{v})^2 - (\vec{u} \cdot \vec{u})(\vec{v} \cdot \vec{v})$의 내적을 $\cos$ 공식으로 변경하면 다음과 같다.
-
-$$(|\vec{u}||\vec{v}|)^2 \cdot \cos^2 \theta - (|\vec{u}||\vec{v}|)^2$$
-
-이 값이 0이 되기 위한 조건은 벡터 $\vec{u}$ 또는 $\vec{v}$의 크기가 0이거나 벡터 $\vec{u}$와 $\vec{v}$가 이루는 각 $\theta$ 값이 $0^\circ$이거나 $180^\circ$일 때다.    
-이는 두 벡터가 평행한 상태임을 의미하며, 두 벡터가 평행하면 [그림 7-10](#그림-7-10-퇴화삼각형의-예시)과 같이 선형 종속의 관계를 이루며, 선형 종속의 관계를 이루는 세 점의 결합은 삼각형이 아닌 선분을 만들어낸다.     
-이러한 삼각형을 ***퇴화삼각형(Degenerate triangle)*** 이라 하며, 퇴화삼각형이 검출되면 그리기에서 제외한다.
-
-###### 그림 7-10 퇴화삼각형의 예시
-![퇴화삼각형의 예시](/img/)
+[본문](/README-ORIGIN.md/#231-무게중심좌표의-계산)
 
 # 24. 텍스처 매핑
 무게중심좌표는 메시에 이미지를 입히는 용도로 활용할 수도 있다.  
