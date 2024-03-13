@@ -1864,85 +1864,21 @@ y_x & y_y & y_z & -y \cdot t \\
 [본문](/README-ORIGIN.md/#281-짐벌락-현상)
 
 # 28.2. 회전 보간의 계산
-3차원 공간에서 시작 회전과 끝 회전을 지정하고 시간에 따라 두 회전 사이를 부드럽게 전환하기는 기능은 카메라의 움직임이나 캐릭터 애니메이션을 구현하는 데 필요하다.   
-이를 구현하기 위해서는 경과된 시간에 따라 회전이 변화되도록 중간 회전 값을 계산할 수 있어야 하는데 이를 ***회전 보간(Rotational interpolation)*** 이라고 한다.
+### 선요약
 
-중간 회전 값은 다음과 같이 선형 보간의 식을 사용해 얻을 수 있다.
+> - 회전 보간(Rotational interpolation): 3차원 공간에서 시작 회전과 끝 회전을 지정하고 시간에 따라 두 회전 사이를 부드럽게 전환하는 기능은 카메라의 움직임이나 캐릭터 애니메이션을 구현하는 데 필요하다       
+> 이를 구현하기 위해서 경과된 시간에 따라 회전이 변화되도록 중간 회전 값을 계산하는 작업이 회전 보간이다      
+> 중간 회전 값은 선형 보간의 식을 사용해 얻을 수 있다     
+> $\theta' = (1 - t)\theta_{start} + t\theta_{end}$      
+> 선형 보간식이 성립하려면 두 각의 회전 변환을 곱한 결과가 두 각의 합의 회전 변환과 동일해야 한다     
+> 2차원 공간의 회전에서는 두 결과가 동일하기 때문에 2차원 공간의 회전에서 선형 보간식을 사용하는 데 아무런 문제가 없다        
+> 오일러 각에서 한 축만 사용한다는 것은 2차원 평면에서의 회전과 동일하기 때문에 선형 보간식을 사용할 수 있다      
+> 하지만 두 축 이상을 사용하는 오일러 각은 선형 보간식을 사용할 수 없다       
+> 3차원 공간에서 자유로운 회전 보간을 구현하고 싶은 경우에는 로드리게스 회전 공식을 사용하거나 사원수를 사용해야 한다
 
-$$\theta' = (1 - t)\theta_{start} + t\theta_{end}$$
+* * *
 
-예를 들어 동일한 평면 상에서 $15^\circ$에서 시작해 $165^\circ$로 끝나는 회전의 $\frac{1}{3}$ 비율에 해당하는 회전 보간 값은 $65^\circ$인데, 이는 다음의 수식으로 계산할 수 있다.
-
-$$\frac{2}{3} \cdot 15^\circ + \frac{1}{3} \cdot 165^\circ = 65^\circ$$
-
-***선형 보간식이 성립하려면 두 각의 회전 변환을 곱한 결과가 두 각의 합의 회전 변환과 동일해야 한다***.    
-2차원 공간의 회전에서는 두 결과가 동일하기 때문에 2차원 공간의 회전에서 선형 보간식을 사용하는 데 아무런 문제가 없다.   
-3차원 공간의 오일러 각 회전에서도 선형 보간식을 사용하는 데 문제가 없는지는 두 오일러 각의 회전 변환을 곱한 결과가 두 오일러 각의 합의 회전 변환과 동일한지 확인하면 알 수 있다.    
-세 기저벡터 중에서 $y$축에 대해서만 회전하는 오일러 각 회전을 살펴보면, $y$축으로 $\alpha$와 $\beta$만큼 회전하는 오일러 각의 데이터는 각각 다음과 같다.
-
-$$(0, \alpha, 0)$$
-
-$$(0, \beta, 0)$$
-
-[식 8-1](#식-8-1)에 의해 두 오일러 각에 대응하는 회전 변환 $R_\alpha$와 $R_\beta$는 다음과 같이 계산된다.
-
-$$R_\alpha = R_{yaw\alpha} \cdot I \cdot I = R_{yaw\alpha}$$
-
-$$R_\beta = R_{yaw\beta} \cdot I \cdot I = R_{yaw\beta}$$
-
-두 오일러 각을 합한 회전 변환 $R_{(\alpha + \beta)}$는 다음과 같다.
-
-$$R_{(\alpha + \beta)} = R_{yaw(\alpha + \beta)} \cdot I \cdot I = R_{yaw(\alpha + \beta)}$$
-
-두 오일러 각에 대응하는 회전 변환 $R_\alpha$와 $R_\beta$를 곱한 결과를 전개해보자.
-
-$$
-\begin{matrix}
-R_\beta \cdot R_\alpha &=& (R_{yaw\beta} \cdot R_{pitch\beta} \cdot R_{roll\beta}) \cdot (R_{yaw\alpha} \cdot R_{pitch\alpha} \cdot R_{roll\alpha}) \\
-&=& (R_{yaw\beta} \cdot I \cdot I) \cdot (R_{yaw\alpha} \cdot I \cdot I) \\
-&=& R_{yaw\beta} \cdot R_{yaw\alpha} \\
-&=& R_{yaw(\beta + \alpha)} \\
-&=& R_{(\alpha + \beta)} \\
-\end{matrix}
-$$
-
-$y$축만 사용하는 두 오일러 각을 곱한 결과는 두 오일러 각을 합한 회전 변환 $R_{(\alpha + \beta)}$와 동일함을 확인할 수 있다.     
-***오일러 각에서 한 축만 사용한다는 것은 결국 2차원 평면에서의 회전과 동일하다***.    
-따라서 해당 상황에서는 선형 보간식을 사용하는 데 문제가 없다.
-
-$x$축과 $y$축, 두 축에 대해서 회전하는 오일러 각에 대해 알아보자.   
-두 축에 대해 $\alpha$와 $\beta$만큼 회전하는 오일러 각의 데이터는 각각 다음과 같다.
-
-$$(\alpha, \alpha, 0)$$
-
-$$(\beta, \beta, 0)$$
-
-[식 8-1](#식-8-1)에 의해 두 오일러 각에 대응하는 회전 변환 $R_\alpha$와 $R_\beta$는 다음과 같이 계산된다.
-
-$$R_\alpha = R_{yaw\alpha} \cdot R_{pitch\alpha} \cdot I = R_{yaw\alpha} \cdot R_{pitch\alpha}$$
-
-$$R_\beta = R_{yaw\beta} \cdot R_{pitch\beta} \cdot I = R_{yaw\beta} \cdot R_{pitch\beta}$$
-
-두 오일러 각을 합한 각의 회전 변환 $R_{(\alpha + \beta)}$는 다음과 같다.
-
-$$R_{(\alpha + \beta)} = R_{yaw(\alpha + \beta)} \cdot R_{pitch(\alpha + \beta)} \cdot I = R_{yaw(\alpha + \beta)} \cdot R_{pitch(\alpha + \beta)}$$
-
-두 오일러 각에 대응하는 회전 변환 $R_\alpha$와 $R_\beta$를 곱한 결과는 두 오일러 각을 합한 회전 변환 $R_{(\alpha + \beta)}$와 다르다.
-
-$$
-\begin{matrix}
-R_\beta \cdot R_\alpha &=& (R_{yaw\beta} \cdot R_{pitch\beta} \cdot R_{roll\beta}) \cdot (R_{yaw\alpha} \cdot R_{pitch\alpha} \cdot R_{roll\alpha}) \\
-&=& (R_{yaw\beta} \cdot R_{pitch\beta} \cdot I) \cdot (R_{yaw\alpha} \cdot R_{pitch\alpha} \cdot I) \\
-&=& R_{yaw\beta} \cdot R_{pitch\beta} \cdot R_{yaw\alpha} \cdot R_{pitch\alpha} \\
-&\neq& R_{(\alpha + \beta)} \\
-\end{matrix}
-$$
-
-따라서 ***두 축 이상을 사용하는 오일러 각은 선형 보간식을 사용할 수 없다***.
-
-일반적으로 게임에서 캐릭터의 회전은 $y$축에 대응하는 요 회전만을 사용하기 때문에 캐릭터 회전 보간은 오일러 각으로 충분히 구현 가능하다.     
-하지만 비행기 조종 같은 3차원 공간에서 2개 이상의 기저축이 결합된 방식으로 회전을 진행하는 경우 오일러 각 방식을 사용해 회전 보간을 구현하는 작업은 어려워진다.     
-3차원 공간에서 자유로운 회전 보간을 구현하고 싶은 경우에는 ***로드리게스 회전 공식***을 사용하거나 ***사원수***를 사용해야 한다.
+[본문](/README-ORIGIN.md/#282-회전-보간의-계산)
 
 # 29. 벡터의 외적
 벡터에는 내적 외에도 ***외적(Cross product)*** 이라는 연산이 있는데 내적이 모든 차원의 벡터에 적용할 수 있는 것과 달리 ***외적은 3차원 공간의 벡터에서만 사용이 가능한 연산***이다.
