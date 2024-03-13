@@ -1758,45 +1758,48 @@ b & d \\
 [본문](/README-ORIGIN.md/#262-회전행렬의-유도)
 
 # 26.3. 3차원 모델링 행렬
-***3차원 공간의 트랜스폼***을 구성하는 ***크기(S)***, ***회전(R)***, ***이동(T)*** 변환행렬은 다음과 같다.  
+### 선요약
 
-$$S = 
+> 3차원 공간의 트랜스폼을 구성하는 크기(S), 회전(R), 이동(T) 변환행렬은 다음과 같다
+> 
+> $$S = 
 \begin{bmatrix}
-S_x & 0 & 0 & 0 \\
-0 & S_y & 0 & 0 \\
-0 & 0 & S_z & 0 \\
+s_x & 0 & 0 & 0 \\
+0 & s_y & 0 & 0 \\
+0 & 0 & s_z & 0 \\
 0 & 0 & 0 & 1 \\
-\end{bmatrix}
-$$
-
-$$R = 
+\end{bmatrix}$$
+> 
+> $$R = 
 \begin{bmatrix}
-X_x & Y_x & Z_x & 0 \\
-X_y & Y_y & Z_y & 0 \\
-X_z & Y_z & Z_z & 0 \\
+x_x & y_x & z_x & 0 \\
+x_y & y_y & z_y & 0 \\
+x_z & y_z & z_z & 0 \\
 0 & 0 & 0 & 1 \\
-\end{bmatrix}
-$$
-
-$$T = 
+\end{bmatrix}$$
+> 
+> $$T =
 \begin{bmatrix}
 1 & 0 & 0 & t_x \\
 0 & 1 & 0 & t_y \\
 0 & 0 & 1 & t_z \\
 0 & 0 & 0 & 1 \\
-\end{bmatrix}
-$$
-
-이 세 행렬을 $TRS$ 연산 순서에 따라 곱해 만든 ***모델링 행렬*** $M$은 다음과 같이 계산된다.
-
-$$M = T \cdot R \cdot S = 
+\end{bmatrix}$$
+> 
+> 세 행렬을 $TRS$ 연산 순서에 따라 곱해 만든 모델링 행렬 $M$은 다음과 같이 계산된다
+> 
+> $$M = T \cdot R \cdot S =
 \begin{bmatrix}
-X_xS_x & Y_xS_y & Z_xS_z & t_x \\
-X_yS_x & Y_yS_y & Z_yS_z & t_y \\
-X_zS_x & Y_zS_y & Z_zS_z & t_z \\
+x_xs_x & y_xs_y & z_xs_z & t_x \\
+x_ys_x & y_ys_y & z_ys_z & t_y \\
+x_zs_x & y_zs_y & z_zs_z & y_z \\
 0 & 0 & 0 & 1 \\
-\end{bmatrix}
-$$
+\end{bmatrix}$$
+>
+
+* * *
+
+[본문](/README-ORIGIN.md/#263-3차원-모델링-행렬)
 
 # 27. 카메라 공간
 2차원 카메라를 구현할 때에는 이동 기능만 부여했지만 3차원 공간의 카메라에는 이동과 회전 기능을 함께 부여한다.
