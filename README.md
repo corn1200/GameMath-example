@@ -1909,108 +1909,31 @@ y_x & y_y & y_z & -y \cdot t \\
 [본문](/README-ORIGIN.md/#29-벡터의-외적)
 
 # 29.1. 평행성 판별
-동일한 벡터끼리 내적하면 벡터 크기를 제곱한 값이 나오는데, ***동일한 벡터를 외적하면 그 결과는 항상 영벡터가 나온다***.
+### 선요약
 
-$$\vec{u} \times \vec{u} = (u_yu_z - u_yu_z, u_zu_x - u_zu_x, u_xu_y - u_xu_y) = (0, 0, 0)$$
+> 외적의 성질
+> - 평행한 두 벡터를 외적하면 항상 영벡터가 된다      
+> $\vec{u} \times \vec{u} = (u_yu_z - u_yu_z, u_zu_x - u_zu_x, u_xu_y - u_xu_y) = (0, 0, 0)$      
+> $\vec{u} \times -\vec{u} = (-u_yu_z + u_yu_z, -u_zu_x + u_zu_x, -u_xu_y + u_xu_y) = (0, 0, 0)$      
+> $\vec{v} = k \cdot \vec{u}, \quad \vec{u} \times \vec{v} = (ku_yu_z - ku_yu_z, ku_zu_x - ku_zu_x, ku_xu_y - ku_xu_y)$       
+> 이러한 성질은 평행성을 판별하는 데 사용된다     
+> 이는 두 벡터의 직교성을 판별하는 내적의 성질과 대립된다     
+> - 외적은 상대방에 직교하는 벡터 성분만 사용된다         
+> 벡터 $\vec{u}$를 벡터 $\vec{v}$에 수평인 벡터 $\vec{u_\parallel}$과 수직인 벡터 $\vec{u_\perp}$로 분리하면 벡터 $\vec{u}$는 수평 성분과 수직 성분의 덧셈으로 분리할 수 있다     
+> 벡터 $\vec{u}$를 분리한 벡터 $\vec{u_\perp}, \vec{u_\parallel}$와 $\vec{v}$의 외적은 다음과 같이 전개된다       
+> $\vec{v} \times \vec{u} = \vec{v} \times (\vec{u_\perp} + \vec{u_\parallel}) = \vec{v} \times \vec{u_\perp} + \vec{v} \times \vec{u_\parallel}$     
+> 벡터 $\vec{v}$와 평행한 벡터 $\vec{u_\parallel}$와의 외적은 크기와 관계 없이 영벡터가 된다      
+> 따라서 위 식은 다음과 같이 간략하게 정리된다        
+> $\vec{v} \times \vec{u} = \vec{v} \times \vec{u_\perp}$
+> - 외적의 크기는 $\sin$ 함수에 비례한다      
+> 두 벡터의 사잇각을 $\theta$라고 할 때 두 벡터의 사잇각이 큰 직교 성분 $\vec{u_\perp}_\alpha$의 크기는 그보다 사잇각이 작은 직교 성분 $\vec{u_\perp}_\beta$보다 크다     
+> 직교 성분 $\vec{u_\perp}$의 크기는 $\sin$ 함수에 비례하므로 외적의 크기도 $\sin$ 함수에 비례하는 것이다     
+> $|\vec{u} \times \vec{v}| = |\vec{u}||\vec{v}||\sin \theta|$
+> - 외적으로 생성된 벡터의 크기는 행렬식이 만들어내느 넓이와 동일하다
 
-이는 $\vec{u}$와 반대 방향의 벡터 $-\vec{u}$를 외적하는 경우에도 동일하다.  
+* * *
 
-$$\vec{u} \times -\vec{u} = (-u_yu_z + u_yu_z, -u_zu_x + u_zu_x, -u_xu_y + u_xu_y) = (0, 0, 0)$$
-
-$\vec{u}$와 평행하지만 크기가 다른 $\vec{v}$라는 벡터를 서로 외적해도 0이 된다.
-
-$$\vec{v} = k \cdot \vec{u}$$
-
-$$\vec{u} \times \vec{v} = (ku_yu_z - ku_yu_z, ku_zu_x - ku_zu_x, ku_xu_y - ku_xu_y)$$
-
-이로써 평행한 두 벡터를 외적하면 항상 영벡터가 됨을 알 수 있으며, 이러한 외적의 성질은 ***평행성을 판별하는 데 사용***된다.   
-이는 ***두 벡터의 직교성을 판별하는 내적의 성질과 대립***된다.
-
-외적의 성질을 자세히 알아보기 위해, [그림 9-2](#그림-9-2-벡터를-수평-성분과-수직-성분으로-분리하기)처럼 벡터 $\vec{u}$를 벡터 $\vec{v}$에 수평인 벡터 $\vec{u_\parallel}$과 수직인 벡터 $\vec{u_\perp}$로 분리한다.  
-벡터 $\vec{u}$는 수평 성분과 수직 성분의 덧셈으로 분리된다.
-
-###### 그림 9-2 벡터를 수평 성분과 수직 성분으로 분리하기
-![벡터를 수평 성분과 수직 성분으로 분리하기](/img/)
-
-외적은 덧셈의 분배법칙이 성립하므로 벡터 $\vec{u}$를 분리한 벡터 $\vec{u_\perp}$, $\vec{u_\parallel}$와 $\vec{v}$의 외적은 다음과 같이 전개된다.
-
-$$\vec{v} \times \vec{u} = \vec{v} \times (\vec{u_\perp} + \vec{u_\parallel}) = \vec{v} \times \vec{u_\perp} + \vec{v} \times \vec{u_\parallel}$$
-
-벡터 $\vec{v}$와 평행한 벡터 $\vec{u_\parallel}$와의 외적은 크기와 관계 없이 영벡터가 된다.     
-따라서 위 식은 다음과 같이 간략하게 정리된다.
-
-$$\vec{v} \times \vec{u} = \vec{v} \times \vec{u_\perp}$$
-
-이로써 ***외적은 상대방에 직교하는 벡터 성분만 사용되는 성질이 있음***을 알 수 있다.  
-두 벡터의 사잇각을 $\theta$라고 할 때 [그림 9-3](#그림-9-3-크기는-같지만-사잇각이-다른-두-벡터의-수직-성분의-크기-비교)을 살펴보면 두 벡터의 사잇각이 큰 (a)의 직교하는 성분 $\vec{u_\perp}$의 크기는 그보다 사잇각이 작은 (b)의 직교하는 성분 $\vec{u_\perp}$보다 크다.   
-직교 성분 $\vec{u_\perp}$의 크기는 $\sin$ 함수에 비례하므로 외적의 크기도 $\sin$ 함수에 비례한다.
-
-###### 그림 9-3 크기는 같지만, 사잇각이 다른 두 벡터의 수직 성분의 크기 비교
-![크기는 같지만, 사잇각이 다른 두 벡터의 수직 성분의 크기 비교](/img/)
-
-실제로 외적의 결과가 $\sin$ 함수에 비례하는지 수식으로 확인해보자.  
-이를 위해 준비한 세 가지 연산 $|\vec{u} \times \vec{v}|^2$, $(|\vec{u}||\vec{v}|)^2$, $(\vec{u} \cdot \vec{v})^2$을 각각 전개한다.  
-첫 번째 식 $|\vec{u} \times \vec{v}|^2$를 전개하면 다음과 같다.
-
-$$
-\begin{matrix}
-|\vec{u} \times \vec{v}|^2 &=& (\vec{u} \times \vec{v}) \cdot (\vec{u} \times \vec{v}) \\
-&=& (u_yv_z - u_zv_y)^2 + (u_zv_x - u_xv_z)^2 + (u_xv_y - u_yv_x)^2 \\
-&=& u_y^2v_z^2 - 2u_yu_zv_yv_z + u_z^2v_y^2 + u_z^2v_x^2 - 2u_yu_zv_yv_z + u_x^2v_z^2 + u_x^2v_y^2 - 2u_xu_yv_xv_y + u_y^2v_x^2 \\
-\end{matrix}
-$$
-
-두 번째 식 $(|\vec{u}||\vec{v}|)^2$를 전개하면 다음과 같다.
-
-$$
-\begin{matrix}
-(|\vec{u}||\vec{v})^2 &=& (\sqrt{u_x^2 + u_y^2 + u_z^2} \sqrt{v_x^2 + v_y^2 + v_z^2})^2 \\
-&=& (u_x^2 + u_y^2 + u_z^2)(v_x^2 + v_y^2 + v_z^2) \\
-&=& u_x^2v_x^2 + u_x^2v_y^2 + u_x^2v_z^2 + u_y^2v_x^2 + u_y^2v_y^2 + u_y^2v_z^2 + u_z^2v_x^2 + u_z^2v_y^2 + u_z^2v_z^2 \\
-\end{matrix}
-$$
-
-마지막 식 $(\vec{u} \cdot \vec{v})^2$를 전개하면 다음과 같다.
-
-$$
-\begin{matrix}
-(\vec{u} \cdot \vec{v})^2 &=& (u_xv_x + u_yv_y + u_zv_z)^2 \\
-&=& u_x^2v_x^2 + u_y^2v_y^2 + u_z^2v_z^2 + 2u_xu_yv_xv_y + 2u_xu_zv_xv_z + 2u_yu_zv_yv_z \\
-\end{matrix}
-$$
-
-세 식의 결과를 비교하면 당므과 같은 관계를 가진다.
-
-$$|\vec{u} \times \vec{v}|^2 = (|\vec{u}||\vec{v}|)^2 - (\vec{u} \cdot \vec{v})^2$$
-
-위 식의 내적 $\vec{u} \cdot \vec{v}$를 코사인 공식으로 바꿔 전개하면 아래와 같다.
-
-$$
-\begin{matrix}
-|\vec{u} \times \vec{v}|^2 &=& (|\vec{u}||\vec{v}|)^2 - (|\vec{u}||\vec{v}| \cos \theta)^2 \\
-&=& (|\vec{u}||\vec{v}|)^2(1 - \cos^2 \theta) \\
-&=& (|\vec{u}||\vec{v}|)^2 \sin^2 \theta \\
-\end{matrix}
-$$
-
-이로써 벡터 외적의 크기는 $\sin$ 함수의 크기에 비례함을 알 수 있다.
-
-$$|\vec{u} \times \vec{v}| = |\vec{u}||\vec{v}||\sin \theta|$$
-
-***외적으로 생성된 벡터의 크기는*** [그림 9-4](#그림-9-4-두-벡터-u와-v가-만드는-평행사변형의-넓이)와 같이 ***두 벡터가 만드는 평행사변형의 넓이로 나타낼 수 있다***.    
-이는 ***행렬식이 만들어내는 넓이와 동일***하다.
-
-###### 그림 9-4 두 벡터 u와 v가 만드는 평행사변형의 넓이
-![두 벡터 u와 v가 만드는 평행사변형의 넓이](/img/)
-
-[표 9-1](#표-9-1-벡터의-내적과-외적의-차이1)에 이어 내적과 대비되는 외적의 성질을 정리하면 [표 9-2](#표-9-2-벡터의-내적과-외적의-차이2)와 같다.
-
-###### 표 9-2 벡터의 내적과 외적의 차이(2)
-
-||내적|외적|
-|---|---|---|
-|판별성|직교성|평행성|
-|삼각함수|$\cos \theta$|$\sin \theta$|
+[본문](/README-ORIGIN.md/#291-평행성-판별)
 
 # 29.2. 법선 벡터
 벡터 외적이 가지는 또 하나의 중요한 성질은 ***두 벡터에 직교하는 벡터를 생성한다***는 것이다.     
