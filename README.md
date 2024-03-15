@@ -2100,7 +2100,7 @@ x_z & y_z & z_z & 0 \\
 
 > 스칼라 삼중곱(Scalar triple product):
 > - $\vec{u} \cdot (\vec{v} \times \vec{w})$
-> - 다른 삼중곱 연산과 구분하기 위해 별도로 스칼라 삼중곱이라고 부른다
+> - 결과값이 스칼라가 나오며 다른 삼중곱 연산과 구분하기 위해 별도로 스칼라 삼중곱이라고 부른다
 > - 좌우 판별과 백페이스 컬링에서 사용된다        
 > $\hat{y} \cdot (\vec{f} \times \vec{v})$        
 > $-\hat{z} \cdot (\vec{P_0P_1} \times \vec{P_0P_2})$
@@ -2128,55 +2128,20 @@ x_z & y_z & z_z & 0 \\
 [본문](/README-ORIGIN.md/#331-스칼라-삼중곱)
 
 # 33.2. 벡터 삼중곱
-세 벡터의 외적으로 구성된 삼중곱 $\vec{u} \times (\vec{v} \times \vec{w})$을 ***벡터 삼중곱(Vector triple product)*** 이라고 한다.     
-벡터 삼중곱은 다음과 같은 성질을 지닌다.
+### 선요약
 
-###### 식 9-3
+> 벡터 삼중곱(Vector triple product):
+> - $\vec{u} \times (\vec{v} \times \vec{w})$
+> - 결과값이 벡터가 나오며 다른 삼중곱 연산과 구분하기 위해 벡터 삼중곱이라고 부른다
+> - 삼중곱 전개(Triple product expansion), 라그랑주 공식(Lagrange's formula): $\vec{u} \times (\vec{v} \times \vec{w}) = (\vec{u} \cdot \vec{w}) \cdot - (\vec{u} \cdot \vec{v}) \cdot \vec{w}$
+> - 벡터 삼중곱은 다소 복잡한 외적을 두 개의 내적 연산으로 변환한다
+> - 삼중곱 전개의 우변은 결국 $a\vec{v} + b\vec{w}$ 형태의 선형 결합식이므로 벡터 삼중곱으로 만들어지는 벡터는 두 벡터 $\vec{v}$와 $\vec{w}$가 만드는 평면에 속한다
+> - 벡터 삼중곱은 2차원 공간의 문제를 푸는 데도 유용하게 활용된다     
+> 2차원 평면의 벡터 $\vec{u}$와 동일한 평면에 위치한 임의의 벡터 $\vec{v}$가 주어졌을 때, 동일 평면에서 벡터 $\vec{u}$와 직교하는 벡터는 $(\vec{u} \times \vec{v}) \times \vec{u}$의 벡터 삼중곱을 사용해 구할 수 있다
 
-$$\vec{u} \times (\vec{v} \times \vec{w}) = (\vec{u} \cdot \vec{w}) \cdot \vec{v} - (\vec{u} \cdot \vec{v}) \cdot \vec{w}$$
+* * *
 
-이를 ***삼중곱 전개(Triple product expansion)*** 또는 ***라그랑주 공식(Largrange's formula)*** 이라고 한다.      
-좌변의 식 $\vec{u} \times (\vec{v} \times \vec{w})$의 최종 연산은 외적이므로 이의 결과는 벡터로 나옴을 알 수 있다.      
-이때 최종 벡터의 $x$ 성분만 먼저 전개한다.      
-먼저 $\vec{v} \times \vec{w}$의 외적을 계산하는 식은 다음과 같다.
-
-$$\vec{v} \times \vec{w} = (v_yw_z - w_yv_z, v_zw_x - w_zv_x, v_xw_y - w_xv_y)$$
-
-여기서 외적의 $x$ 요소에는 $\vec{u}$ 벡터와 $(\vec{v} \times \vec{w})$ 벡터의 $y$ 성분과 $z$ 성분만 사용된다.   
-$\vec{u} \times (\vec{v} \times \vec{w})$로 만들어지는 $x$ 성분을 전개한다.     
-이는 $v_x(\vec{u} \cdot \vec{w}) - w_x(\vec{u} \cdot \vec{v})$의 내적식으로 간단하게 정리된다.
-
-$$
-\begin{matrix}
-(\vec{u} \times (\vec{v} \times \vec{w}))_x &=& u_y(v_xw_y - w_xv_y) - (v_zw_x - w_zv_x)u_z \\
-&=& v_x(u_yw_y + u_zw_z) - w_x(u_yv_y + u_zv_z) \\
-&=& v_x(u_yw_y + u_zw_z) - w_x(u_yv_y + u_zv_z) + v_xu_xw_x - v_xu_xw_x \\
-&=& v_x(u_xw_x + u_yw_y + u_zw_z) - w_x(u_xv_x + u_yv_y + u_zv_z) \\
-&=& v_x(\vec{u} \cdot \vec{w}) - w_x(\vec{u} \cdot \vec{v}) \\
-\end{matrix}
-$$
-
-0의 값을 가지는 수식 $+ v_xu_xw_x - v_xu_xw_x$을 추가한다.
-
-나머지 두 개의 성분도 동일한 방식으로 전개할 수 있으며, 이 결과를 정리하면 다음과 같다.
-
-$$(\vec{u} \times (\vec{v} \times \vec{w}))_y = v_y(\vec{u} \cdot \vec{w}) - w_y(\vec{u} \cdot \vec{v})$$
-
-$$(\vec{u} \times (\vec{v} \times \vec{w}))_z = v_z(\vec{u} \cdot \vec{w}) - w_z(\vec{u} \cdot \vec{v})$$
-
-위 결과를 종합하면 [식 9-3](#식-9-3)이 유도됨을 확인할 수 있다.     
-***벡터 삼중곱은 다소 복잡한 외적을 두 개의 내적 연산으로 변환한다***는 특징을 지닌다.    
-이 식의 우변은 결국 $a\vec{v} + b\vec{w}$ 형태의 ***선형 결합식***이므로 ***벡터 삼중곱으로 만들어지는 벡터***는 두 벡터 $\vec{v}$와 $\vec{w}$가 만드는 ***평면에 속함***을 알 수 있다.
-
-###### 그림 9-32 벡터 삼중곱으로 만들어진 벡터의 결과
-![벡터 삼중곱으로 만들어진 벡터의 결과](/img/)
-
-> 참고  
-3차원 공간의 연산 외적이 사용되는 벡터 삼중곱은 2차원 공간의 문제를 푸는 데도 유용하게 활용할 수 있다.      
-2차원 평면의 벡터 $\vec{u}$와 동일한 평면에 위치한 임의의 벡터 $\vec{v}$가 주어졌을 때, 동일 평면에서 벡터 $\vec{u}$와 직교하는 벡터는 $(\vec{u} \times \vec{v}) \times \vec{u}$의 벡터 삼중곱을 사용해 구할 수 있다.
->
-> ###### 그림 9-33 2차원 평면 위의 직교 벡터를 생성해주는 벡터 삼중곱 연산
-> ![2차원 평면 위의 직교 벡터를 생성해주는 벡터 삼중곱 연산](/img/)
+[본문](/README-ORIGIN.md/#332-벡터-삼중곱)
 
 # 34. 원근 투영 변환의 원리
 원근 기법은 르네상스 시대의 화가들에 의해 창안되었다.   
