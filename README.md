@@ -2673,60 +2673,56 @@ x_z & y_z & z_z & 0 \\
 [본문](/README-ORIGIN.md/#432-켤레-복소수의-회전-변환)
 
 # 44. 복소수와 행렬의 관계
-***복소수를 수의 관점이 아닌 변환의 관점에서 바라본다면 2차원 복소평면 상의 복소수는 2차원 행렬에 대응할 수 있다***.      
-회전을 수행하는 단위 복소수와 2차원의 회전 변환행렬이 동일하다고 가정하고 수식을 전개하면 다음과 같다.
+### 선요약
 
-$$\cos \theta + i \sin \theta = 
+> 복소수의 2차원 행렬 대응:
+> - 복소수를 수의 관점이 아닌 변환의 관점에서 바라본다면 2차원 복소평면 상의 복소수는 2차원 행렬에 대응된다
+> - 회전을 수행하는 단위 복소수와 2차원의 회전 변환행렬이 동일하다고 가정하고 수식을 전개한 뒤 $\cos\theta$와 $\sin\theta$에 대해 분리해 정리하면 실수부에 대응하는 행렬 $I$와 허수 $i$에 대응하는 행렬 $J$를 확인할 수 있다
+> - 실수부에 대응하는 행렬 $I$는 어떤 수에 곱했을 때 아무 변화가 없는 항등행렬이고, 이는 곱셈의 항등원 1과 동등한 개념이다        
+> 허수 $i$에 대응하는 행렬 $J$는 $90^\circ$ 회전 변환행렬인데 이를 두 번 곱하면 $-I$가 나오며, 이는 $-1$에 대응한다고 볼 수 있다      
+> 이는 두 번 곱하면 $-1$이 나오는 허수 단위의 성질과도 일치한다
+> 
+> $$\cos\theta + i\sin\theta = 
 \begin{bmatrix}
-\cos \theta & -\sin \theta \\
-\sin \theta & \cos \theta \\
-\end{bmatrix}
-$$
-
-회전 변환행렬을 $\cos \theta$와 $\sin \theta$에 대해 분리해 정리하면 다음과 같다.
-
-$$\cos \theta + i \sin \theta =
-\cos \theta \cdot 
-\begin{bmatrix}
-1 & 0 \\
-0 & 1 \\
-\end{bmatrix}
-+ \sin \theta \cdot
-\begin{bmatrix}
-0 & -1 \\
-1 & 0 \\
-\end{bmatrix}
-$$
-
-실수부에 대응하는 행렬을 $I$로, 허수 $i$에 대응되는 행렬을 $J$라고 정의한다.
-
-$$I = 
+\cos\theta & -\sin\theta \\
+\sin\theta & \cos\theta \\
+\end{bmatrix}$$
+> 
+> $$\cos\theta + i\sin\theta =
+\cos\theta \cdot
 \begin{bmatrix}
 1 & 0 \\
 0 & 1 \\
-\end{bmatrix}
-$$
-
-$$J = 
+\end{bmatrix} +
+\sin\theta \cdot 
 \begin{bmatrix}
 0 & -1 \\
 1 & 0 \\
-\end{bmatrix}
-$$
-
-실수부에 대응하는 ***행렬*** $I$***는 어떤 수에 곱했을 때 아무 변화가 없는 항등행렬임을 알 수 있는데, 이는 곱셈의 항등원*** $1$***과 동등한 개념이다***.      
-한편 ***허수*** $i$***에 대응하는 행렬*** $J$***는*** $90^\circ$ ***회전 변환행렬인데 이를 두 번 곱하면*** $-I$***가 나오며, 이는*** $-1$***에 대응한다고 볼 수 있다***.
-
-$$J \cdot J = 
+\end{bmatrix}$$
+> 
+> $$I =
+\begin{bmatrix}
+1 & 0 \\
+0 & 1 \\
+\end{bmatrix}$$
+> 
+> $$J = 
+\begin{bmatrix}
+0 & -1 \\
+1 & 0 \\
+\end{bmatrix}$$
+> 
+> $$J \cdot J =
 \begin{bmatrix}
 -1 & 0 \\
 0 & -1 \\
-\end{bmatrix} = 
--I$$
+\end{bmatrix} = -I$$
+> 
+> $$i \cdot i = -1$$
 
-이는 ***두 번 곱하면*** $-1$***이 나오는 허수 단위의 성질과도 일치***한다.
+* * *
 
-$$i \cdot i = -1$$
+[본문](/README-ORIGIN.md/#44-복소수와-행렬의-관계)
 
 # 45. 자연지수함수
 1748년 스위스 수학자 ***레온하르트 오일러(Leonhard Euler)*** 는 실수와 허수와의 관계에서 더 나아가 삼각함수와 자연지수함수와의 관계를 나타내는 ***오일러 공식(Euler's formula)*** 을 발표했다.    
