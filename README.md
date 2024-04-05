@@ -3209,28 +3209,18 @@ x_z & y_z & z_z & 0 \\
 3차원 공간에서 물체의 회전을 설정할 때에는 오일러 각 방식이 사원수보다 직관적이고 편리하기 때문에, 오일러 각의 값을 사원수로 변환해주는 기능을 만들면 게임 제작에 유용하게 사용할 수 있다.
 
 # 51.1. 오일러 각에서 사원수로의 변환
-***오일러 각의 각 회전은*** $x, y, z$ ***기저 축이 회전축의 역할을 수행***한다.     
-3차원 공간에서 $x$축을 중심으로 각 $\theta$만큼 회전시키는 데 사용하는 회전 사원수 $q$는 다음과 같다.
+### 선요약
 
-$$q = (\cos \frac{\theta}{2}, \sin \frac{\theta}{2} \cdot \vec{x}) = \cos \frac{\theta}{2} + \sin \frac{\theta}{2} i$$
+> 오일러 각의 각 회전은 $x, y, z$ 기저 축이 회전축의 역할을 수행한다      
+> 이를 사원수로 표현할 때, 3차원 공간에서 $x$축을 중심으로 각 $\theta$만큼 회전시키는 데 사용하는 회전 사원수 $q$는 다음과 같다       
+> 
+> $$q = (\cos\frac{\theta}{2}, \sin\frac{\theta}{2} \cdot \vec{x}) = \cos\frac{\theta}{2} + \sin\frac{\theta}{2}i$$
+> 
+> 오일러 각의 회전 순서를 롤, 피치, 요 순으로 적용하면, 이에 대응하는 사원수를 동일한 순서에 맞춰서 곱하여 오일러 각에 대응하는 사원수를 만들 수 있다
 
-따라서 오일러 각을 구성하는 롤, 피치, 요 회전에 대응하는 각 사원수 $q_{roll}, q_{pitch}, q_{yaw}$는 각각 다음과 같이 표기된다.
+* * *
 
-$$q_{roll} = \cos \frac{\theta_{roll}}{2} + \sin \frac{\theta_{roll}}{2}k$$
-
-$$q_{pitch} = \cos \frac{\theta_{pitch}}{2} + \sin \frac{\theta_{pitch}}{2}i$$
-
-$$q_{yaw} = \cos \frac{\theta_{yaw}}{2} + \sin \frac{\theta_{yaw}}{2}j$$
-
-오일러 각의 회전 순서를 롤, 피치, 요 순으로 적용하고, 이에 대응하는 사원수를 동일한 순서에 맞춰서 곱하면 오일러 각에 대응하는 사원수가 만들어진다.        
-이를 계산하면 [식 14-3](#식-14-3)과 같다.
-
-###### 식 14-3
-
-$$q_{yaw} \cdot q_{pitch} \cdot q_{roll} = \cos \frac{\theta_{roll}}{2} \cos \frac{\theta_{pitch}}{2} \cos \frac{\theta_{yaw}}{2} + \sin \frac{\theta_{roll}}{2} \sin \frac{\theta_{pitch}}{2} \sin \frac{\theta_{yaw}}{2} + \\
-(\cos \frac{\theta_{roll}}{2} \sin \frac{\theta_{pitch}}{2} \cos \frac{\theta_{yaw}}{2} + \sin \frac{\theta_{roll}}{2} \cos \frac{\theta_{pitch}}{2} \sin \frac{\theta_{yaw}}{2})i + \\
-(\cos \frac{\theta_{roll}}{2} \cos \frac{\theta_{pitch}}{2} \sin \frac{\theta_{yaw}}{2} - \sin \frac{\theta_{roll}}{2} \sin \frac{\theta_{pitch}}{2} \cos \frac{\theta_{yaw}}{2})j + \\
-(\sin \frac{\theta_{roll}}{2} \cos \frac{\theta_{pitch}}{2} \cos \frac{\theta_{yaw}}{2} - \cos \frac{\theta_{roll}}{2} \sin \frac{\theta_{pitch}}{2} \sin \frac{\theta_{yaw}}{2})k$$
+[본문](/README-ORIGIN.md/#511-오일러-각에서-사원수로의-변환)
 
 # 51.2. 사원수에서 오일러 각으로의 변환
 거꾸로 사원수로부터 오일러 각의 값을 변환하는 방법에 대해 알아보자.     
